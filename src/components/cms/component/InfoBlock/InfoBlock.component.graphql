@@ -1,0 +1,4 @@
+fragment InfoBlockData on InfoBlock {
+  title: InfoBlockTitle
+  descrip: InfoBlockDescription
+}
