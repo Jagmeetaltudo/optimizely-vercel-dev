@@ -173,6 +173,12 @@ export const CardBlockDataFragmentDoc = /*#__PURE__*/ gql`
   layout: CardImageLayout
 }
     `;
+export const InfoBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment InfoBlockData on InfoBlock {
+  title: InfoBlockTitle
+  descrip: InfoBlockDescription
+}
+    `;
 export const OfficeLocationDataFragmentDoc = /*#__PURE__*/ gql`
     fragment OfficeLocationData on OfficeLocation {
   title: OfficeTitle
@@ -232,6 +238,7 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
   ...CardBlockData
+  ...InfoBlockData
   ...OfficeLocationData
   ...ButtonBlockData
   ...MegaMenuGroupBlockData
@@ -315,6 +322,7 @@ ${LinkDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
+${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
@@ -366,6 +374,7 @@ ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
+${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
