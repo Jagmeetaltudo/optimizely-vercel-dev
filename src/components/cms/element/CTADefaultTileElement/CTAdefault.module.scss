@@ -1,0 +1,110 @@
+@import '@sass/abstracts/mixins';
+@import '@sass/abstracts/vars/colors';
+
+.ctaTileDefault {
+  position: relative;
+  padding: 0;
+  margin-top: 7rem;
+
+  figure {
+    margin-bottom: 0;
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: right;
+      height: 540px;
+    }
+  }
+  .ctaTileContentWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+
+    .ctaTileContent {
+      text-align: center;
+      max-width: 780px;
+
+      h2 {
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.76px;
+        color: $text-main-blue;
+        margin-bottom: 2rem;
+      }
+
+      .ctaTilesCTAs {
+        a {
+          width: 100%;
+          margin: 2rem 0;
+          font-size: 20px;
+          padding: 2.9rem 7rem;
+          border-width: 3px;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(tab) {
+  .ctaTileDefault {
+    figure {
+      img {
+        height: 360px;
+      }
+    }
+
+    .ctaTileContentWrapper {
+      padding: 0;
+      margin: 50px;
+      .ctaTileContent {
+        h2 {
+          letter-spacing: normal;
+          margin: 0 0 30px 0;
+        }
+
+        .ctaTilesCTAs {
+          display: flex;
+          justify-content: center;
+
+          a {
+            width: auto;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(desktop) {
+  .ctaTileDefault {
+    figure {
+      img {
+        height: auto;
+      }
+    }
+
+    .ctaTileContentWrapper {
+      .ctaTileContent {
+        h2 {
+          font-size: 48px;
+        }
+
+        .ctaTilesCTAs {
+          a {
+            padding: 2.9rem 8rem;
+          }
+        }
+      }
+    }
+  }
+}

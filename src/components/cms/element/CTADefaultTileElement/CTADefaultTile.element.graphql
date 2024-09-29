@@ -1,0 +1,10 @@
+fragment CTADefaultTileData on CTADefaultTile {
+  Title: CTATileTitle
+  Description: CTATileDescription
+  Image: CTATileImage {
+    ...ReferenceData
+  }
+  Link: CTATileButton {
+    ...ReferenceData
+  }
+}

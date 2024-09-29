@@ -47,6 +47,26 @@ export const ArticleListElementDataFragmentDoc = /*#__PURE__*/ gql`
   articleListCount
 }
     `;
+export const ReferenceDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ReferenceData on ContentReference {
+  key
+  url {
+    ...LinkData
+  }
+}
+    `;
+export const CTADefaultTileDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CTADefaultTileData on CTADefaultTile {
+  Title: CTATileTitle
+  Description: CTATileDescription
+  Image: CTATileImage {
+    ...ReferenceData
+  }
+  Link: CTATileButton {
+    ...ReferenceData
+  }
+}
+    `;
 export const CTAElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTAElementData on CTAElement {
   text: Text
@@ -58,14 +78,6 @@ export const CTAElementDataFragmentDoc = /*#__PURE__*/ gql`
 export const HeadingElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment HeadingElementData on HeadingElement {
   headingText
-}
-    `;
-export const ReferenceDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment ReferenceData on ContentReference {
-  key
-  url {
-    ...LinkData
-  }
 }
     `;
 export const ImageElementDataFragmentDoc = /*#__PURE__*/ gql`
@@ -100,6 +112,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ElementData on _IElement {
   ...IElementData
   ...ArticleListElementData
+  ...CTADefaultTileData
   ...CTAElementData
   ...HeadingElementData
   ...ImageElementData
@@ -335,6 +348,7 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
+${CTADefaultTileDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
@@ -364,10 +378,11 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
+${CTADefaultTileDataFragmentDoc}
+${ReferenceDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
-${ReferenceDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
