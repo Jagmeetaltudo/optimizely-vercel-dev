@@ -1,5 +1,6 @@
-@import '@sass/abstracts/mixins';
-@import '@sass/abstracts/vars/colors';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .ctaTileDefault {
   position: relative;

@@ -1,5 +1,5 @@
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
-import Styles from "./CTATileDefault.module.scss";
+import Styles from "./CTADefault.module.scss";
 import {
   ButtonBlockPropertyDataFragment,
   CTADefaultTileDataFragment,
