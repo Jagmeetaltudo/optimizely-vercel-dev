@@ -4,7 +4,10 @@ import {
 } from "@/gql/graphql";
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
 import { RichText } from "@remkoj/optimizely-cms-react/components";
-import { getServerContext } from "@remkoj/optimizely-cms-react/rsc";
+import {
+  CmsEditable,
+  getServerContext,
+} from "@remkoj/optimizely-cms-react/rsc";
 
 export const TitleAndDescriptionElement: CmsComponent<
   TitleAndDescriptionElementDataFragment
@@ -16,7 +19,13 @@ export const TitleAndDescriptionElement: CmsComponent<
       {data?.TestDescription && (
         <RichText factory={factory} text={data?.TestDescription?.json} />
       )}
-      {data.TestCTA}
+      <CmsEditable as="h2" cmsFieldName="TestTitle" />
+      <CmsEditable
+        as={RichText}
+        cmsFieldName="TestDescription"
+        text={data?.TestDescription?.json}
+      />
+
       <div className="flex justify-between mb-[16px]">
         <p className="text-[12px] text-pale-sky my-0">
           {data?.TestTitle ?? ""}
@@ -28,7 +37,6 @@ export const TitleAndDescriptionElement: CmsComponent<
     </>
   );
 };
-
 TitleAndDescriptionElement.getDataFragment = () => [
   "TitleAndDescriptionElementData",
   TitleAndDescriptionElementDataFragmentDoc,

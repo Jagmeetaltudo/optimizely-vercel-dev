@@ -3,7 +3,4 @@ fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {
   TestDescription {
     json
   }
-  TestCTA {
-    ...LinkItemData
   }
-}
