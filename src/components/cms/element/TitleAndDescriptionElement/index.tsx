@@ -19,12 +19,12 @@ export const TitleAndDescriptionElement: CmsComponent<
       {data?.TestDescription && (
         <RichText factory={factory} text={data?.TestDescription?.json} />
       )}
-    {/*   <CmsEditable as="h2" cmsFieldName="TestTitle" />
+      <CmsEditable as="h2" cmsFieldName="TestTitle" />
       <CmsEditable
         as={RichText}
         cmsFieldName="TestDescription"
         text={data?.TestDescription?.json}
-      /> */}
+      />
 
       <div className="flex justify-between mb-[16px]">
         <p className="text-[12px] text-pale-sky my-0">
