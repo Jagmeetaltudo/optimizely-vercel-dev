@@ -30,9 +30,6 @@ export const TitleAndDescriptionElement: CmsComponent<
         <p className="text-[12px] text-pale-sky my-0">
           {data?.TestTitle ?? ""}
         </p>
-        <p className="text-[12px] text-pale-sky my-0">
-          {data?.TestDescription?.json ?? ""}
-        </p>
       </div>
     </>
   );
