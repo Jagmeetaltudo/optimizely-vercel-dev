@@ -14,23 +14,26 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
   data,
   inEditMode,
 }) => {
-  const buttonClasses: string[] = [];
   return (
     <div>
-      <div className="article-image aspect-[5/2] md:aspect-[5/1] relative w-full lg:aspect-[3/1] lg:z-[-10] lg:shadow-xl">
+      <div className="relative w-full aspect-[5/2] md:aspect-[5/1] lg:aspect-[3/1] lg:z-[-10] lg:shadow-xl">
         <CmsImage
           src={data.image}
           alt="hero-image"
           aria-hidden
           priority
           fill
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
       <div>
-        <div>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50">
           {(data.title || inEditMode) && (
-            <CmsEditable as="h2" cmsFieldName="CTATileTitle">
+            <CmsEditable
+              as="h2"
+              cmsFieldName="CTATileTitle"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            >
               {data.title}
             </CmsEditable>
           )}
@@ -39,9 +42,10 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
               as={RichText}
               cmsFieldName="CTATileDescription"
               text={data.description?.json}
+              className="text-lg md:text-xl lg:text-2xl mb-6"
             />
           )}
-          <div>
+          <div className="flex space-x-4">
             {
               <CmsEditable
                 as={ButtonBlock}
@@ -52,14 +56,7 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
                   __typename: undefined, // Remove data type, so only data fields will be matched
                   " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
                   className:
-                    `${
-                      (
-                        button as
-                          | ButtonBlockPropertyDataFragment
-                          | undefined
-                          | null
-                      )?.className ?? ""
-                    } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
+                    "btn--primary btn--default px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded", // Apply additional classes
                 }}
               />
             }
@@ -73,14 +70,7 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
                   __typename: undefined, // Remove data type, so only data fields will be matched
                   " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
                   className:
-                    `${
-                      (
-                        button as
-                          | ButtonBlockPropertyDataFragment
-                          | undefined
-                          | null
-                      )?.className ?? ""
-                    } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
+                    "btn--primary btn--default px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded", // Apply additional classes
                 }}
               />
             }
