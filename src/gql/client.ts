@@ -59,7 +59,7 @@ export const CTADefaultTileDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTADefaultTileData on CTADefaultTile {
   Title: CTATileTitle
   Description: CTATileDescription
-  Image: CTATileImage {
+  CTAImage: CTATileImage {
     ...ReferenceData
   }
   Link: CTATileButton {

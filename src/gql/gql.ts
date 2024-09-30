@@ -33,7 +33,7 @@ const documents = {
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
-    "fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  Image: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}": types.CTADefaultTileDataFragmentDoc,
+    "fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  CTAImage: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}": types.CTADefaultTileDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getBlankExperienceMetaDataDocument,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  articleGroupTitle\n  articleGroupIntro {\n    json\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
@@ -151,7 +151,7 @@ export function gql(source: "query getArticleListElementItems($count: Int, $loca
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  Image: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}"): (typeof documents)["fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  Image: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}"];
+export function gql(source: "fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  CTAImage: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}"): (typeof documents)["fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  CTAImage: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -4,12 +4,13 @@ import {
   CTADefaultTileDataFragment,
   CTADefaultTileDataFragmentDoc,
 } from "@/gql/graphql";
+import Image from "@/components/shared/cms_image";
 import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import ButtonBlock from "@/components/component/block/button_block";
 import button from "@/components/shared/button";
 
 const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
-  data: { Title, Description, Image, Link },
+  data: { Title, Description, CTAImage, Link },
   inEditMode,
 }) => {
   const buttonClasses: string[] = [];
@@ -17,14 +18,14 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
   return (
     <div className="relative mt-28 p-0 ctaTile-without-image">
       <figure className="mb-0">
-        {(Image || inEditMode) && (
+        {(CTAImage || inEditMode) && (
           <CmsEditable
             as={Image}
             cmsFieldName="CTATileImage"
-            src={Image}
+            src={CTAImage}
             alt={""}
-            width={48}
-            height={48}
+            width={360}
+            height={540}
             className="w-full object-cover object-right h-[540px] md:h-[360px] lg:h-auto"
           />
         )}
@@ -32,7 +33,11 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
       <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
         <div className="text-center max-w-[780px]">
           {(Title || inEditMode) && (
-            <CmsEditable as="h2" cmsFieldName="CTATileTitle" className="text-[38px] font-normal leading-normal tracking-[0.76px] mb-8 md:tracking-normal md:mb-8 lg:text-[48px]">
+            <CmsEditable
+              as="h2"
+              cmsFieldName="CTATileTitle"
+              className="text-[38px] font-normal leading-normal tracking-[0.76px] mb-8 md:tracking-normal md:mb-8 lg:text-[48px]"
+            >
               {Title}
             </CmsEditable>
           )}
@@ -41,7 +46,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
               {Description}
             </CmsEditable>
           )}
-        {/*   <div className="flex justify-center">
+          <div className="flex justify-center">
             {
               <CmsEditable
                 as={ButtonBlock}
@@ -63,12 +68,15 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
                 }}
               />
             }
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-CTADefaultTileElement.getDataFragment = () => ['CTADefaultTileData', CTADefaultTileDataFragmentDoc]
+CTADefaultTileElement.getDataFragment = () => [
+  "CTADefaultTileData",
+  CTADefaultTileDataFragmentDoc,
+];
 
 export default CTADefaultTileElement;
