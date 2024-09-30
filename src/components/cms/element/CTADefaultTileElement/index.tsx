@@ -8,7 +8,7 @@ import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import ButtonBlock from "@/components/component/block/button_block";
 import button from "@/components/shared/button";
 
-const CTADefaultTile: CmsComponent<CTADefaultTileDataFragment> = ({
+const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
   data: { Title, Description, Image, Link },
   inEditMode,
 }) => {
@@ -69,6 +69,6 @@ const CTADefaultTile: CmsComponent<CTADefaultTileDataFragment> = ({
     </div>
   );
 };
-CTADefaultTile.getDataFragment = () => ['CTADefaultTileData', CTADefaultTileDataFragmentDoc]
+CTADefaultTileElement.getDataFragment = () => ['CTADefaultTileData', CTADefaultTileDataFragmentDoc]
 
-export default CTADefaultTile;
+export default CTADefaultTileElement;
