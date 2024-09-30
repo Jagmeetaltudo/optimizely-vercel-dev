@@ -30,7 +30,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
           />
         )}
       </figure>
-      <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
+   {/*    <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
         <div className="text-center max-w-[780px]">
           {(Title || inEditMode) && (
             <CmsEditable
@@ -70,7 +70,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
             }
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
