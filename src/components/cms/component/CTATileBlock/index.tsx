@@ -26,85 +26,85 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
           fill
           className="absolute inset-0 w-full h-full object-cover"
         />
-      </div>
-      <div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50">
-          {(data.title || inEditMode) && (
-            <CmsEditable
-              as="h2"
-              cmsFieldName="CTATileTitle"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
-            >
-              {data.title}
-            </CmsEditable>
-          )}
-          {(data.description || inEditMode) && (
-            <CmsEditable
-              as={RichText}
-              cmsFieldName="CTATileDescription"
-              text={data.description?.json}
-              className="text-lg md:text-xl lg:text-2xl mb-6"
-            />
-          )}
-          <div>
-            {
+        <div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50">
+            {(data.title || inEditMode) && (
               <CmsEditable
-                as={ButtonBlock}
-                cmsFieldName="Link1"
-                contentLink={{ key: null }}
-                data={{
-                  ...button,
-                  __typename: undefined, // Remove data type, so only data fields will be matched
-                  " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
-                  text: `${
-                    (
-                      button as
-                        | ButtonBlockPropertyDataFragment
-                        | undefined
-                        | null
-                    )?.text ?? ""
-                  }`,
-                  className:
-                    `${
+                as="h2"
+                cmsFieldName="CTATileTitle"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              >
+                {data.title}
+              </CmsEditable>
+            )}
+            {(data.description || inEditMode) && (
+              <CmsEditable
+                as={RichText}
+                cmsFieldName="CTATileDescription"
+                text={data.description?.json}
+                className="text-lg md:text-xl lg:text-2xl mb-6"
+              />
+            )}
+            <div>
+              {
+                <CmsEditable
+                  as={ButtonBlock}
+                  cmsFieldName="Link1"
+                  contentLink={{ key: null }}
+                  data={{
+                    ...button,
+                    __typename: undefined, // Remove data type, so only data fields will be matched
+                    " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
+                    text: `${
                       (
                         button as
                           | ButtonBlockPropertyDataFragment
                           | undefined
                           | null
-                      )?.className ?? ""
-                    } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
-                }}
-              />
-            }
-            {
-              <CmsEditable
-                as={ButtonBlock}
-                cmsFieldName="Link2"
-                contentLink={{ key: null }}
-                data={{
-                  ...button,
-                  __typename: undefined, // Remove data type, so only data fields will be matched
-                  " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
-                  text: `${
-                    (
-                      button as
-                        | ButtonBlockPropertyDataFragment
-                        | undefined
-                        | null
-                    )?.text ?? ""
-                  }`,
-                  className:
-                    `${
+                      )?.text ?? ""
+                    }`,
+                    className:
+                      `${
+                        (
+                          button as
+                            | ButtonBlockPropertyDataFragment
+                            | undefined
+                            | null
+                        )?.className ?? ""
+                      } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
+                  }}
+                />
+              }
+              {
+                <CmsEditable
+                  as={ButtonBlock}
+                  cmsFieldName="Link2"
+                  contentLink={{ key: null }}
+                  data={{
+                    ...button,
+                    __typename: undefined, // Remove data type, so only data fields will be matched
+                    " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
+                    text: `${
                       (
                         button as
                           | ButtonBlockPropertyDataFragment
                           | undefined
                           | null
-                      )?.className ?? ""
-                    } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
-                }}
-              />
-            }
+                      )?.text ?? ""
+                    }`,
+                    className:
+                      `${
+                        (
+                          button as
+                            | ButtonBlockPropertyDataFragment
+                            | undefined
+                            | null
+                        )?.className ?? ""
+                      } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
+                  }}
+                />
+              }
+            </div>
           </div>
         </div>
       </div>
