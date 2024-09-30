@@ -41,7 +41,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
               {Description}
             </CmsEditable>
           )}
-          <div className="flex justify-center">
+        {/*   <div className="flex justify-center">
             {
               <CmsEditable
                 as={ButtonBlock}
@@ -63,7 +63,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
                 }}
               />
             }
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
