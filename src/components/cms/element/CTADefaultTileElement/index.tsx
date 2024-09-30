@@ -1,5 +1,4 @@
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
-import Styles from "./CTADefault.module.scss";
 import {
   ButtonBlockPropertyDataFragment,
   CTADefaultTileDataFragment,
@@ -16,8 +15,8 @@ const CTADefaultTile: CmsComponent<CTADefaultTileDataFragment> = ({
   const buttonClasses: string[] = [];
 
   return (
-    <div className={`${Styles.ctaTileDefault} 'ctaTile-without-image'`}>
-      <figure>
+    <div className="relative mt-28 p-0 ctaTile-without-image">
+      <figure className="mb-0">
         {(Image || inEditMode) && (
           <CmsEditable
             as={Image}
@@ -26,22 +25,23 @@ const CTADefaultTile: CmsComponent<CTADefaultTileDataFragment> = ({
             alt={""}
             width={48}
             height={48}
+            className="w-full object-cover object-right h-[540px] md:h-[360px] lg:h-auto"
           />
         )}
       </figure>
-      <div className={Styles.ctaTileContentWrapper}>
-        <div className={Styles.ctaTileContent}>
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
+        <div className="text-center max-w-[780px]">
           {(Title || inEditMode) && (
-            <CmsEditable as="h2" cmsFieldName="CTATileTitle">
+            <CmsEditable as="h2" cmsFieldName="CTATileTitle" className="text-[38px] font-normal leading-normal tracking-[0.76px] mb-8 md:tracking-normal md:mb-8 lg:text-[48px]">
               {Title}
             </CmsEditable>
           )}
           {(Description || inEditMode) && (
             <CmsEditable as="p" cmsFieldName="CTATileDescription">
-              {Title}
+              {Description}
             </CmsEditable>
           )}
-          <div className={Styles.ctaTilesCTAs}>
+          <div className="flex justify-center">
             {
               <CmsEditable
                 as={ButtonBlock}
