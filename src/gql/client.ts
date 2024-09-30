@@ -151,6 +151,27 @@ export const BlankExperienceDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
+export const CTATileBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CTATileBlockData on CTATileBlock {
+  title: CTATileTitle
+  description: CTATileDescription {
+    json
+  }
+  image: BackgroundImage {
+    ...ReferenceData
+  }
+  Link1: Link1 {
+    ...LinkData
+  }
+  Link2: Link2 {
+    ...LinkData
+  }
+  CTAColor1: CTAColor1
+  CTAColor1: CTAColor1
+  CTAType1: CTAType1
+  CTAType1: CTAType1
+}
+    `;
 export const ButtonBlockPropertyDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ButtonBlockPropertyData on ButtonBlockProperty {
   text
@@ -246,6 +267,7 @@ export const MegaMenuGroupBlockDataFragmentDoc = /*#__PURE__*/ gql`
 export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
+  ...CTATileBlockData
   ...CardBlockData
   ...InfoBlockData
   ...OfficeLocationData
@@ -328,8 +350,9 @@ export const getContentByIdDocument = /*#__PURE__*/ gql`
 ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${CardBlockDataFragmentDoc}
+${CTATileBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
@@ -383,6 +406,7 @@ ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
+${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}

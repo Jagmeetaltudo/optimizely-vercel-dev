@@ -1,0 +1,19 @@
+fragment CTATileBlockData on CTATileBlock {
+  title: CTATileTitle
+  description: CTATileDescription {
+    json
+  }
+  image: BackgroundImage {
+    ...ReferenceData
+  }
+  Link1: Link1 {
+    ...LinkData
+  }
+  Link2: Link2 {
+    ...LinkData
+  }
+  CTAColor1: CTAColor1
+  CTAColor1: CTAColor1
+  CTAType1: CTAType1
+  CTAType1: CTAType1
+}
