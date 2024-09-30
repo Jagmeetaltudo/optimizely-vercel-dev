@@ -34,7 +34,7 @@ const documents = {
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "fragment CTADefaultTileData on CTADefaultTile {\n  Title: CTATileTitle\n  Description: CTATileDescription\n  CTAImage: CTATileImage {\n    ...ReferenceData\n  }\n  Link: CTATileButton {\n    ...ReferenceData\n  }\n}": types.CTADefaultTileDataFragmentDoc,
-    "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
+    "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n  TestCTA {\n    ...LinkItemData\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getBlankExperienceMetaDataDocument,
     "fragment ArticleGroupPageData on ArticleGroupPage {\n  articleGroupTitle\n  articleGroupIntro {\n    json\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
@@ -156,7 +156,7 @@ export function gql(source: "fragment CTADefaultTileData on CTADefaultTile {\n  
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}"): (typeof documents)["fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}"];
+export function gql(source: "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n  TestCTA {\n    ...LinkItemData\n  }\n}"): (typeof documents)["fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n  TestCTA {\n    ...LinkItemData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

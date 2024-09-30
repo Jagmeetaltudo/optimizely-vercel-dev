@@ -1,17 +1,37 @@
-import { TitleAndDescriptionElementDataFragment, TitleAndDescriptionElementDataFragmentDoc } from "@/gql/graphql"
-import { CmsComponent } from "@remkoj/optimizely-cms-react"
-import { RichText } from "@remkoj/optimizely-cms-react/components"
-import { getServerContext } from "@remkoj/optimizely-cms-react/rsc"
+import {
+  TitleAndDescriptionElementDataFragment,
+  TitleAndDescriptionElementDataFragmentDoc,
+} from "@/gql/graphql";
+import { CmsComponent } from "@remkoj/optimizely-cms-react";
+import { RichText } from "@remkoj/optimizely-cms-react/components";
+import { getServerContext } from "@remkoj/optimizely-cms-react/rsc";
 
-export const TitleAndDescriptionElement: CmsComponent<TitleAndDescriptionElementDataFragment> = async ({ data, contentLink: { locale } }) => {
-    const { factory } = getServerContext()
-    return (
-        <>
-            <h3 className="my-0 mt-[16px]">{data?.TestTitle ?? ''}</h3>
-            {data?.TestDescription && <RichText factory={factory} text={data?.TestDescription?.json} />}
-        </>
-    )
-}
-TitleAndDescriptionElement.getDataFragment = () => ['TitleAndDescriptionElementData', TitleAndDescriptionElementDataFragmentDoc]
+export const TitleAndDescriptionElement: CmsComponent<
+  TitleAndDescriptionElementDataFragment
+> = async ({ data, contentLink: { locale } }) => {
+  const { factory } = getServerContext();
+  return (
+    <>
+      <h3 className="my-0 mt-[16px]">{data?.TestTitle ?? ""}</h3>
+      {data?.TestDescription && (
+        <RichText factory={factory} text={data?.TestDescription?.json} />
+      )}
+      {data.TestCTA}
+      <div className="flex justify-between mb-[16px]">
+        <p className="text-[12px] text-pale-sky my-0">
+          {data?.TestTitle ?? ""}
+        </p>
+        <p className="text-[12px] text-pale-sky my-0">
+          {data?.TestDescription?.json ?? ""}
+        </p>
+      </div>
+    </>
+  );
+};
 
-export default TitleAndDescriptionElement
+TitleAndDescriptionElement.getDataFragment = () => [
+  "TitleAndDescriptionElementData",
+  TitleAndDescriptionElementDataFragmentDoc,
+];
+
+export default TitleAndDescriptionElement;

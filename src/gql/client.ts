@@ -67,11 +67,24 @@ export const CTADefaultTileDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const LinkItemDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment LinkItemData on Link {
+  title
+  text
+  target
+  url {
+    ...LinkData
+  }
+}
+    `;
 export const TitleAndDescriptionElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {
   TestTitle
   TestDescription {
     json
+  }
+  TestCTA {
+    ...LinkItemData
   }
 }
     `;
@@ -222,16 +235,6 @@ export const ButtonBlockDataFragmentDoc = /*#__PURE__*/ gql`
   className
   buttonType
   variant
-}
-    `;
-export const LinkItemDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment LinkItemData on Link {
-  title
-  text
-  target
-  url {
-    ...LinkData
-  }
 }
     `;
 export const NavigationMenuBlockDataFragmentDoc = /*#__PURE__*/ gql`
@@ -391,6 +394,7 @@ ${ArticleListElementDataFragmentDoc}
 ${CTADefaultTileDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${TitleAndDescriptionElementDataFragmentDoc}
+${LinkItemDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
@@ -405,7 +409,6 @@ ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
-${LinkItemDataFragmentDoc}
 ${ArticlePageDataFragmentDoc}`;
 export const getArticleListElementItemsDocument = /*#__PURE__*/ gql`
     query getArticleListElementItems($count: Int, $locale: [Locales]) {
