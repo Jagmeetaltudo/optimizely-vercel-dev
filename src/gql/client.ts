@@ -67,6 +67,14 @@ export const CTADefaultTileDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const TitleAndDescriptionElementDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {
+  TestTitle
+  TestDescription {
+    json
+  }
+}
+    `;
 export const CTAElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTAElementData on CTAElement {
   text: Text
@@ -113,6 +121,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
   ...IElementData
   ...ArticleListElementData
   ...CTADefaultTileData
+  ...TitleAndDescriptionElementData
   ...CTAElementData
   ...HeadingElementData
   ...ImageElementData
@@ -349,6 +358,7 @@ ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
 ${CTADefaultTileDataFragmentDoc}
+${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
@@ -380,6 +390,7 @@ ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
 ${CTADefaultTileDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}

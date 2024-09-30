@@ -4,18 +4,20 @@ import {
   CTADefaultTileDataFragment,
   CTADefaultTileDataFragmentDoc,
 } from "@/gql/graphql";
-/* import Image from "@/components/shared/cms_image";
+import Image from "@/components/shared/cms_image";
 import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import ButtonBlock from "@/components/component/block/button_block";
-import button from "@/components/shared/button"; */
+import button from "@/components/shared/button";
 
 const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
-  data,
+  data: { Title, Description, CTAImage, Link },
+  inEditMode,
 }) => {
+  const buttonClasses: string[] = [];
+
   return (
     <div className="relative mt-28 p-0 ctaTile-without-image">
-      {data.Title}
-      {/* <figure className="mb-0">
+      <figure className="mb-0">
         {(CTAImage || inEditMode) && (
           <CmsEditable
             as={Image}
@@ -27,8 +29,8 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
             className="w-full object-cover object-right h-[540px] md:h-[360px] lg:h-auto"
           />
         )}
-      </figure> */}
-      {/*    <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
+      </figure>
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-6 md:p-0 md:m-12">
         <div className="text-center max-w-[780px]">
           {(Title || inEditMode) && (
             <CmsEditable
@@ -68,7 +70,7 @@ const CTADefaultTileElement: CmsComponent<CTADefaultTileDataFragment> = ({
             }
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
