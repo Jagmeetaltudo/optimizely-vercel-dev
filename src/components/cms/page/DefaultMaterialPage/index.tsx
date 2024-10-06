@@ -8,10 +8,10 @@ import {
   CmsContentArea,
 } from "@remkoj/optimizely-cms-react/rsc";
 
-export const DefaultMaterialPagePage: CmsComponent<
+export const DefaultMaterialPage: CmsComponent<
   DefaultMaterialPageDataFragment
-> = async ({ data, contentLink }) => {
-  const { factory } = getServerContext();
+> = async ({ data }) => {
+  getServerContext();
 
   return (
     <div className="outer-padding">
@@ -37,9 +37,9 @@ export const DefaultMaterialPagePage: CmsComponent<
     </div>
   );
 };
-DefaultMaterialPagePage.getDataFragment = () => [
+DefaultMaterialPage.getDataFragment = () => [
   "DefaultMaterialPageData",
   DefaultMaterialPageDataFragmentDoc,
 ];
 
-export default DefaultMaterialPagePage;
+export default DefaultMaterialPage;
