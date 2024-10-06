@@ -8,6 +8,7 @@ import {
   CmsEditable,
   getServerContext,
 } from "@remkoj/optimizely-cms-react/rsc";
+import React from "react";
 
 export const TitleAndDescriptionElement: CmsComponent<
   TitleAndDescriptionElementDataFragment
