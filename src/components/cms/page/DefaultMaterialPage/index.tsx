@@ -3,7 +3,6 @@ import {
   DefaultMaterialPageDataFragment,
   DefaultMaterialPageDataFragmentDoc,
 } from "@/gql/graphql";
-import { getArticles } from "./api";
 import {
   getServerContext,
   CmsContentArea,
@@ -13,13 +12,7 @@ import { getLabel } from "@/labels";
 export const DefaultMaterialPagePage: CmsComponent<
   DefaultMaterialPageDataFragment
 > = async ({ data, contentLink }) => {
-  const articles = contentLink.key
-    ? await getArticles(contentLink.key, contentLink.locale)
-    : { total: 0, items: [] };
   const { factory } = getServerContext();
-  const continueReading = await getLabel("Continue reading", {
-    fallback: "Continue reading",
-  });
 
   return (
     <div className="outer-padding">
@@ -30,12 +23,12 @@ export const DefaultMaterialPagePage: CmsComponent<
             fieldName="HeroCarousel"
             className="w-full mt-[32pt]"
           />
-           <CmsContentArea
+          <CmsContentArea
             items={data.MainContent}
             fieldName="FeaturedTiles"
             className="w-full mt-[32pt]"
           />
-           <CmsContentArea
+          <CmsContentArea
             items={data.MainContent}
             fieldName="CategoryTiles"
             className="w-full mt-[32pt]"
