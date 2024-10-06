@@ -7,7 +7,6 @@ import {
   getServerContext,
   CmsContentArea,
 } from "@remkoj/optimizely-cms-react/rsc";
-import { getLabel } from "@/labels";
 
 export const DefaultMaterialPagePage: CmsComponent<
   DefaultMaterialPageDataFragment
@@ -23,7 +22,7 @@ export const DefaultMaterialPagePage: CmsComponent<
             fieldName="HeroCarousel"
             className="w-full mt-[32pt]"
           />
-          <CmsContentArea
+          {/*   <CmsContentArea
             items={data.FeaturedTiles}
             fieldName="FeaturedTiles"
             className="w-full mt-[32pt]"
@@ -32,7 +31,7 @@ export const DefaultMaterialPagePage: CmsComponent<
             items={data.CategoryTiles}
             fieldName="CategoryTiles"
             className="w-full mt-[32pt]"
-          />
+          /> */}
         </div>
       </div>
     </div>
