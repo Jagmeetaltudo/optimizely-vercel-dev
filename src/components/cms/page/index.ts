@@ -14,7 +14,7 @@ export const pageDictionary : ComponentTypeDictionary = [
         component: ArticleGroupPage
     },
     {
-        type: 'DefaultMaterialPage',
+        type: 'DefaultMaterialPagePage',
         component: DefaultMaterialPagePage
     },
 ]
