@@ -1,0 +1,5 @@
+fragment DefaultMaterialPageData on DefaultMaterialPage {
+  HeroCarousel { ...BlockData }
+  FeaturedTiles { ...BlockData }
+  CategoryTiles { ...BlockData }
+}

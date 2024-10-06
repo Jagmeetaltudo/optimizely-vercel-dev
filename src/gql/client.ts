@@ -302,12 +302,20 @@ export const ArticlePageDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const DefaultMaterialPageDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment DefaultMaterialPageData on DefaultMaterialPage {
+  MainContent {
+    ...BlockData
+  }
+}
+    `;
 export const PageDataFragmentDoc = /*#__PURE__*/ gql`
     fragment PageData on _IContent {
   ...IContentData
   ...BlankExperienceData
   ...ArticleGroupPageData
   ...ArticlePageData
+  ...DefaultMaterialPageData
 }
     `;
 export const MenuContentFragmentDoc = /*#__PURE__*/ gql`
@@ -374,7 +382,8 @@ ${ImageElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${DefaultMaterialPageDataFragmentDoc}`;
 export const getContentByPathDocument = /*#__PURE__*/ gql`
     query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {
   content: _Content(
@@ -415,7 +424,8 @@ ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
 ${LinkItemDataFragmentDoc}
-${ArticlePageDataFragmentDoc}`;
+${ArticlePageDataFragmentDoc}
+${DefaultMaterialPageDataFragmentDoc}`;
 export const getArticleListElementItemsDocument = /*#__PURE__*/ gql`
     query getArticleListElementItems($count: Int, $locale: [Locales]) {
   ArticlePage(

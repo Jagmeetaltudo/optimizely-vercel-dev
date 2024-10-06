@@ -2,6 +2,7 @@
 import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import ArticlePage from "./ArticlePage";
 import ArticleGroupPage from "./ArticleGroupPage";
+import DefaultMaterialPage from "./DefaultMaterialPage";
 
 export const pageDictionary : ComponentTypeDictionary = [
     {
@@ -11,6 +12,10 @@ export const pageDictionary : ComponentTypeDictionary = [
     {
         type: 'ArticleGroupPage',
         component: ArticleGroupPage
+    },
+    {
+        type: 'DefaultMaterialPage',
+        component: DefaultMaterialPage
     },
 ]
 
