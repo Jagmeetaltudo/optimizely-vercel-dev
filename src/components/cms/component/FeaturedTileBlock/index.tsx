@@ -5,11 +5,13 @@ import {
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
 import React from "react";
 import Image from "next/image";
+import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
+import { RichText } from "@remkoj/optimizely-cms-react/components";
 
 export const FeaturedTileBlockComponent: CmsComponent<
   FeaturedTileBlockDataFragment
 > = ({ data }) => {
-  return data.Position == "Left" ? (
+  return data.Position === "Left" ? (
     <section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
       <Image
         loading="lazy"
@@ -26,9 +28,13 @@ export const FeaturedTileBlockComponent: CmsComponent<
         <h1 className="self-stretch text-3xl uppercase text-teal-950 max-md:mr-2.5">
           {data.title}
         </h1>
-        <p className="mt-10 text-base font-light text-teal-950">
-          {data.description?.json}
-        </p>
+
+        <CmsEditable
+          as={RichText}
+          cmsFieldName="TileDescription"
+          text={data.description?.json}
+          className="mt-10 text-base font-light text-teal-950"
+        />
         <button className="overflow-hidden px-12 py-6 text-sm font-bold tracking-wide text-white uppercase bg-cyan-900 max-md:px-5 mt-16 -mb-7 max-md:mt-10 max-md:mb-2.5">
           {data.buttontext}
         </button>
@@ -50,9 +56,12 @@ export const FeaturedTileBlockComponent: CmsComponent<
       <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full left-[892px] w-[548px]">
         <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 max-md:max-w-full">
           <h1 className="text-3xl uppercase text-teal-950">{data.title}</h1>
-          <p className="mt-10 text-base font-light text-teal-950">
-            {data.description?.json}
-          </p>
+          <CmsEditable
+            as={RichText}
+            cmsFieldName="TileDescription"
+            text={data.description?.json}
+            className="mt-10 text-base font-light text-teal-950"
+          />
           <button className="overflow-hidden px-12 py-6 mt-16 -mb-7 text-sm font-bold tracking-wide text-white uppercase bg-cyan-900 max-md:px-5 max-md:mt-10 max-md:mb-2.5">
             {data.buttontext}
           </button>
