@@ -1,6 +1,7 @@
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
 import { OfficeLocationDataFragmentDoc, type OfficeLocationDataFragment } from "@/gql/graphql";
 import { PhoneIcon, AtSymbolIcon } from '@heroicons/react/24/solid'
+import React from "react";
 
 /**
  * Office Location

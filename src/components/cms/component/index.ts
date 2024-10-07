@@ -4,6 +4,7 @@ import CardBlock from "./CardBlock";
 import OfficeLocation from "./OfficeLocation";
 import InfoBlock from "./InfoBlock";
 import CTATileBlock from "./CTATileBlock";
+import FeaturedTileBlock from "./FeaturedTileBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -21,6 +22,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'CTATileBlock',
         component: CTATileBlock
+    },
+    {
+        type: 'FeaturedTileBlock',
+        component: FeaturedTileBlock
     },
 ]
 

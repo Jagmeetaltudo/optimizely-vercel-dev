@@ -1,0 +1,11 @@
+fragment FeaturedTileBlockData on FeaturedTileBlock {
+  title: TileTitle
+  description: TileDescription {
+    json
+  }
+  buttontext: TileButtonText
+  backgroundImageSrc {
+    ...ReferenceData
+  }
+  Position
+}

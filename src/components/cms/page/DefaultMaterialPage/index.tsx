@@ -7,37 +7,40 @@ import {
   getServerContext,
   CmsContentArea,
 } from "@remkoj/optimizely-cms-react/rsc";
+import React from "react";
 
 export const DefaultMaterialPage: CmsComponent<
-  DefaultMaterialPageDataFragment
-> = async ({ data }) => {
+  DefaultMaterialPageDataFragment>
+= async ({ data }) => {
   getServerContext();
 
   return (
-    <div className="outer-padding">
-      <div className="mx-auto container">
-        <div className="py-[32pt]">
-          <CmsContentArea
-            items={data.HeroCarousel}
-            fieldName="HeroCarousel"
-            className="w-full mt-[32pt]"
-          />
-          {/*   <CmsContentArea
-            items={data.FeaturedTiles}
-            fieldName="FeaturedTiles"
-            className="w-full mt-[32pt]"
-          />
-          <CmsContentArea
-            items={data.CategoryTiles}
-            fieldName="CategoryTiles"
-            className="w-full mt-[32pt]"
-          /> */}
+    <>
+      <div className="outer-padding">
+        <div className="mx-auto container">
+          <div className="py-[32pt]">
+          <h1>{data.HeroCarousel ? JSON.stringify(data.HeroCarousel) : ''}</h1>
+            <CmsContentArea
+              items={data.HeroCarousel}
+              fieldName="HeroCarousel"
+              className="w-full mt-[32pt]"
+            />
+            <CmsContentArea
+              items={data.FeaturedTiles}
+              fieldName="FeaturedTiles"
+              className="w-full mt-[32pt]"
+            />
+            <CmsContentArea
+              items={data.CategoryTiles}
+              fieldName="CategoryTiles"
+              className="w-full mt-[32pt]"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
-};
-DefaultMaterialPage.getDataFragment = () => [
+};DefaultMaterialPage.getDataFragment = () => [
   "DefaultMaterialPageData",
   DefaultMaterialPageDataFragmentDoc,
 ];

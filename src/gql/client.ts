@@ -203,6 +203,19 @@ export const CardBlockDataFragmentDoc = /*#__PURE__*/ gql`
   layout: CardImageLayout
 }
     `;
+export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment FeaturedTileBlockData on FeaturedTileBlock {
+  title: TileTitle
+  description: TileDescription {
+    json
+  }
+  buttontext: TileButtonText
+  backgroundImageSrc {
+    ...ReferenceData
+  }
+  Position
+}
+    `;
 export const InfoBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment InfoBlockData on InfoBlock {
   title: InfoBlockTitle
@@ -269,6 +282,7 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...IContentData
   ...CTATileBlockData
   ...CardBlockData
+  ...FeaturedTileBlockData
   ...InfoBlockData
   ...OfficeLocationData
   ...ButtonBlockData
@@ -368,6 +382,7 @@ ${CTATileBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${FeaturedTileBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
@@ -424,6 +439,7 @@ ${BlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${FeaturedTileBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
