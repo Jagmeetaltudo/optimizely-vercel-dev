@@ -210,7 +210,7 @@ export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     json
   }
   buttontext: TileButtonText
-  backgroundImageSrc {
+  backgroundImage {
     ...ReferenceData
   }
   Position

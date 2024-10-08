@@ -14,7 +14,7 @@ export const FeaturedTileBlockComponent: CmsComponent<
   return data.Position === "Left" ? (
     <section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
       <CmsImage
-        src={data.backgroundImageSrc}
+        src={data.backgroundImage}
         alt="hero-image"
         aria-hidden
         priority
@@ -38,9 +38,9 @@ export const FeaturedTileBlockComponent: CmsComponent<
       </div>
     </section>
   ) : (
-    <section className="relative flex flex-col">
+    <section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
       <CmsImage
-        src={data.backgroundImageSrc}
+        src={data.backgroundImage}
         alt="hero-image"
         aria-hidden
         priority
