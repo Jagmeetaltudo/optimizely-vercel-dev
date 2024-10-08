@@ -6,6 +6,7 @@ import InfoBlock from "./InfoBlock";
 import CTATileBlock from "./CTATileBlock";
 import FeaturedTileBlock from "./FeaturedTileBlock";
 import HeroCarouselBlock from "./HeroCarouselBlock";
+import CategoryListBlock from "./CategoryListBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -31,6 +32,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'HeroCarouselBlock',
         component: HeroCarouselBlock
+    },
+    {
+        type: 'CategoryListBlock',
+        component: CategoryListBlock
     },
 ]
 

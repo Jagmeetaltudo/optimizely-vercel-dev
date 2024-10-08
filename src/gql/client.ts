@@ -203,6 +203,25 @@ export const CardBlockDataFragmentDoc = /*#__PURE__*/ gql`
   layout: CardImageLayout
 }
     `;
+export const CategoryTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CategoryTileBlockData on CategoryTileBlock {
+  TileTitle
+  TileImage {
+    ...ReferenceData
+  }
+}
+    `;
+export const CategoryListBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CategoryListBlockData on CategoryListBlock {
+  Title
+  Description {
+    json
+  }
+  CategoryTiles {
+    ...CategoryTileBlockData
+  }
+}
+    `;
 export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment FeaturedTileBlockData on FeaturedTileBlock {
   title: TileTitle
@@ -301,6 +320,8 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...IContentData
   ...CTATileBlockData
   ...CardBlockData
+  ...CategoryListBlockData
+  ...CategoryTileBlockData
   ...FeaturedTileBlockData
   ...HeroBannerBlockData
   ...HeroCarouselBlockData
@@ -403,6 +424,8 @@ ${CTATileBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${CategoryListBlockDataFragmentDoc}
+${CategoryTileBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}
 ${HeroBannerBlockDataFragmentDoc}
 ${HeroCarouselBlockDataFragmentDoc}
@@ -462,6 +485,8 @@ ${BlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${CategoryListBlockDataFragmentDoc}
+${CategoryTileBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}
 ${HeroBannerBlockDataFragmentDoc}
 ${HeroCarouselBlockDataFragmentDoc}

@@ -1,0 +1,9 @@
+fragment CategoryListBlockData on CategoryListBlock {
+  Title
+  Description {
+    json
+  }
+  CategoryTiles {
+    ...CategoryTileBlockData
+  }
+}
