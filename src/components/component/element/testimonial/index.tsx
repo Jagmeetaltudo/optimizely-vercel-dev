@@ -5,6 +5,7 @@ import { type TestimonialElementDataFragment, TestimonialElementDataFragmentDoc 
 import { RichText } from '@remkoj/optimizely-cms-react/components'
 import { CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
 import { CmsImage } from '@/components/shared/cms_image'
+import React from 'react'
 
 export const TestimonialElement : CmsComponent<TestimonialElementDataFragment> = ({ 
     data: { 

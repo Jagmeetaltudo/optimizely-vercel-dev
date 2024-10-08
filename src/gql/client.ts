@@ -216,6 +216,25 @@ export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
   Position
 }
     `;
+export const HeroBannerBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HeroBannerBlockData on HeroBannerBlock {
+  BannerTitle
+  BannerDescription {
+    json
+  }
+  BannerImage {
+    ...ReferenceData
+  }
+  BannerButtonText
+}
+    `;
+export const HeroCarouselBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HeroCarouselBlockData on HeroCarouselBlock {
+  Banners {
+    ...HeroBannerBlockData
+  }
+}
+    `;
 export const InfoBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment InfoBlockData on InfoBlock {
   title: InfoBlockTitle
@@ -283,6 +302,8 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...CTATileBlockData
   ...CardBlockData
   ...FeaturedTileBlockData
+  ...HeroBannerBlockData
+  ...HeroCarouselBlockData
   ...InfoBlockData
   ...OfficeLocationData
   ...ButtonBlockData
@@ -383,6 +404,8 @@ ${ReferenceDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}
+${HeroBannerBlockDataFragmentDoc}
+${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
@@ -440,6 +463,8 @@ ${CTATileBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}
+${HeroBannerBlockDataFragmentDoc}
+${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}

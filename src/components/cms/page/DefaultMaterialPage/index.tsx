@@ -19,7 +19,6 @@ export const DefaultMaterialPage: CmsComponent<
       <div className="outer-padding">
         <div className="mx-auto container">
           <div className="py-[32pt]">
-          <h1>{data.HeroCarousel ? JSON.stringify(data.HeroCarousel) : ''}</h1>
             <CmsContentArea
               items={data.HeroCarousel}
               fieldName="HeroCarousel"

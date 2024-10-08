@@ -1,0 +1,3 @@
+fragment HeroCarouselBlockData on HeroCarouselBlock {
+Banners{...HeroBannerBlockData}
+}

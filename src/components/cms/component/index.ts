@@ -5,6 +5,7 @@ import OfficeLocation from "./OfficeLocation";
 import InfoBlock from "./InfoBlock";
 import CTATileBlock from "./CTATileBlock";
 import FeaturedTileBlock from "./FeaturedTileBlock";
+import HeroCarouselBlock from "./HeroCarouselBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -26,6 +27,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'FeaturedTileBlock',
         component: FeaturedTileBlock
+    },
+    {
+        type: 'HeroCarouselBlock',
+        component: HeroCarouselBlock
     },
 ]
 

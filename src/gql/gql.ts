@@ -31,6 +31,8 @@ const documents = {
     "fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...ButtonBlockPropertyData\n  }\n  Link2: Link2 {\n    ...ButtonBlockPropertyData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n}": types.CTATileBlockDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}": types.FeaturedTileBlockDataFragmentDoc,
+    "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}": types.HeroBannerBlockDataFragmentDoc,
+    "fragment HeroCarouselBlockData on HeroCarouselBlock {\n  Banners {\n    ...HeroBannerBlockData\n  }\n}": types.HeroCarouselBlockDataFragmentDoc,
     "fragment InfoBlockData on InfoBlock {\n  title: InfoBlockTitle\n  descrip: InfoBlockDescription\n}": types.InfoBlockDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
@@ -143,6 +145,14 @@ export function gql(source: "fragment CardBlockData on CardBlock {\n  heading: C
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}"): (typeof documents)["fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}"): (typeof documents)["fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment HeroCarouselBlockData on HeroCarouselBlock {\n  Banners {\n    ...HeroBannerBlockData\n  }\n}"): (typeof documents)["fragment HeroCarouselBlockData on HeroCarouselBlock {\n  Banners {\n    ...HeroBannerBlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

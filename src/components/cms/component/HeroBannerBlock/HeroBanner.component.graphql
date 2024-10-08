@@ -1,0 +1,10 @@
+fragment HeroBannerBlockData on HeroBannerBlock {
+  BannerTitle
+  BannerDescription {
+    json
+  }
+  BannerImage {
+    ...ReferenceData
+  }
+  BannerButtonText
+}
