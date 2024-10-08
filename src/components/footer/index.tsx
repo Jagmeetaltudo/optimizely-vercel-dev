@@ -4,6 +4,7 @@ import { getSdk } from '@/sdk'
 import { CmsLink, createListKey } from '@/components/shared/cms_link'
 import { CmsImage } from '@/components/shared/cms_image'
 import { getLabel } from '@/labels'
+import React from 'react'
 
 export type FooterProps = {
 

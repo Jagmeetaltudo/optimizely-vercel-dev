@@ -4,7 +4,6 @@ import {
 } from "@/gql/graphql";
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
 import React from "react";
-import Image from "next/image";
 import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import { RichText } from "@remkoj/optimizely-cms-react/components";
 import CmsImage from "@/components/shared/cms_image";
