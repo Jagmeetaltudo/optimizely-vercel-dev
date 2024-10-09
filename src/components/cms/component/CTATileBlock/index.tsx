@@ -8,12 +8,15 @@ import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 import { RichText } from "@remkoj/optimizely-cms-react/components";
 import CmsImage from "@/components/shared/cms_image";
 import ButtonBlock from "@/components/component/block/button_block";
-import button from "@/components/shared/button";
+import button, { Button } from "@/components/shared/button";
+import { linkDataToUrl } from "@remkoj/optimizely-cms-nextjs/components";
 
 export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
   data,
   inEditMode,
 }) => {
+  const url1 = data.Link1 ? linkDataToUrl(data.Link1) : undefined;
+  const url2 = data.Link2 ? linkDataToUrl(data.Link2) : undefined;
   const buttonClasses: string[] = [];
   return (
     <div>
@@ -46,64 +49,12 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
               />
             )}
             <div>
-              {
-                <CmsEditable
-                  as={ButtonBlock}
-                  cmsFieldName="Link1"
-                  contentLink={{ key: null }}
-                  data={{
-                    ...button,
-                    __typename: undefined, // Remove data type, so only data fields will be matched
-                    " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
-                    text: `${
-                      (
-                        button as
-                          | ButtonBlockPropertyDataFragment
-                          | undefined
-                          | null
-                      )?.text ?? ""
-                    }`,
-                    className:
-                      `${
-                        (
-                          button as
-                            | ButtonBlockPropertyDataFragment
-                            | undefined
-                            | null
-                        )?.className ?? ""
-                      } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
-                  }}
-                />
-              }
-              {
-                <CmsEditable
-                  as={ButtonBlock}
-                  cmsFieldName="Link2"
-                  contentLink={{ key: null }}
-                  data={{
-                    ...button,
-                    __typename: undefined, // Remove data type, so only data fields will be matched
-                    " $fragmentName": undefined, // Remove fragment source, so only data fields will be matched
-                    text: `${
-                      (
-                        button as
-                          | ButtonBlockPropertyDataFragment
-                          | undefined
-                          | null
-                      )?.text ?? ""
-                    }`,
-                    className:
-                      `${
-                        (
-                          button as
-                            | ButtonBlockPropertyDataFragment
-                            | undefined
-                            | null
-                        )?.className ?? ""
-                      } ${buttonClasses.join(" ")}`.trim() || undefined, // Apply additional classes
-                  }}
-                />
-              }
+              <Button url={url1} buttonVariant="default" buttonType="primary">
+                {data.Link1Text}
+              </Button>
+              <Button url={url2} buttonVariant="default" buttonType="secondary">
+                {data.Link2Text}
+              </Button>
             </div>
           </div>
         </div>

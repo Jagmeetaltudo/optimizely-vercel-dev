@@ -184,6 +184,8 @@ export const CTATileBlockDataFragmentDoc = /*#__PURE__*/ gql`
   CTAColor1: CTAColor1
   CTAType1: CTAType1
   CTAType1: CTAType1
+  Link1Text
+  Link2Text
 }
     `;
 export const ButtonBlockPropertyDataFragmentDoc = /*#__PURE__*/ gql`

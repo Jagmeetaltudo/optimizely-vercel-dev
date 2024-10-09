@@ -7,6 +7,7 @@ import CTATileBlock from "./CTATileBlock";
 import FeaturedTileBlock from "./FeaturedTileBlock";
 import HeroCarouselBlock from "./HeroCarouselBlock";
 import CategoryListBlock from "./CategoryListBlock";
+import ArticleHeroBlock from "./ArticleHeroBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -36,6 +37,10 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'CategoryListBlock',
         component: CategoryListBlock
+    },
+    {
+        type: 'ArticleHeroBlock',
+        component: ArticleHeroBlock
     },
 ]
 
