@@ -1,0 +1,12 @@
+fragment ArticleHeroBlockData on ArticleHeroBlock {
+  Title
+  Description {
+    json
+  }
+  Image {
+    ...ReferenceData
+  }
+  Button {
+    ...LinkData
+  }
+}

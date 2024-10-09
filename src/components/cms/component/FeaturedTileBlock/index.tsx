@@ -66,7 +66,7 @@ export const FeaturedTileBlockComponent: CmsComponent<
 };
 FeaturedTileBlockComponent.displayName = "FeaturedTileBlock";
 FeaturedTileBlockComponent.getDataFragment = () => [
-  "OfficeLocationData",
+  "FeaturedTileBlockData",
   FeaturedTileBlockDataFragmentDoc,
 ];
 

@@ -28,6 +28,7 @@ const documents = {
     "query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {\n  content: _Content(\n    where: {_metadata: {url: {default: {eq: $path}, base: {eq: $domain}}, version: {eq: $version}}}\n    locale: $locale\n  ) {\n    total\n    items {\n      ...PageData\n    }\n  }\n}": types.getContentByPathDocument,
     "fragment LinkData on ContentUrl {\n  base\n  hierarchical\n  default\n}": types.LinkDataFragmentDoc,
     "fragment IContentData on _IContent {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}": types.IContentDataFragmentDoc,
+    "fragment ArticleHeroBlockData on ArticleHeroBlock {\n  Title\n  Description {\n    json\n  }\n  Image {\n    ...ReferenceData\n  }\n  Button {\n    ...LinkData\n  }\n}": types.ArticleHeroBlockDataFragmentDoc,
     "fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...ButtonBlockPropertyData\n  }\n  Link2: Link2 {\n    ...ButtonBlockPropertyData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n}": types.CTATileBlockDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment CategoryListBlockData on CategoryListBlock {\n  Title\n  Description {\n    json\n  }\n  CategoryTiles {\n    ...CategoryTileBlockData\n  }\n}": types.CategoryListBlockDataFragmentDoc,
@@ -135,6 +136,10 @@ export function gql(source: "fragment LinkData on ContentUrl {\n  base\n  hierar
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment IContentData on _IContent {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}"): (typeof documents)["fragment IContentData on _IContent {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ArticleHeroBlockData on ArticleHeroBlock {\n  Title\n  Description {\n    json\n  }\n  Image {\n    ...ReferenceData\n  }\n  Button {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment ArticleHeroBlockData on ArticleHeroBlock {\n  Title\n  Description {\n    json\n  }\n  Image {\n    ...ReferenceData\n  }\n  Button {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
