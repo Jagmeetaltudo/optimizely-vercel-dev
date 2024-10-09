@@ -165,17 +165,6 @@ export const ArticleHeroBlockDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
-export const ButtonBlockPropertyDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment ButtonBlockPropertyData on ButtonBlockProperty {
-  text
-  link {
-    ...LinkData
-  }
-  className
-  buttonType
-  variant
-}
-    `;
 export const CTATileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTATileBlockData on CTATileBlock {
   title: CTATileTitle
@@ -186,15 +175,26 @@ export const CTATileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     ...ReferenceData
   }
   Link1: Link1 {
-    ...ButtonBlockPropertyData
+    ...LinkData
   }
   Link2: Link2 {
-    ...ButtonBlockPropertyData
+    ...LinkData
   }
   CTAColor1: CTAColor1
   CTAColor1: CTAColor1
   CTAType1: CTAType1
   CTAType1: CTAType1
+}
+    `;
+export const ButtonBlockPropertyDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ButtonBlockPropertyData on ButtonBlockProperty {
+  text
+  link {
+    ...LinkData
+  }
+  className
+  buttonType
+  variant
 }
     `;
 export const CardBlockDataFragmentDoc = /*#__PURE__*/ gql`
@@ -432,8 +432,8 @@ ${LinkDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
-${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${ButtonBlockPropertyDataFragmentDoc}
 ${CategoryListBlockDataFragmentDoc}
 ${CategoryTileBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}
@@ -494,8 +494,8 @@ ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
-${ButtonBlockPropertyDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
+${ButtonBlockPropertyDataFragmentDoc}
 ${CategoryListBlockDataFragmentDoc}
 ${CategoryTileBlockDataFragmentDoc}
 ${FeaturedTileBlockDataFragmentDoc}

@@ -7,10 +7,10 @@ fragment CTATileBlockData on CTATileBlock {
     ...ReferenceData
   }
   Link1: Link1 {
-    ...ButtonBlockPropertyData
+    ...LinkData
   }
   Link2: Link2 {
-    ...ButtonBlockPropertyData
+    ...LinkData
   }
   CTAColor1: CTAColor1
   CTAColor1: CTAColor1
