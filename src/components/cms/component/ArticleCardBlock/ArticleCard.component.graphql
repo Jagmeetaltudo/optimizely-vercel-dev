@@ -1,0 +1,5 @@
+fragment ArticleCardBlockData on ArticleCardBlock {
+Title
+Image{...ReferenceData}
+Link{...LinkData}
+}

@@ -27,12 +27,12 @@ export const ArticleHeroBlockComponent: CmsComponent<
         />
         <CmsEditable
                 as="h2"
-                cmsFieldName="CTATileTitle"
+                cmsFieldName="Title"
                 className="text-3xl uppercase text-teal-950"
         ></CmsEditable>
         <CmsEditable
                 as={RichText}
-                cmsFieldName="CTATileDescription"
+                cmsFieldName="Description"
                 text={data.Description?.json}
                 className="mt-10 text-base font-light text-teal-950"
         />

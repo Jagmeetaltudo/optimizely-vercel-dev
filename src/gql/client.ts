@@ -151,6 +151,17 @@ export const BlankExperienceDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
+export const ArticleCardBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ArticleCardBlockData on ArticleCardBlock {
+  Title
+  Image {
+    ...ReferenceData
+  }
+  Link {
+    ...LinkData
+  }
+}
+    `;
 export const ArticleHeroBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ArticleHeroBlockData on ArticleHeroBlock {
   Title
@@ -273,7 +284,9 @@ export const HeroCarouselBlockDataFragmentDoc = /*#__PURE__*/ gql`
 export const InfoBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment InfoBlockData on InfoBlock {
   title: InfoBlockTitle
-  descrip: InfoBlockDescription
+  descrip: InfoBlockDescription {
+    json
+  }
 }
     `;
 export const OfficeLocationDataFragmentDoc = /*#__PURE__*/ gql`
@@ -334,6 +347,7 @@ export const MegaMenuGroupBlockDataFragmentDoc = /*#__PURE__*/ gql`
 export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
+  ...ArticleCardBlockData
   ...ArticleHeroBlockData
   ...CTATileBlockData
   ...CardBlockData
@@ -431,8 +445,9 @@ export const getContentByIdDocument = /*#__PURE__*/ gql`
 ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${ArticleHeroBlockDataFragmentDoc}
+${ArticleCardBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${ArticleHeroBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
@@ -494,6 +509,7 @@ ${ParagraphElementDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
+${ArticleCardBlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
