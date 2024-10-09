@@ -162,6 +162,17 @@ export const ArticleCardBlockDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const ArticleCardListBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ArticleCardListBlockData on ArticleCardListBlock {
+  Title
+  Description {
+    json
+  }
+  Articles {
+    ...ArticleCardBlockData
+  }
+}
+    `;
 export const ArticleHeroBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ArticleHeroBlockData on ArticleHeroBlock {
   Title
@@ -348,6 +359,7 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
   ...ArticleCardBlockData
+  ...ArticleCardListBlockData
   ...ArticleHeroBlockData
   ...CTATileBlockData
   ...CardBlockData
@@ -447,6 +459,7 @@ ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
 ${ArticleCardBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${ArticleCardListBlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
@@ -510,6 +523,7 @@ ${TestimonialElementDataFragmentDoc}
 ${ArticleGroupPageDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${ArticleCardBlockDataFragmentDoc}
+${ArticleCardListBlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}

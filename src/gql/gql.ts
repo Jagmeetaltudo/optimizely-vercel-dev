@@ -29,6 +29,7 @@ const documents = {
     "fragment LinkData on ContentUrl {\n  base\n  hierarchical\n  default\n}": types.LinkDataFragmentDoc,
     "fragment IContentData on _IContent {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}": types.IContentDataFragmentDoc,
     "fragment ArticleCardBlockData on ArticleCardBlock {\n  Title\n  Image {\n    ...ReferenceData\n  }\n  Link {\n    ...LinkData\n  }\n}": types.ArticleCardBlockDataFragmentDoc,
+    "fragment ArticleCardListBlockData on ArticleCardListBlock {\n  Title\n  Description {\n    json\n  }\n  Articles {\n    ...ArticleCardBlockData\n  }\n}": types.ArticleCardListBlockDataFragmentDoc,
     "fragment ArticleHeroBlockData on ArticleHeroBlock {\n  Title\n  Description {\n    json\n  }\n  Image {\n    ...ReferenceData\n  }\n  Button {\n    ...LinkData\n  }\n}": types.ArticleHeroBlockDataFragmentDoc,
     "fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...LinkData\n  }\n  Link2: Link2 {\n    ...LinkData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n  Link1Text\n  Link2Text\n}": types.CTATileBlockDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
@@ -141,6 +142,10 @@ export function gql(source: "fragment IContentData on _IContent {\n  _metadata {
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ArticleCardBlockData on ArticleCardBlock {\n  Title\n  Image {\n    ...ReferenceData\n  }\n  Link {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment ArticleCardBlockData on ArticleCardBlock {\n  Title\n  Image {\n    ...ReferenceData\n  }\n  Link {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ArticleCardListBlockData on ArticleCardListBlock {\n  Title\n  Description {\n    json\n  }\n  Articles {\n    ...ArticleCardBlockData\n  }\n}"): (typeof documents)["fragment ArticleCardListBlockData on ArticleCardListBlock {\n  Title\n  Description {\n    json\n  }\n  Articles {\n    ...ArticleCardBlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

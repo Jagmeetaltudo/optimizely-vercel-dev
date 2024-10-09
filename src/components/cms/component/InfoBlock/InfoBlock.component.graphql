@@ -1,4 +1,6 @@
 fragment InfoBlockData on InfoBlock {
   title: InfoBlockTitle
-  descrip: InfoBlockDescription{json}
+  descrip: InfoBlockDescription {
+    json
+  }
 }

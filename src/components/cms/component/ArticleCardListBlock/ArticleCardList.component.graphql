@@ -1,0 +1,9 @@
+fragment ArticleCardListBlockData on ArticleCardListBlock {
+  Title
+  Description {
+    json
+  }
+  Articles {
+    ...ArticleCardBlockData
+  }
+}
