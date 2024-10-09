@@ -8,6 +8,8 @@ import FeaturedTileBlock from "./FeaturedTileBlock";
 import HeroCarouselBlock from "./HeroCarouselBlock";
 import CategoryListBlock from "./CategoryListBlock";
 import ArticleHeroBlock from "./ArticleHeroBlock";
+import ArticleCardBlock from "./ArticleCardBlock";
+import ArticleCardListBlock from "./ArticleCardListBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -41,6 +43,14 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'ArticleHeroBlock',
         component: ArticleHeroBlock
+    },
+    {
+        type: 'ArticleCardBlock',
+        component: ArticleCardBlock
+    },
+    {
+        type: 'ArticleCardListBlock',
+        component: ArticleCardListBlock
     },
 ]
 
