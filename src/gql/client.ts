@@ -360,13 +360,7 @@ export const ArticlePageDataFragmentDoc = /*#__PURE__*/ gql`
     `;
 export const DefaultMaterialPageDataFragmentDoc = /*#__PURE__*/ gql`
     fragment DefaultMaterialPageData on DefaultMaterialPage {
-  HeroCarousel {
-    ...BlockData
-  }
-  FeaturedTiles {
-    ...BlockData
-  }
-  CategoryTiles {
+  MainContent {
     ...BlockData
   }
 }

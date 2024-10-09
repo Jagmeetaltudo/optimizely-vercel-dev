@@ -20,18 +20,8 @@ export const DefaultMaterialPage: CmsComponent<
         <div className="mx-auto container">
           <div className="py-[32pt]">
             <CmsContentArea
-              items={data.HeroCarousel}
-              fieldName="HeroCarousel"
-              className="w-full mt-[32pt]"
-            />
-            <CmsContentArea
-              items={data.FeaturedTiles}
-              fieldName="FeaturedTiles"
-              className="w-full mt-[32pt]"
-            />
-            <CmsContentArea
-              items={data.CategoryTiles}
-              fieldName="CategoryTiles"
+              items={data.MainContent}
+              fieldName="MainContent"
               className="w-full mt-[32pt]"
             />
           </div>
