@@ -45,7 +45,7 @@ export const FeaturedTileBlockComponent: CmsComponent<
         aria-hidden
         priority
         fill
-        className="object-contain z-0 w-full aspect-[2.57] max-md:max-w-full"
+        className="object-cover z-0 w-full h-full max-md:max-w-full"
       />
       <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full left-[892px] w-[548px]">
         <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 max-md:max-w-full">
