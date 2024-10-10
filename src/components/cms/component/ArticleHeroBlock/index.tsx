@@ -22,7 +22,7 @@ export const ArticleHeroBlockComponent: CmsComponent<
           loading="lazy"
           src={data?.Image}
           alt="Inspirational background"
-          className="object-cover absolute inset-0 size-full"
+          className="object-contain z-0 w-full aspect-[2.57] max-md:max-w-full"
           layout="fill"
         />
         <CmsEditable
