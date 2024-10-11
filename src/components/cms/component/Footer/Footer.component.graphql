@@ -1,0 +1,38 @@
+fragment FooterData on Footer {
+  copyrighttext: CopyrightText
+  footertext: FooterText {
+    json
+  }
+  links: FooterLinks {
+    ...LinkItemData
+  }
+  icons: Icons {
+    ...SocialIconFooter
+  }
+  columns: FooterColumns {
+    ... on FooterColumn {
+      Title
+      Icon {
+        ...ReferenceData
+      }
+      ColumnItems {
+        ...LinkItemData
+      }
+    }
+  }
+  Logo {
+    ...ReferenceData
+  }
+}
+
+fragment SocialIconFooter on JWSocialIcon {
+  ... on JWSocialIcon {
+    IconName
+    IconValue {
+      ...ReferenceData
+    }
+    Link {
+      ...LinkData
+    }
+  }
+}

@@ -9,6 +9,8 @@ import HeroCarouselBlock from "./HeroCarouselBlock";
 import CategoryListBlock from "./CategoryListBlock";
 import ArticleHeroBlock from "./ArticleHeroBlock";
 import ArticleCardListBlock from "./ArticleCardListBlock";
+import FooterComponent from "./Footer";
+import MainHeaderComponent from "./JWHeader/MainHeader";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -47,6 +49,14 @@ export const componentDictionary : ComponentTypeDictionary = [
         type: 'ArticleCardListBlock',
         component: ArticleCardListBlock
     },
+    {
+        type: 'Footer',
+        component: FooterComponent
+    },
+    {
+        type: 'JWHeader',
+        component: MainHeaderComponent
+    }
 ]
 
 export default componentDictionary

@@ -1,0 +1,35 @@
+fragment JWHeaderData on JWHeader {
+  logo: HeaderLogo {
+    ...ReferenceData
+  }
+  bannerr: HeaderBanner {
+    ...ReferenceData
+  }
+  topbar: HeaderTopBar {
+    ... on JWHeaderTopBar {
+      LeftNavigationLinks {
+        ...LinkItemData
+      }
+      SearchIcon {
+        ...ReferenceData
+      }
+      FindAStore {
+        ...ReferenceData
+      }
+    }
+  }
+  mainNav: HeaderMainNavigation {
+    ... on JWMainNavigation {
+      Title
+      IsTabLayout
+      HeaderColumns {
+        ... on JWHeaderColumn {
+          HeaderColumnTitle
+          HeaderColumnLinks {
+            ...LinkItemData
+          }
+        }
+      }
+    }
+  }
+}
