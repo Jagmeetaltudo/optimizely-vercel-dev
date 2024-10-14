@@ -1,10 +1,10 @@
 fragment HeroBannerBlockData on HeroBannerBlock {
   BannerTitle
-  BannerDescription {
-    json
-  }
+  BannerDescription
   BannerImage {
     ...ReferenceData
   }
-  BannerButtonText
+  BannerButton{
+  ...CTAButtonBlockData
+  }
 }

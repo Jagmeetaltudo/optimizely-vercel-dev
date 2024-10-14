@@ -339,13 +339,13 @@ export const FooterDataFragmentDoc = /*#__PURE__*/ gql`
 export const HeroBannerBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment HeroBannerBlockData on HeroBannerBlock {
   BannerTitle
-  BannerDescription {
-    json
-  }
+  BannerDescription
   BannerImage {
     ...ReferenceData
   }
-  BannerButtonText
+  BannerButton {
+    ...CTAButtonBlockData
+  }
 }
     `;
 export const HeroCarouselBlockDataFragmentDoc = /*#__PURE__*/ gql`
