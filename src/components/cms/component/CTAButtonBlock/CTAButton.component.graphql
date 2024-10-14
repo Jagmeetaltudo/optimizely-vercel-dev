@@ -1,0 +1,7 @@
+fragment CTAButtonBlockData on CTAButtonBlock {
+  Text
+  ClassName
+  Link {
+    ...LinkData
+  }
+}

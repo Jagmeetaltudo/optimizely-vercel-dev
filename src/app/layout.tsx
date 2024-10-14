@@ -28,9 +28,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider value={{ theme: "system" }}>
             <Body className={`${figtree.className} bg-ghost-white text-vulcan dark:bg-vulcan dark:text-ghost-white`}>
                 <div className="flex min-h-screen flex-col justify-between">
-                    <MoseyBankHeader />
+                    {/* <MoseyBankHeader /> */}
                     {children}
-                    <MoseyBankFooter />
+                    {/* <MoseyBankFooter /> */}
                 </div>
             </Body>
         </ThemeProvider>

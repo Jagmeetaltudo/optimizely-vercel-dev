@@ -27,7 +27,7 @@ export const CategoryListBlockComponent: CmsComponent<
 > = ({ data }) => {
   const utilityItems = filterMaybeArray(data.CategoryTiles) as TileItems;
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col my-8">
       <div className="flex z-10 flex-wrap gap-10 items-start w-full max-md:max-w-full">
         <h1 className="grow shrink text-5xl text-zinc-600 w-[654px] max-md:max-w-full max-md:text-4xl">
           {data.Title}

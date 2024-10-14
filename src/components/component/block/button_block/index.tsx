@@ -8,7 +8,7 @@ export const ButtonBlock : CmsComponent<ButtonBlockDataFragment> = ({ data }) =>
     const hrefBase = link?.base ?? 'http://example.com'
     const hrefPath = link?.default ?? '/'
     const href = new URL(hrefPath, hrefBase)
-    return <Button url={ href } buttonType={ (data.buttonType ?? undefined) as "primary" | "secondary" | undefined } buttonVariant={ (data.variant ?? undefined) as "default" | "cta" | undefined } className={ data.className ?? undefined } >{data.text ?? ''}</Button>
+    return <Button url={ href } buttonType={ (data.buttonType ?? undefined) as "primary" | "secondary" | undefined } buttonVariant={ (data.variant ?? undefined) as "default" | "cta" | undefined } className={ data.className ?? undefined } >{data.text}</Button>
 }
 ButtonBlock.getDataFragment = () => ['ButtonBlockData', ButtonBlockDataFragmentDoc ]
 

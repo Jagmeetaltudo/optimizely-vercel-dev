@@ -26,7 +26,7 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
       : "text-teal-950 border-solid border-[3px] border-teal-950";
 
   return (
-    <section className="flex flex-col text-center">
+    <section className="flex flex-col text-center my-8">
       <div className="flex relative flex-col justify-center items-center px-20 py-24 w-full min-h-[443px] max-md:px-5 max-md:max-w-full">
         <CmsImage
           src={data.image}
