@@ -16,6 +16,8 @@
   .heroBannerSlider img,
   .heroBannerSlider iframe {
     height: 60rem !important;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+
   }
 }
 @media (min-width: 768px) {
