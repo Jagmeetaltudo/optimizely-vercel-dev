@@ -10,6 +10,9 @@ export const InfoBlockComponent: CmsComponent<InfoBlockDataFragment> = ({
   data,
 }) => {
   return (
+    <div className="outer-padding">
+      <div className="mx-auto container">
+        <div className="py-[32pt]">
     <section className="hero">
       <div className="hero-content">
         <CmsEditable
@@ -25,6 +28,9 @@ export const InfoBlockComponent: CmsComponent<InfoBlockDataFragment> = ({
         />
       </div>
     </section>
+    </div>
+    </div>
+    </div>
   );
 };
 

@@ -32,6 +32,9 @@ export const ArticleCardListBlockComponent: CmsComponent<
     image: item.Image
   }));
   return (
+    <div className="outer-padding">
+      <div className="mx-auto container">
+        <div className="py-[32pt]">
     <section className="flex flex-col my-8">
       <div className="flex flex-wrap gap-5 justify-between self-center w-full max-w-[1239px] max-md:max-w-full">
         <h1 className="text-5xl text-zinc-600 max-md:text-4xl">{data.Title}</h1>
@@ -49,6 +52,9 @@ export const ArticleCardListBlockComponent: CmsComponent<
         <BlogCarousel blogData={blogData} />
       </div>
     </section>
+    </div>
+    </div>
+    </div>
   );
 };
 
