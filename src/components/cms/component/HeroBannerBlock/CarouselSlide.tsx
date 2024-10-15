@@ -47,14 +47,14 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   return (
     <>
       <div className="component-content hero-banner-slide">
-        <CmsImage
-          loading="lazy"
-          src={image}
-          alt="Inspirational background"
-          aria-hidden
-          fill
-          className="object-cover z-0 w-full h-full max-md:max-w-full"
-        />
+      <CmsImage
+        src={image}
+        alt="hero-image"
+        aria-hidden
+        priority
+        fill
+        className="object-cover absolute inset-0 max-md:max-w-full"
+      />
         <div className={Styles.bannerTextWrapper}>
           <div className="container">
             <div className="textbox">

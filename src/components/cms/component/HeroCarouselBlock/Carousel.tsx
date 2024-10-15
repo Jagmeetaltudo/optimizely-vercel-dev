@@ -1,3 +1,4 @@
+'use client';
 import CarouselSlide from "../HeroBannerBlock/CarouselSlide";
 import Styles from "./HeroCarousel.module.css";
 import Slider, { Settings } from "react-slick";
@@ -31,6 +32,7 @@ const Carousel: React.FC<CarouselProps> = ({ slidesData }) => {
       <section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
         <div className={`${Styles.heroBannerSlider}`}>
           <div>
+          <Slider {...settings}>
             {slidesData.map((slide, index) => (
               <CarouselSlide
                 key={index}
@@ -40,6 +42,7 @@ const Carousel: React.FC<CarouselProps> = ({ slidesData }) => {
                 image={slide.image}
               />
             ))}
+            </Slider>
           </div>
         </div>
       </section>
