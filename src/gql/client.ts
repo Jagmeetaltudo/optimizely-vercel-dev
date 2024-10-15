@@ -187,6 +187,15 @@ export const ArticleHeroBlockDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const CTAButtonBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CTAButtonBlockData on CTAButtonBlock {
+  Text
+  ClassName
+  Link {
+    ...LinkData
+  }
+}
+    `;
 export const CTATileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment CTATileBlockData on CTATileBlock {
   title: CTATileTitle
@@ -271,6 +280,9 @@ export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     ...ReferenceData
   }
   Position
+  CTA: Button {
+    ...CTAButtonBlockData
+  }
 }
     `;
 export const LinkItemDataFragmentDoc = /*#__PURE__*/ gql`
@@ -327,13 +339,13 @@ export const FooterDataFragmentDoc = /*#__PURE__*/ gql`
 export const HeroBannerBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment HeroBannerBlockData on HeroBannerBlock {
   BannerTitle
-  BannerDescription {
-    json
-  }
+  BannerDescription
   BannerImage {
     ...ReferenceData
   }
-  BannerButtonText
+  BannerButton {
+    ...CTAButtonBlockData
+  }
 }
     `;
 export const HeroCarouselBlockDataFragmentDoc = /*#__PURE__*/ gql`
@@ -439,6 +451,7 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...ArticleCardBlockData
   ...ArticleCardListBlockData
   ...ArticleHeroBlockData
+  ...CTAButtonBlockData
   ...CTATileBlockData
   ...CardBlockData
   ...CategoryListBlockData
@@ -542,6 +555,7 @@ ${ArticleCardBlockDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ArticleCardListBlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
+${CTAButtonBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
@@ -609,6 +623,7 @@ ${BlockDataFragmentDoc}
 ${ArticleCardBlockDataFragmentDoc}
 ${ArticleCardListBlockDataFragmentDoc}
 ${ArticleHeroBlockDataFragmentDoc}
+${CTAButtonBlockDataFragmentDoc}
 ${CTATileBlockDataFragmentDoc}
 ${CardBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}

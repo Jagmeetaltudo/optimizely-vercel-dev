@@ -31,13 +31,14 @@ const documents = {
     "fragment ArticleCardBlockData on ArticleCardBlock {\n  Title\n  Image {\n    ...ReferenceData\n  }\n  Link {\n    ...LinkData\n  }\n}": types.ArticleCardBlockDataFragmentDoc,
     "fragment ArticleCardListBlockData on ArticleCardListBlock {\n  Title\n  Description {\n    json\n  }\n  Articles {\n    ...ArticleCardBlockData\n  }\n}": types.ArticleCardListBlockDataFragmentDoc,
     "fragment ArticleHeroBlockData on ArticleHeroBlock {\n  Title\n  Description {\n    json\n  }\n  Image {\n    ...ReferenceData\n  }\n  Button {\n    ...LinkData\n  }\n}": types.ArticleHeroBlockDataFragmentDoc,
+    "fragment CTAButtonBlockData on CTAButtonBlock {\n  Text\n  ClassName\n  Link {\n    ...LinkData\n  }\n}": types.CTAButtonBlockDataFragmentDoc,
     "fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...LinkData\n  }\n  Link2: Link2 {\n    ...LinkData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n  Link1Text\n  Link2Text\n}": types.CTATileBlockDataFragmentDoc,
     "fragment CardBlockData on CardBlock {\n  heading: CardHeading\n  subheading: CardSubheading\n  description: CardDescription {\n    json\n  }\n  icon: CardIcon {\n    ...ReferenceData\n  }\n  image: CardImage {\n    ...ReferenceData\n  }\n  link: CardButton {\n    ...ButtonBlockPropertyData\n  }\n  color: CardColor\n  layout: CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment CategoryListBlockData on CategoryListBlock {\n  Title\n  Description {\n    json\n  }\n  CategoryTiles {\n    ...CategoryTileBlockData\n  }\n}": types.CategoryListBlockDataFragmentDoc,
     "fragment CategoryTileBlockData on CategoryTileBlock {\n  TileTitle\n  TileImage {\n    ...ReferenceData\n  }\n}": types.CategoryTileBlockDataFragmentDoc,
-    "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}": types.FeaturedTileBlockDataFragmentDoc,
+    "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n  CTA: Button {\n    ...CTAButtonBlockData\n  }\n}": types.FeaturedTileBlockDataFragmentDoc,
     "fragment FooterData on Footer {\n  copyrighttext: CopyrightText\n  footertext: FooterText {\n    json\n  }\n  links: FooterLinks {\n    ...LinkItemData\n  }\n  icons: Icons {\n    ...SocialIconFooter\n  }\n  columns: FooterColumns {\n    ... on FooterColumn {\n      Title\n      Icon {\n        ...ReferenceData\n      }\n      ColumnItems {\n        ...LinkItemData\n      }\n    }\n  }\n  Logo {\n    ...ReferenceData\n  }\n}\n\nfragment SocialIconFooter on JWSocialIcon {\n  ... on JWSocialIcon {\n    IconName\n    IconValue {\n      ...ReferenceData\n    }\n    Link {\n      ...LinkData\n    }\n  }\n}": types.FooterDataFragmentDoc,
-    "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}": types.HeroBannerBlockDataFragmentDoc,
+    "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButton {\n    ...CTAButtonBlockData\n  }\n}": types.HeroBannerBlockDataFragmentDoc,
     "fragment HeroCarouselBlockData on HeroCarouselBlock {\n  Banners {\n    ...HeroBannerBlockData\n  }\n}": types.HeroCarouselBlockDataFragmentDoc,
     "fragment InfoBlockData on InfoBlock {\n  title: InfoBlockTitle\n  descrip: InfoBlockDescription {\n    json\n  }\n}": types.InfoBlockDataFragmentDoc,
     "fragment JWHeaderData on JWHeader {\n  logo: HeaderLogo {\n    ...ReferenceData\n  }\n  bannerr: HeaderBanner {\n    ...ReferenceData\n  }\n  topbar: HeaderTopBar {\n    ... on JWHeaderTopBar {\n      LeftNavigationLinks {\n        ...LinkItemData\n      }\n      SearchIcon {\n        ...ReferenceData\n      }\n      FindAStore {\n        ...ReferenceData\n      }\n    }\n  }\n  mainNav: HeaderMainNavigation {\n    ... on JWMainNavigation {\n      Title\n      IsTabLayout\n      HeaderColumns {\n        ... on JWHeaderColumn {\n          HeaderColumnTitle\n          HeaderColumnLinks {\n            ...LinkItemData\n          }\n        }\n      }\n    }\n  }\n}": types.JWHeaderDataFragmentDoc,
@@ -155,6 +156,10 @@ export function gql(source: "fragment ArticleHeroBlockData on ArticleHeroBlock {
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment CTAButtonBlockData on CTAButtonBlock {\n  Text\n  ClassName\n  Link {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment CTAButtonBlockData on CTAButtonBlock {\n  Text\n  ClassName\n  Link {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...LinkData\n  }\n  Link2: Link2 {\n    ...LinkData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n  Link1Text\n  Link2Text\n}"): (typeof documents)["fragment CTATileBlockData on CTATileBlock {\n  title: CTATileTitle\n  description: CTATileDescription {\n    json\n  }\n  image: BackgroundImage {\n    ...ReferenceData\n  }\n  Link1: Link1 {\n    ...LinkData\n  }\n  Link2: Link2 {\n    ...LinkData\n  }\n  CTAColor1: CTAColor1\n  CTAColor1: CTAColor1\n  CTAType1: CTAType1\n  CTAType1: CTAType1\n  Link1Text\n  Link2Text\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -171,7 +176,7 @@ export function gql(source: "fragment CategoryTileBlockData on CategoryTileBlock
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}"): (typeof documents)["fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n}"];
+export function gql(source: "fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n  CTA: Button {\n    ...CTAButtonBlockData\n  }\n}"): (typeof documents)["fragment FeaturedTileBlockData on FeaturedTileBlock {\n  title: TileTitle\n  description: TileDescription {\n    json\n  }\n  buttontext: TileButtonText\n  backgroundImage {\n    ...ReferenceData\n  }\n  Position\n  CTA: Button {\n    ...CTAButtonBlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -179,7 +184,7 @@ export function gql(source: "fragment FooterData on Footer {\n  copyrighttext: C
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}"): (typeof documents)["fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription {\n    json\n  }\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButtonText\n}"];
+export function gql(source: "fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButton {\n    ...CTAButtonBlockData\n  }\n}"): (typeof documents)["fragment HeroBannerBlockData on HeroBannerBlock {\n  BannerTitle\n  BannerDescription\n  BannerImage {\n    ...ReferenceData\n  }\n  BannerButton {\n    ...CTAButtonBlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

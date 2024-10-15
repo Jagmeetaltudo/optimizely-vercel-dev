@@ -32,7 +32,7 @@ export const ArticleCardListBlockComponent: CmsComponent<
     image: item.Image
   }));
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col my-8">
       <div className="flex flex-wrap gap-5 justify-between self-center w-full max-w-[1239px] max-md:max-w-full">
         <h1 className="text-5xl text-zinc-600 max-md:text-4xl">{data.Title}</h1>
         <p className="flex gap-2.5 text-base font-light text-right text-stone-500">
