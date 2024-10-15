@@ -500,6 +500,12 @@ export const DefaultMaterialPageDataFragmentDoc = /*#__PURE__*/ gql`
   MainContent {
     ...BlockData
   }
+  HeaderContent {
+    ...BlockData
+  }
+  FooterContent {
+    ...BlockData
+  }
 }
     `;
 export const PageDataFragmentDoc = /*#__PURE__*/ gql`

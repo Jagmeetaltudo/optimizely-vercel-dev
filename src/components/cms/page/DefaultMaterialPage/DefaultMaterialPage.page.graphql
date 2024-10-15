@@ -2,4 +2,10 @@ fragment DefaultMaterialPageData on DefaultMaterialPage {
   MainContent {
     ...BlockData
   }
+   HeaderContent {
+    ...BlockData
+  }
+   FooterContent {
+    ...BlockData
+  }
 }

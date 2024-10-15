@@ -10,26 +10,30 @@ import {
 import React from "react";
 
 export const DefaultMaterialPage: CmsComponent<
-  DefaultMaterialPageDataFragment>
-= async ({ data }) => {
+  DefaultMaterialPageDataFragment
+> = async ({ data }) => {
   getServerContext();
 
   return (
     <>
-      <div className="outer-padding">
-        <div className="mx-auto container">
-          <div className="py-[32pt]">
+      <CmsContentArea
+        items={data.HeaderContent}
+        fieldName="HeaderContent"
+      />
+     
             <CmsContentArea
               items={data.MainContent}
               fieldName="MainContent"
               className="w-full mt-[32pt]"
             />
-          </div>
-        </div>
-      </div>
+      <CmsContentArea
+        items={data.FooterContent}
+        fieldName="FooterContent"
+      />
     </>
   );
-};DefaultMaterialPage.getDataFragment = () => [
+};
+DefaultMaterialPage.getDataFragment = () => [
   "DefaultMaterialPageData",
   DefaultMaterialPageDataFragmentDoc,
 ];

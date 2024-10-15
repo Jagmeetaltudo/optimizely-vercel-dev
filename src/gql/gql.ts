@@ -52,7 +52,7 @@ const documents = {
     "query getArticleGroupPageItems($key: String!, $locale: [Locales], $pageSize: Int, $skip: Int) {\n  group: ArticleGroupPage(where: {_metadata: {key: {eq: $key}}}, locale: $locale) {\n    data: items {\n      children: _link(type: ITEMS) {\n        listing: ArticlePage(\n          limit: $pageSize\n          locale: $locale\n          skip: $skip\n          where: {_metadata: {status: {eq: \"Published\"}}}\n        ) {\n          total\n          items {\n            ...IContentData\n            _metadata {\n              published\n            }\n            articleHeroImage {\n              ...ReferenceData\n            }\n            articleTitle\n            articleSummary {\n              json\n            }\n          }\n        }\n      }\n    }\n  }\n}": types.getArticleGroupPageItemsDocument,
     "query getArticlePageMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getArticlePageMetaDataDocument,
     "fragment ArticlePageData on ArticlePage {\n  metadata: _metadata {\n    published\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleAuthors\n  articleTitle\n  articleBody {\n    json\n  }\n}": types.ArticlePageDataFragmentDoc,
-    "fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n}": types.DefaultMaterialPageDataFragmentDoc,
+    "fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n  HeaderContent {\n    ...BlockData\n  }\n  FooterContent {\n    ...BlockData\n  }\n}": types.DefaultMaterialPageDataFragmentDoc,
     "fragment ButtonBlockData on ButtonBlock {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockDataFragmentDoc,
     "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  text\n  link {\n    ...LinkData\n  }\n  className\n  buttonType\n  variant\n}": types.ButtonBlockPropertyDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  text: Text\n  link: Link {\n    ...LinkData\n  }\n}": types.CTAElementDataFragmentDoc,
@@ -240,7 +240,7 @@ export function gql(source: "fragment ArticlePageData on ArticlePage {\n  metada
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n}"): (typeof documents)["fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n}"];
+export function gql(source: "fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n  HeaderContent {\n    ...BlockData\n  }\n  FooterContent {\n    ...BlockData\n  }\n}"): (typeof documents)["fragment DefaultMaterialPageData on DefaultMaterialPage {\n  MainContent {\n    ...BlockData\n  }\n  HeaderContent {\n    ...BlockData\n  }\n  FooterContent {\n    ...BlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
