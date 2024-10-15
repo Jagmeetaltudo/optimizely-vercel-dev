@@ -13,10 +13,10 @@ import "./globals.scss"
 const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    description: "An Optimizely demo website",
-    keywords: "Mosey bank, Mosey, Optimizely, Demo",
+    description: "An Optimizely website",
+    keywords: "Altudo, Accelerator",
     title: {
-        default: "Mosey Bank - An Optimizely Demo",
+        default: "Altudo - An Optimizely Demo",
         template: "%s - An Optimizely Demo"
     }
 };
