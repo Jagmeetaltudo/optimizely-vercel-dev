@@ -25,3 +25,181 @@ body {
   font-style: normal;
   color:#666
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* FontAwesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+// Fruitger Fonts
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-Light.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-Roman.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-Black.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-Black.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-Bold.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-ExtraBlackCn.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-ExtraBlackCn.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Frutiger_LT_Pro';
+  src: url('/fonts/frutiger-pro/FrutigerLTPro-Italic.woff2') format('woff2'),
+    url('/fonts/frutiger-pro/FrutigerLTPro-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: Sawarabi Gothic, sans-serif;
+}
+body {
+  font-family: Cantarell, sans-serif;
+}
+p {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.text-heading-1 {
+  font-size: 48px;
+  color: rgb(88, 89, 91);
+  font-weight: 400;
+    color: #58595b;
+
+}
+.text-desc-1 {
+  padding: 0 10px 15px;
+  border-right: 2px solid #c8b78a;
+  color: #666;
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: normal;
+  text-align: right;
+  width: 33%;
+}
+.card-items {
+  position: relative;
+  text-align: center;
+}
+.card-image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--bs-card-img-overlay-padding);
+  border-radius: var(--bs-card-inner-border-radius);
+  display: flex;
+  justify-content: center;
+}
+.card-image-overlay h4{
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+  transition: bottom .5s ease-in;
+  color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    font-family: Frutiger_LT_Pro;
+    text-align: center;
+}
+
+.card-image-overlay:hover {
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.card-image-overlay:hover h4 {
+ bottom:35%;
+}
+.self-stretch-title {
+  font-family: minion-pro, serif;
+  color: #002a3a;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.self-stretch-desc {
+  margin-bottom: 30px;
+}
+.self-stretch-desc p {
+  font-family: Frutiger_LT_Pro;
+    font-size: 16px;
+    font-style: normal;
+    color: #002a3a;
+    font-weight: 300;
+    line-height: normal;
+
+}
+.primary_button a{
+  background-color: #1d446b;
+  border: 1px solid #1d446b;
+  padding: 22px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  font-family: Frutiger_LT_Pro;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: .56px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+
+}
+.primary_button  a:hover {
+  background-color: #6f9abb;
+  color: #fff;
+  border-color: #6f9abb;
+}

@@ -47,17 +47,20 @@ export const FeaturedTileBlockComponent: CmsComponent<
         className="object-cover absolute inset-0 max-md:max-w-full"
       />
       <div className="relative flex flex-col min-h-[560px] items-start px-20 py-36 max-w-full bg-white bg-opacity-70 w-[548px] max-md:px-5 max-md:py-24 h-full">
-        <h1 className="self-stretch text-5xl uppercase text-teal-950 max-md:mr-2.5">
+        <h1 className="self-stretch  self-stretch-title text-3xl uppercase text-teal-950 max-md:mr-2.5">
           {data.title}
         </h1>
+
         <CmsEditable
           as={RichText}
           cmsFieldName="TileDescription"
           text={data.description?.json}
-          className="z-0 w-full object-contain aspect-[2.57] max-md:max-w-full mt-6"
+          className="mt-10 text-base font-light text-teal-950 self-stretch-desc"
         />
         {buttonData.map((button, index) => (
-          <CTAButtonBlock key={index} text={button.text} url={button.url.toString()} className={button.className} />
+          <div key={index} className="primary_button">
+            <CTAButtonBlock text={button.text} url={button.url} className={button.className} />
+          </div>
         ))}
       </div>
     </section>
@@ -73,15 +76,17 @@ export const FeaturedTileBlockComponent: CmsComponent<
       />
       <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full w-[548px]">
         <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 right-0 max-md:max-w-full min-h-[560px]">
-          <h1 className="text-5xl uppercase text-teal-950">{data.title}</h1>
+          <h1 className="text-3xl self-stretch-title uppercase text-teal-950">{data.title}</h1>
           <CmsEditable
             as={RichText}
             cmsFieldName="TileDescription"
             text={data.description?.json}
-            className="z-0 w-full object-contain aspect-[2.57] max-md:max-w-full mt-6"
+            className="z-0 mt-10 text w-full object-contain max-md:max-w-full self-stretch-desc"
           />
            {buttonData.map((button, index) => (
-          <CTAButtonBlock key={index} text={button.text} url={button.url} className={button.className} />
+            <div key={index} className="primary_button">
+          <CTAButtonBlock text={button.text} url={button.url} className={button.className} />
+     </div>
         ))}
           
         </div>

@@ -32,10 +32,10 @@ export const CategoryListBlockComponent: CmsComponent<
         <div className="py-[32pt]">
           <div className="flex flex-col my-8">
             <div className="flex z-20 flex-wrap gap-10 items-start w-full max-md:max-w-full">
-              <h1 className="grow shrink text-5xl text-zinc-600 w-[654px] max-md:max-w-full max-md:text-4xl">
+              <h1 className="grow shrink text-heading-1 w-[654px] max-md:max-w-full max-md:text-4xl">
                 {data.Title}
               </h1>
-              <div className="flex gap-2.5 text-base font-light text-right">
+              <div className="flex gap-2.5 text-base text-desc-1 text-right">
                 <CmsEditable
                   as={RichText}
                   cmsFieldName="TileDescription"
@@ -51,7 +51,7 @@ export const CategoryListBlockComponent: CmsComponent<
                     key={index}
                     className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full"
                   >
-                    <div className="flex relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
+                    <div className="flex card-items relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
                       <CmsImage
                         loading="lazy"
                         src={category?.TileImage}
@@ -59,7 +59,9 @@ export const CategoryListBlockComponent: CmsComponent<
                         className="object-cover absolute inset-0 size-full"
                         layout="fill"
                       />
-                      {category?.TileTitle}
+                      <div className="card-image-overlay">
+                        <h4>{category?.TileTitle}</h4>
+                      </div>
                     </div>
                   </div>
                 ))}
