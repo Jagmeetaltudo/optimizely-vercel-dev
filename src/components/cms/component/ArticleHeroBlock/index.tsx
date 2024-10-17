@@ -1,3 +1,4 @@
+import CmsImage from "@/components/shared/cms_image";
 import {
   ArticleHeroBlockDataFragment,
   ArticleHeroBlockDataFragmentDoc,
@@ -10,29 +11,27 @@ export const ArticleHeroBlockComponent: CmsComponent<
   ArticleHeroBlockDataFragment
 > = ({ data }) => {
   return (
-    <section className="flex flex-col">
-      <div className="flex relative flex-col items-end px-20 w-full min-h-[560px] max-md:pl-5 max-md:max-w-full">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d340f7b29fe6efdc0db60ca42217fdb07e6c0d45536ab0e98cfdb1a36def710?placeholderIfAbsent=true&apiKey=55a1f87f288a4c39862df294d0639360"
-          alt="Coastal style interior design"
-          className="object-cover absolute inset-0 w-full h-full"
+    <section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
+    <CmsImage
+      src={data.Image}
+      alt="hero-image"
+      aria-hidden
+      priority
+      fill
+      className="object-cover z-0 w-full h-full max-md:max-w-full"
+    />
+    <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full w-[548px]">
+      <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 right-0 max-md:max-w-full min-h-[560px]">
+        <h1 className="text-3xl self-stretch-title uppercase text-teal-950">{data.Title}</h1>
+        <CmsEditable
+          as={RichText}
+          cmsFieldName="TileDescription"
+          text={data.Description?.json}
+          className="mt-10 text-base font-light text-teal-950 self-stretch-desc"
         />
-        <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full left-[892px] w-[548px]">
-          <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 max-md:max-w-full">
-            <h2 className="text-5xl text-white max-md:text-4xl">
-              {data.Title}
-            </h2>
-            <CmsEditable
-              as={RichText}
-              text={data.Description?.json}
-              className="mt-8 mb-0 text-base font-light text-white max-md:mb-2.5"
-              cmsFieldName="Description"
-            />
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 
