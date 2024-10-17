@@ -51,12 +51,8 @@ export const FeaturedTileBlockComponent: CmsComponent<
           {data.title}
         </h1>
 
-        <CmsEditable
-          as={RichText}
-          cmsFieldName="TileDescription"
-          text={data.description?.json}
-          className="mt-10 text-base font-light text-teal-950 self-stretch-desc"
-        />
+         <div className="mt-10 text-base font-light text-teal-950 self-stretch-desc">
+        {data.TileDescription}</div>
         {buttonData.map((button, index) => (
           <div key={index} className="primary_button">
             <CTAButtonBlock text={button.text} url={button.url} className={button.className} />
@@ -77,12 +73,7 @@ export const FeaturedTileBlockComponent: CmsComponent<
       <div className="absolute inset-y-0 right-0 z-0 flex flex-col max-w-full w-[548px]">
         <div className="flex flex-col items-start px-14 py-36 bg-white bg-opacity-70 max-md:px-5 max-md:py-24 right-0 max-md:max-w-full min-h-[560px]">
           <h1 className="text-3xl self-stretch-title uppercase text-teal-950">{data.title}</h1>
-          <CmsEditable
-            as={RichText}
-            cmsFieldName="TileDescription"
-            text={data.description?.json}
-            className="z-0 mt-10 text w-full object-contain max-md:max-w-full self-stretch-desc"
-          />
+          <div className="z-0 mt-10 text-base font-light text-teal-950 self-stretch-desc">{data.TileDescription}</div>
            {buttonData.map((button, index) => (
             <div key={index} className="primary_button">
           <CTAButtonBlock text={button.text} url={button.url} className={button.className} />

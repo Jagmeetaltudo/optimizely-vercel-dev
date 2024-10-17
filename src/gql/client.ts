@@ -272,9 +272,7 @@ export const CategoryListBlockDataFragmentDoc = /*#__PURE__*/ gql`
 export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment FeaturedTileBlockData on FeaturedTileBlock {
   title: TileTitle
-  description: TileDescription {
-    json
-  }
+  TileDescription
   buttontext: TileButtonText
   backgroundImage {
     ...ReferenceData
