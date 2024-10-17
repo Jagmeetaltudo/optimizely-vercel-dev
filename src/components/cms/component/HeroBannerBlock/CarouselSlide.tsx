@@ -46,7 +46,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   }));
   return (
     <>
-      <div className="component-content hero-banner-slide">
+      
       <CmsImage
         src={image}
         alt="hero-image"
@@ -57,7 +57,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
       />
         <div className={Styles.bannerTextWrapper}>
           <div className="container">
-            <div className="textbox">
+            <div className={Styles.textbox}>
               <div className="row">
                 <div className="col-12 col-md-7">
                   <h2>{title} </h2>
@@ -66,7 +66,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                   <p>{subtitle} </p>
                 </div>
               </div>
-              <div className="btn-wrap">
+              <div className={Styles.btnWrap}>
                 {buttonData.map((button, index) => (
                   <CTAButtonBlock
                     key={index}
@@ -79,7 +79,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
             </div>
           </div>
         </div>
-      </div>
+    
     </>
   );
 };

@@ -17,6 +17,256 @@
 .optly-contentLink {
   display: none
 }
+@charset "UTF-8";.slick-slider {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent
+}
+
+.slick-list,.slick-slider {
+  position: relative;
+  display: block
+}
+
+.slick-list {
+  // overflow: hidden;
+  margin: 0;
+  padding: 0
+}
+
+.slick-list:focus {
+  outline: none
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand
+}
+
+.slick-slider .slick-list,.slick-slider .slick-track {
+  transform: translateZ(0)
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.slick-track:after,.slick-track:before {
+  display: table;
+  content: ""
+}
+
+.slick-track:after {
+  clear: both
+}
+
+.slick-loading .slick-track {
+  visibility: hidden
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px
+}
+
+[dir=rtl] .slick-slide {
+  float: right
+}
+
+.slick-slide img {
+  display: block
+}
+
+.slick-slide.slick-loading img {
+  display: none
+}
+
+.slick-slide.dragging img {
+  pointer-events: none
+}
+
+.slick-initialized .slick-slide {
+  display: block
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent
+}
+
+.slick-arrow.slick-hidden {
+  display: none
+}
+
+.slick-loading .slick-list {
+  background: #fff url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/ajax-loader.0b80f665.gif) 50% no-repeat
+}
+
+@font-face {
+  font-family: slick;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/slick.25572f22.eot);
+  src: url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/slick.25572f22.eot?#iefix) format("embedded-opentype"),url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/slick.653a4cbb.woff) format("woff"),url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/slick.6aa1ee46.ttf) format("truetype"),url(https://xmc-eh-1uba15q3zjbfmgzqp0gzhh.sitecorecloud.io/_next/static/media/slick.f895cfdf.svg#slick) format("svg")
+}
+
+.slick-next,.slick-prev {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none
+}
+
+.slick-next,.slick-next:focus,.slick-next:hover,.slick-prev,.slick-prev:focus,.slick-prev:hover {
+  color: transparent;
+  outline: none;
+  background: transparent
+}
+
+.slick-next:focus:before,.slick-next:hover:before,.slick-prev:focus:before,.slick-prev:hover:before {
+  opacity: 1
+}
+
+.slick-next.slick-disabled:before,.slick-prev.slick-disabled:before {
+  opacity: .25
+}
+
+.slick-next:before,.slick-prev:before {
+  font-family: slick;
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.slick-prev {
+  left: -25px
+}
+
+[dir=rtl] .slick-prev {
+  right: -25px;
+  left: auto
+}
+
+.slick-prev:before {
+  content: "←"
+}
+
+[dir=rtl] .slick-prev:before {
+  content: "→"
+}
+
+.slick-next {
+  right: -25px
+}
+
+[dir=rtl] .slick-next {
+  right: auto;
+  left: -25px
+}
+
+.slick-next:before {
+  content: "→"
+}
+
+[dir=rtl] .slick-next:before {
+  content: "←"
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 30px
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0
+}
+
+.slick-dots li,.slick-dots li button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  padding: 5px;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent
+}
+
+.slick-dots li button:focus,.slick-dots li button:hover {
+  outline: none
+}
+
+.slick-dots li button:focus:before,.slick-dots li button:hover:before {
+  opacity: 1
+}
+
+.slick-dots li button:before {
+  font-family: slick;
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: .25;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: #000
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
@@ -29,8 +279,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-Light.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-Light.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-Light.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -38,8 +288,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-Roman.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-Roman.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-Roman.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-Roman.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -47,8 +297,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-Black.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-Black.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-Black.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-Black.woff') format('woff');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -56,8 +306,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-Bold.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-Bold.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-Bold.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -65,8 +315,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-ExtraBlackCn.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-ExtraBlackCn.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-ExtraBlackCn.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-ExtraBlackCn.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -74,8 +324,8 @@
 
 @font-face {
   font-family: 'Frutiger_LT_Pro';
-  src: url('/fonts/frutiger-pro/FrutigerLTPro-Italic.woff2') format('woff2'),
-    url('/fonts/frutiger-pro/FrutigerLTPro-Italic.woff') format('woff');
+  src: url('/fonts/FrutigerLTPro-Italic.woff2') format('woff2'),
+    url('/fonts/FrutigerLTPro-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -204,4 +454,174 @@ p {
   background-color: #6f9abb;
   color: #fff;
   border-color: #6f9abb;
+}
+.HeroCarousel_heroBannerSlider__FgZtq {
+  overflow: visible;
+}
+.opti-content-area  {
+  overflow: hidden;
+}
+.HeroCarousel_heroBannerSlider__FgZtq img {
+  position: relative!important;
+  z-index: 1;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1* var(--bs-gutter-y));
+  margin-right: calc(-.5* var(--bs-gutter-x));
+  margin-left: calc(-.5* var(--bs-gutter-x));
+}
+.row>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .col-md-7 {
+      flex: 0 0 auto;
+      width: 58.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .HeroCarousel_heroBannerSlider__FgZtq {
+      padding-bottom:3rem
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-list {
+      height:60rem
+  }
+}
+
+.HeroCarousel_heroBannerSlider__FgZtq .slick-slide {
+  position: relative
+}
+@media only screen and (max-width: 767px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-slide {
+      margin-bottom:3rem
+  }
+}
+
+
+
+
+.HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+  bottom: -1.5rem;
+  margin-left: auto;
+  margin-right: auto
+}
+
+@media only screen and (min-width: 768px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+      text-align:left;
+      position: relative;
+      bottom: 5rem
+  }
+}
+
+@media(min-width: 768px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+      max-width:720px
+  }
+}
+
+@media(min-width: 992px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+      max-width:960px
+  }
+}
+
+@media(min-width: 1200px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+      max-width:1140px
+  }
+}
+
+@media(min-width: 1400px) {
+  .HeroCarousel_heroBannerSlider__FgZtq .slick-dots {
+      max-width:1250px
+  }
+}
+ul.slick-dots {
+  z-index: 1
+}
+
+ul.slick-dots li {
+  width: 2rem;
+  height: 2rem
+}
+
+ul.slick-dots li button,ul.slick-dots li button:before {
+  width: 1.56rem;
+  height: 1.56rem;
+  transition: .3s ease
+}
+
+ul.slick-dots li button:before {
+  content: "";
+  opacity: .5;
+  border-radius: 5rem;
+  color: transparent;
+  background-color: #002a3a
+}
+
+ul.slick-dots li button:hover:before {
+  opacity: 1
+}
+
+@media only screen and (max-width: 767px) {
+  ul.slick-dots li button:hover:before {
+      opacity:.5
+  }
+}
+
+ul.slick-dots li.slick-active button:before {
+  content: "";
+  width: 1.56rem;
+  height: 1.56rem;
+  opacity: 1
+}
+
+@media only screen and (min-width: 768px) {
+  ul.slick-dots li.slick-active button:before {
+      background-color:#fff
+  }
+}
+.text-teal-large {
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: .76px;
+  color: #002a3a;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 1100px) {
+  .text-teal-large {
+      font-size: 48px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .text-teal-large {
+      letter-spacing: normal;
+      margin: 0 0 30px;
+  }
 }

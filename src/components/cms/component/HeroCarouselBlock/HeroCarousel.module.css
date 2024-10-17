@@ -1,5 +1,10 @@
+
+.carouselWrapper {
+  overflow: hidden;
+}
 .heroBannerSlider {
   position: relative;
+ clear: both;
 }
 .heroBannerSlider figure {
   margin-bottom: 0;
@@ -88,4 +93,85 @@
   margin-bottom: 2rem;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight700);
+}
+
+.bannerTextWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5.3rem 2.7rem 8rem;
+  z-index: 100;
+}
+@media only screen and (max-width: 767px) {
+  .bannerTextWrapper {
+      display:flex;
+      align-items: flex-end
+  }
+}
+
+.textbox {
+  max-width: 65rem;
+  background: hsla(0,0%,100%,.8);
+  padding: 2.1rem
+}
+.textbox h2 {
+  font-size: 38px;
+  margin-bottom: 0;
+  color:rgb(39, 39, 42);
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .textbox h2 {
+    font-size: 48px;
+
+  }
+}
+@media only screen and (max-width: 767px) {
+  .textbox {
+      padding:2rem 1.6rem;
+      text-align: center
+  }
+}
+.textbox p {
+  font-size: 16px;
+  color: rgb(102, 102, 102);
+  line-height: normal;
+  margin-top: 2rem;
+  font-weight: 300;
+}
+.btnWrap {
+  text-align: center;
+  margin-bottom: -5.5rem;
+  padding-top: 3rem
+}
+.btnWrap a {
+  background-color: #1d446b;
+  border: 1px solid #1d446b;
+  padding: 22px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  font-family: Frutiger_LT_Pro;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: .56px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+  width: auto
+}
+.btnWrap a:hover {
+  background-color: #6f9abb;
+  color: #fff;
+  border-color: #6f9abb;
 }
