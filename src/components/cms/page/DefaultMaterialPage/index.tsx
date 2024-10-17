@@ -16,20 +16,9 @@ export const DefaultMaterialPage: CmsComponent<
 
   return (
     <>
-      <CmsContentArea
-        items={data.HeaderContent}
-        fieldName="HeaderContent"
-      />
-     
-            <CmsContentArea
-              items={data.MainContent}
-              fieldName="MainContent"
-              className="w-full mt-[32pt]"
-            />
-      <CmsContentArea
-        items={data.FooterContent}
-        fieldName="FooterContent"
-      />
+      <CmsContentArea items={data.HeaderContent} fieldName="HeaderContent" />
+      <CmsContentArea items={data.MainContent} fieldName="MainContent" />
+      <CmsContentArea items={data.FooterContent} fieldName="FooterContent" />
     </>
   );
 };
