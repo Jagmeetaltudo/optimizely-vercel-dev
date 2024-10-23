@@ -37,7 +37,7 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
           className="object-cover z-0 w-full h-full max-md:max-w-full"
         />
         <div className="flex relative flex-col max-w-full w-[768px]">
-          <h2 className="text-5xl text-teal-950 max-md:max-w-full max-md:text-4xl">
+          <h2 className="text-5xl text-teal-950 text-teal-large max-md:max-w-full max-md:text-4xl">
             {data.title}
           </h2>
           <div className="flex flex-wrap gap-5 self-center mt-16 max-w-full max-md:mt-10">
