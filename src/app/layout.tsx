@@ -27,7 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
-        <script src="https://cdn.optimizely.com/js/6697360307257344.js" async></script>
+        {/* <script src="https://cdn.optimizely.com/js/6697360307257344.js" async></script> */}
         <script src="https://optimizely-vercel-dev.vercel.app/edge-client/v1/20979850399/6503637065662464" referrerPolicy="no-referrer-when-downgrade" async></script>      </head>
       <ThemeProvider value={{ theme: "system" }}>
         <Body>
