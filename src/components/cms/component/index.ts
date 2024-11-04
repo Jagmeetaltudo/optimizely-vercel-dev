@@ -11,6 +11,9 @@ import ArticleHeroBlock from "./ArticleHeroBlock";
 import ArticleCardListBlock from "./ArticleCardListBlock";
 import FooterComponent from "./Footer";
 import MainHeaderComponent from "./JWHeader/MainHeader";
+import ProductOverviewComponent from "./ProductOverviewBlock";
+import ProductConfiguratorComponent from "./ProductConfigratorBlock";
+import TabsBlockComponent from "./TabsBlock";
 
 export const componentDictionary : ComponentTypeDictionary = [
     {
@@ -56,6 +59,18 @@ export const componentDictionary : ComponentTypeDictionary = [
     {
         type: 'JWHeader',
         component: MainHeaderComponent
+    },
+    {
+        type: 'TabsBlock',
+        component: TabsBlockComponent
+    },
+    {
+        type: 'ProductOverviewBlock',
+        component: ProductOverviewComponent
+    },
+    {
+        type: 'ProductConfigratorBlock',
+        component: ProductConfiguratorComponent
     }
 ]
 

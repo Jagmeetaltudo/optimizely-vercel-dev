@@ -1857,7 +1857,7 @@ export type DateFilterInput = {
 
 /** Decay influences the weight of the score based on field values with a decay function */
 export type Decay = {
-  origin?: InputMaybe<Scalars['String']['input']>;
+  origin?: InputMaybe<Scalars['Date']['input']>;
   rate?: InputMaybe<Scalars['Float']['input']>;
   scale?: InputMaybe<Scalars['Int']['input']>;
 };
