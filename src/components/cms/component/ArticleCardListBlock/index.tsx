@@ -32,7 +32,7 @@ export const ArticleCardListBlockComponent: CmsComponent<
     image: item.Image
   }));
   return (
-    <div className="outer-padding">
+    <div className="outer-padding article-card-outer">
       <div className="mx-auto container">
         <div className="py-[32pt]">
     <section className="flex flex-col my-8">

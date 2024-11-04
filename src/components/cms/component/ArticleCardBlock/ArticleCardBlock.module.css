@@ -1,0 +1,38 @@
+.articleCard  figure{
+    overflow: hidden;
+}
+.articleCard figure img {
+    height:490px;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+}
+.articleCard:hover figure img {
+    transform: scale(1.1);
+}
+.articleCard h2 {
+    font-size: 22px;
+    font-family: Frutiger_LT_Pro;
+    font-weight: 300;
+    letter-spacing: .44px;
+    margin-bottom: 1.9rem;
+    transition: .3s ease-in-out;
+    color: #666;
+    line-height: normal;
+}
+.articleCard button {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .56px;
+    text-transform: uppercase;
+    color: #002a3a;
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+    line-height: normal;
+    margin-top: 5px;
+
+}
+.articleCard button:hover {
+    color: #6f9abb;
+}
