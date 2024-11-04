@@ -134,10 +134,10 @@
 }
 
 .logo {
-  aspect-ratio: 5.78;
+  /* aspect-ratio: 5.78; */
   object-fit: contain;
   object-position: center;
-  width: 208px;
+  width: 150px;
   margin-top: 30px;
   max-width: 100%;
 }

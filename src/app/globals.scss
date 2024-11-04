@@ -448,6 +448,7 @@ p {
   text-decoration: none;
   text-align: center;
   width: fit-content;
+  border-width: 3px;
 
 }
 .primary_button  a:hover {
@@ -624,4 +625,81 @@ ul.slick-dots li.slick-active button:before {
       letter-spacing: normal;
       margin: 0 0 30px;
   }
+}
+
+.article-card-outer .overflow-hidden{
+  overflow: visible!important;
+  }
+  .article-card-outer > div {
+    position: relative;
+  }
+  .article-card-outer > div:after {
+    position: absolute;
+    content: "";
+    background-color: rgba(255,255,255,0.7);
+    width:100%;
+    height: 100%;
+    left:100%;
+    top:0
+  }
+  .article-card-outer > div:before {
+    position: absolute;
+    content: "";
+    background-color: rgba(255,255,255,0.7);
+    width:100%;
+    height: 100%;
+    right:100%;
+    top:0
+  }
+
+  .article-card-outer button.shadow-md{
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    background: #1d446b;
+    z-index: 1;
+    transition: .35s ease-in-out;
+top:40%;
+font-size: 0px;
+    
+  }
+  .article-card-outer button.shadow-md[aria-label="Previous slide"] {
+    left: -5rem;
+  }
+  .article-card-outer button.shadow-md:before {
+    content: "";
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 7px;
+    opacity: 1;
+
+  }
+  .article-card-outer button.shadow-md[aria-label="Previous slide"]:before {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .article-card-outer button.shadow-md[aria-label="Next slide"]:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .article-card-outer button.shadow-md:after {
+    content: "";
+    position: absolute;
+    left: 36%;
+    top: 48%;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+  }
+  .article-card-outer button.shadow-md:hover {
+    background: #6f9abb;
+}
+
+.article-card-outer button.shadow-md[aria-label="Next slide"]:after {
+  left: 32%;
+}
+.article-card-outer button.shadow-md[aria-label="Next slide"] {
+  right: -5rem;
 }
