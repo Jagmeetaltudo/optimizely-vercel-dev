@@ -1,0 +1,4 @@
+fragment TabsContentBlockData on TabsContentBlock {
+Title
+SectionList{...RichTextSectionData}
+}

@@ -410,6 +410,29 @@ export const OfficeLocationDataFragmentDoc = /*#__PURE__*/ gql`
   email: OfficeEmail
 }
     `;
+export const RichTextSectionDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment RichTextSectionData on RichTextSection {
+  Section {
+    json
+  }
+}
+    `;
+export const TabsContentBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment TabsContentBlockData on TabsContentBlock {
+  Title
+  SectionList {
+    ...RichTextSectionData
+  }
+}
+    `;
+export const TabsBlockDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment TabsBlockData on TabsBlock {
+  Title
+  Tabs {
+    ...TabsContentBlockData
+  }
+}
+    `;
 export const ButtonBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ButtonBlockData on ButtonBlock {
   text
@@ -462,6 +485,9 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...InfoBlockData
   ...JWHeaderData
   ...OfficeLocationData
+  ...RichTextSectionData
+  ...TabsBlockData
+  ...TabsContentBlockData
   ...ButtonBlockData
   ...MegaMenuGroupBlockData
   ...NavigationMenuBlockData
@@ -574,6 +600,9 @@ ${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${JWHeaderDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
+${RichTextSectionDataFragmentDoc}
+${TabsBlockDataFragmentDoc}
+${TabsContentBlockDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}
@@ -642,6 +671,9 @@ ${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${JWHeaderDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
+${RichTextSectionDataFragmentDoc}
+${TabsBlockDataFragmentDoc}
+${TabsContentBlockDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${NavigationMenuBlockDataFragmentDoc}

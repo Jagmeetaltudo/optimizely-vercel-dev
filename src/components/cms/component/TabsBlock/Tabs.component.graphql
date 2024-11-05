@@ -1,0 +1,5 @@
+fragment TabsBlockData on TabsBlock {
+Title
+Tabs{...TabsContentBlockData}
+
+}

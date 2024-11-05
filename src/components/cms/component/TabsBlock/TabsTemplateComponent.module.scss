@@ -1,0 +1,122 @@
+
+.tabsTemplate h3 {
+  padding: 10px;
+}
+
+.tabsTemplate .tabContent h4 {
+  color: #333; /* Replace with actual color value */
+  font-family: 'Frutiger_LT_Pro';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.44px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc; /* Replace with actual color value */
+  margin-bottom: 30px;
+}
+
+.tabsTemplate .tabContent figure img {
+  width: 100%;
+  height: auto;
+}
+
+.tabsTemplate .tabContent .singleImageWrap {
+  padding-bottom: 2rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.tabsTemplate .tabContent .singleImageWrap .image {
+  min-width: 22rem;
+  max-width: 22rem;
+}
+
+.tabsTemplate .tabContent .singleImageWrap .bodyCopy {
+  flex: auto;
+  min-width: 33rem;
+}
+
+.tabsTemplate .tabContent .multiImageWrap {
+  gap: 20px;
+}
+
+.tabsTemplate .tabContent .colorsDesc {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ccc; /* Replace with actual color value */
+  margin-bottom: 30px;
+}
+
+.tabsTemplate .tabContent .colorsDesc h4 {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.tabsTemplate .tabContent .colorsDesc p {
+  font-size: 14px;
+}
+
+.tabsTemplate .tabContent .colorsImageRow {
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.tabsTemplate .tabContent .colorsImageRow .colorsImageWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabsTemplate .tabContent .colorsImageRow .colorsImageWrap .colorImage {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #f0f1f1;
+}
+
+.tabsTemplate .tabContent .colorsImageRow .colorsImageWrap .colorImage img {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  left: -10px;
+  top: -10px;
+}
+
+.tabsTemplate .tabContent .colorsImageRow .colorsImageWrap p {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .tabsTemplate h3 {
+    padding: 10px 0;
+  }
+
+  .tabsTemplate .tabContent .multiImageWrap {
+    gap: 30px;
+  }
+
+  .tabsTemplate .tabContent .colorsDesc {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .tabsTemplate .tabContent .colorsImageRow {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabsTemplate .tabContent .singleImageWrap {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tabsTemplate .tabContent .singleImageWrap .bodyCopy {
+    padding: 0 2rem;
+  }
+}

@@ -43,6 +43,9 @@ const documents = {
     "fragment InfoBlockData on InfoBlock {\n  title: InfoBlockTitle\n  descrip: InfoBlockDescription {\n    json\n  }\n}": types.InfoBlockDataFragmentDoc,
     "fragment JWHeaderData on JWHeader {\n  logo: HeaderLogo {\n    ...ReferenceData\n  }\n  bannerr: HeaderBanner {\n    ...ReferenceData\n  }\n  topbar: HeaderTopBar {\n    ... on JWHeaderTopBar {\n      LeftNavigationLinks {\n        ...LinkItemData\n      }\n      SearchIcon {\n        ...ReferenceData\n      }\n      FindAStore {\n        ...ReferenceData\n      }\n    }\n  }\n  mainNav: HeaderMainNavigation {\n    ... on JWMainNavigation {\n      Title\n      IsTabLayout\n      HeaderColumns {\n        ... on JWHeaderColumn {\n          HeaderColumnTitle\n          HeaderColumnLinks {\n            ...LinkItemData\n          }\n        }\n      }\n    }\n  }\n}": types.JWHeaderDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
+    "fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}": types.RichTextSectionDataFragmentDoc,
+    "fragment TabsBlockData on TabsBlock {\n  Title\n  Tabs {\n    ...TabsContentBlockData\n  }\n}": types.TabsBlockDataFragmentDoc,
+    "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionList {\n    ...RichTextSectionData\n  }\n}": types.TabsContentBlockDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
@@ -201,6 +204,18 @@ export function gql(source: "fragment JWHeaderData on JWHeader {\n  logo: Header
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}"): (typeof documents)["fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}"): (typeof documents)["fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment TabsBlockData on TabsBlock {\n  Title\n  Tabs {\n    ...TabsContentBlockData\n  }\n}"): (typeof documents)["fragment TabsBlockData on TabsBlock {\n  Title\n  Tabs {\n    ...TabsContentBlockData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionList {\n    ...RichTextSectionData\n  }\n}"): (typeof documents)["fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionList {\n    ...RichTextSectionData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

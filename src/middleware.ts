@@ -59,7 +59,7 @@ export function middleware(request: NextRequest)
     const url = request.nextUrl.clone();
 
   if (url.pathname === '/') {
-    url.pathname = '/home-new';
+  //  url.pathname = '/home-new';
     return NextResponse.redirect(url);
   }
     return NextResponse.next()
