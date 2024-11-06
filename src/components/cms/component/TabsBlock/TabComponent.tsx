@@ -48,7 +48,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
         {tabs.map((tab, index) => (
           <Tabs
             key={index}
-            label={tab?.Title}
+            label={tab?.Title || ''}
             isActive={activeTab === index}
             onClick={() => setActiveTab(index)}
           />
