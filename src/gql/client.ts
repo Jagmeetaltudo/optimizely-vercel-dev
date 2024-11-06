@@ -420,8 +420,8 @@ export const RichTextSectionDataFragmentDoc = /*#__PURE__*/ gql`
 export const TabsContentBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment TabsContentBlockData on TabsContentBlock {
   Title
-  SectionList {
-    ...RichTextSectionData
+  SectionContent {
+    json
   }
 }
     `;

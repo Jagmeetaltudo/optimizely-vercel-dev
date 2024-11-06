@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ColorOption from "./ColorOption";
 import { InteriorColorOption, ExteriorColorOption } from './types';
 import Tabs from "./Tabs";
+import { IContentDataFragment, TabsContentBlockDataFragment } from "../../../../gql/graphql";
 
 interface TabComponentProps {
   tabData: any;
@@ -19,21 +20,41 @@ const exteriorColorOptions: ExteriorColorOption[] = [
   { color: 'Pebble', imageSrc: 'https://cdn.builder.io/api/v1/image/assets/55a1f87f288a4c39862df294d0639360/fb7f4dfa8960e91c182e153452ab293d530e10555773191c7a6748f44966236f?apiKey=55a1f87f288a4c39862df294d0639360&' },
   { color: 'Slate', imageSrc: 'https://cdn.builder.io/api/v1/image/assets/55a1f87f288a4c39862df294d0639360/cdf3e98c48850915f9c56485d18140e637cdaddcae67d3d3c8c49d425a10e62c?apiKey=55a1f87f288a4c39862df294d0639360&' },
 ];
+export type TabsItems = Array<
+TabsContentBlockDataFragment & IContentDataFragment
+>;
+
+function filterMaybeArray<T>(
+  input: Array<T | null> | T | null | undefined
+): Array<T> {
+  if (!input) return [];
+  if (!Array.isArray(input)) return [input];
+  return input.filter((x) => x) as Array<T>;
+}
+
+interface tabsData {
+  title: string;
+  tabs: any;
+}
+
 
 const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
-  const [activeTab, setActiveTab] = useState<string>('Color Options');
+  const [activeTab, setActiveTab] = useState<number>(1);
+  const tabs = filterMaybeArray(tabData) as TabsItems;
+
   return (
     <>
       <nav className="flex flex-wrap gap-8 mt-14 text-sm text-center uppercase text-zinc-600 max-md:mt-10">
-        {tabData.map((tab, index) => (
-         <Tabs
-         key={index}
-         label={tab?.Title}
-         isActive={activeTab === tab}
-         onClick={() => setActiveTab(tab)}
-       />
+        {tabs.map((tab, index) => (
+          <Tabs
+            key={index}
+            label={tab?.Title}
+            isActive={activeTab === index}
+            onClick={() => setActiveTab(index)}
+          />
         ))}
       </nav>
+      {/* <div>{tabs[activeTab].SectionContent.json}</div> */}
       <h3 className="self-stretch py-3.5 mt-10 text-2xl tracking-tight text-zinc-600 max-md:pr-5 max-md:max-w-full">
         Interior Colour Options
       </h3>
@@ -82,5 +103,4 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
     </>
   );
 };
-
 export default TabComponent;
