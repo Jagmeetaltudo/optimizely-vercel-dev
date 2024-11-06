@@ -1596,6 +1596,76 @@ export type CompositionStructureNodeWhereInput = {
   type?: InputMaybe<StringFilterInput>;
 };
 
+export type ConfigItemBlock = IData & _IComponent & _IContent & {
+  __typename?: 'ConfigItemBlock';
+  Features?: Maybe<Array<Maybe<_IContent>>>;
+  Title?: Maybe<Scalars['String']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type ConfigItemBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type ConfigItemBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type ConfigItemBlockAutocomplete = {
+  __typename?: 'ConfigItemBlockAutocomplete';
+  Features?: Maybe<_IContentAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type ConfigItemBlockFacet = {
+  __typename?: 'ConfigItemBlockFacet';
+  Features?: Maybe<_IContentFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type ConfigItemBlockOrderByInput = {
+  Features?: InputMaybe<_IContentOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ConfigItemBlockOutput = {
+  __typename?: 'ConfigItemBlockOutput';
+  autocomplete?: Maybe<ConfigItemBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<ConfigItemBlockFacet>;
+  items?: Maybe<Array<Maybe<ConfigItemBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type ConfigItemBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ConfigItemBlockWhereInput = {
+  Features?: InputMaybe<_IContentWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<ConfigItemBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<ConfigItemBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<ConfigItemBlockWhereInput>>>;
+};
+
 export type ContentMetadata = IContentMetadata & {
   __typename?: 'ContentMetadata';
   created?: Maybe<Scalars['DateTime']['output']>;
@@ -4582,6 +4652,147 @@ export type ParagraphElementWhereInput = {
   text?: InputMaybe<RichTextWhereInput>;
 };
 
+export type ProductConfiguratorBlock = IData & _IComponent & _IContent & {
+  __typename?: 'ProductConfiguratorBlock';
+  Configurations?: Maybe<Array<Maybe<_IContent>>>;
+  Subtitle?: Maybe<Scalars['String']['output']>;
+  Title?: Maybe<Scalars['String']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type ProductConfiguratorBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type ProductConfiguratorBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type ProductConfiguratorBlockAutocomplete = {
+  __typename?: 'ProductConfiguratorBlockAutocomplete';
+  Configurations?: Maybe<_IContentAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type ProductConfiguratorBlockFacet = {
+  __typename?: 'ProductConfiguratorBlockFacet';
+  Configurations?: Maybe<_IContentFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type ProductConfiguratorBlockOrderByInput = {
+  Configurations?: InputMaybe<_IContentOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ProductConfiguratorBlockOutput = {
+  __typename?: 'ProductConfiguratorBlockOutput';
+  autocomplete?: Maybe<ProductConfiguratorBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<ProductConfiguratorBlockFacet>;
+  items?: Maybe<Array<Maybe<ProductConfiguratorBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type ProductConfiguratorBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ProductConfiguratorBlockWhereInput = {
+  Configurations?: InputMaybe<_IContentWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<ProductConfiguratorBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<ProductConfiguratorBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<ProductConfiguratorBlockWhereInput>>>;
+};
+
+export type ProductFeatureBlock = IData & _IComponent & _IContent & {
+  __typename?: 'ProductFeatureBlock';
+  Image?: Maybe<ContentReference>;
+  Title?: Maybe<Scalars['String']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type ProductFeatureBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type ProductFeatureBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type ProductFeatureBlockAutocomplete = {
+  __typename?: 'ProductFeatureBlockAutocomplete';
+  Image?: Maybe<ContentReferenceAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type ProductFeatureBlockFacet = {
+  __typename?: 'ProductFeatureBlockFacet';
+  Image?: Maybe<ContentReferenceFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type ProductFeatureBlockOrderByInput = {
+  Image?: InputMaybe<ContentReferenceOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ProductFeatureBlockOutput = {
+  __typename?: 'ProductFeatureBlockOutput';
+  autocomplete?: Maybe<ProductFeatureBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<ProductFeatureBlockFacet>;
+  items?: Maybe<Array<Maybe<ProductFeatureBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type ProductFeatureBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ProductFeatureBlockWhereInput = {
+  Image?: InputMaybe<ContentReferenceWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<ProductFeatureBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<ProductFeatureBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<ProductFeatureBlockWhereInput>>>;
+};
+
 export type Query = {
   __typename?: 'Query';
   ArticleCardBlock?: Maybe<ArticleCardBlockOutput>;
@@ -4601,6 +4812,7 @@ export type Query = {
   CardBlock?: Maybe<CardBlockOutput>;
   CategoryListBlock?: Maybe<CategoryListBlockOutput>;
   CategoryTileBlock?: Maybe<CategoryTileBlockOutput>;
+  ConfigItemBlock?: Maybe<ConfigItemBlockOutput>;
   Data?: Maybe<DataOutput>;
   DefaultImage?: Maybe<DefaultImageOutput>;
   DefaultMaterialPage?: Maybe<DefaultMaterialPageOutput>;
@@ -4630,6 +4842,8 @@ export type Query = {
   OfficeLocation?: Maybe<OfficeLocationOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphElement?: Maybe<ParagraphElementOutput>;
+  ProductConfiguratorBlock?: Maybe<ProductConfiguratorBlockOutput>;
+  ProductFeatureBlock?: Maybe<ProductFeatureBlockOutput>;
   RichTextSection?: Maybe<RichTextSectionOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
   TabsBlock?: Maybe<TabsBlockOutput>;
@@ -4837,6 +5051,17 @@ export type QueryCategoryTileBlockArgs = {
   orderBy?: InputMaybe<CategoryTileBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<CategoryTileBlockWhereInput>;
+};
+
+
+export type QueryConfigItemBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ConfigItemBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ConfigItemBlockWhereInput>;
 };
 
 
@@ -5159,6 +5384,28 @@ export type QueryParagraphElementArgs = {
 };
 
 
+export type QueryProductConfiguratorBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ProductConfiguratorBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ProductConfiguratorBlockWhereInput>;
+};
+
+
+export type QueryProductFeatureBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ProductFeatureBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ProductFeatureBlockWhereInput>;
+};
+
+
 export type QueryRichTextSectionArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -5397,6 +5644,7 @@ export type QueryRef = {
   CardBlock?: Maybe<CardBlockOutput>;
   CategoryListBlock?: Maybe<CategoryListBlockOutput>;
   CategoryTileBlock?: Maybe<CategoryTileBlockOutput>;
+  ConfigItemBlock?: Maybe<ConfigItemBlockOutput>;
   Data?: Maybe<DataOutput>;
   DefaultImage?: Maybe<DefaultImageOutput>;
   DefaultMaterialPage?: Maybe<DefaultMaterialPageOutput>;
@@ -5426,6 +5674,8 @@ export type QueryRef = {
   OfficeLocation?: Maybe<OfficeLocationOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphElement?: Maybe<ParagraphElementOutput>;
+  ProductConfiguratorBlock?: Maybe<ProductConfiguratorBlockOutput>;
+  ProductFeatureBlock?: Maybe<ProductFeatureBlockOutput>;
   RichTextSection?: Maybe<RichTextSectionOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
   TabsBlock?: Maybe<TabsBlockOutput>;
@@ -5633,6 +5883,17 @@ export type QueryRefCategoryTileBlockArgs = {
   orderBy?: InputMaybe<CategoryTileBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<CategoryTileBlockWhereInput>;
+};
+
+
+export type QueryRefConfigItemBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ConfigItemBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ConfigItemBlockWhereInput>;
 };
 
 
@@ -5952,6 +6213,28 @@ export type QueryRefParagraphElementArgs = {
   orderBy?: InputMaybe<ParagraphElementOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<ParagraphElementWhereInput>;
+};
+
+
+export type QueryRefProductConfiguratorBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ProductConfiguratorBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ProductConfiguratorBlockWhereInput>;
+};
+
+
+export type QueryRefProductFeatureBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ProductFeatureBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ProductFeatureBlockWhereInput>;
 };
 
 
@@ -7914,7 +8197,7 @@ export type getContentTypeQueryVariables = Exact<{
 }>;
 
 
-export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<{ __typename?: 'ArticleCardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleCardListBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleGroupPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleHeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticlePage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BannerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTADefaultTileElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTATileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CategoryListBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CategoryTileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultImage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultMaterialPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultVideo', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Dictionary', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DictionaryItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'FeaturedTileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Footer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'FooterColumn', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeaderBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBannerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroCarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageBanner', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'InfoBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeader', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeaderColumn', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeaderTopBar', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWMainNavigation', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWSocialIcon', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'NavigationMenuBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OfficeLocation', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TabsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TabsContentBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TitleAndDescriptionElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'WebsiteFooter', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Element', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
+export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<{ __typename?: 'ArticleCardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleCardListBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleGroupPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleHeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticlePage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BannerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTADefaultTileElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTATileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CategoryListBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CategoryTileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ConfigItemBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultImage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultMaterialPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultVideo', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Dictionary', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DictionaryItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'FeaturedTileBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Footer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'FooterColumn', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeaderBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBannerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroCarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageBanner', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'InfoBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeader', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeaderColumn', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWHeaderTopBar', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWMainNavigation', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'JWSocialIcon', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'NavigationMenuBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OfficeLocation', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ProductConfiguratorBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ProductFeatureBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TabsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TabsContentBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TitleAndDescriptionElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'WebsiteFooter', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Element', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
 
 export type ReferenceDataFragment = { __typename?: 'ContentReference', key?: string | null, url?: (
     { __typename?: 'ContentUrl' }
@@ -8217,6 +8500,11 @@ type IContentListItem_CategoryTileBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_CategoryTileBlock_Fragment' };
 
+type IContentListItem_ConfigItemBlock_Fragment = (
+  { __typename?: 'ConfigItemBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_ConfigItemBlock_Fragment' };
+
 type IContentListItem_DefaultImage_Fragment = (
   { __typename?: 'DefaultImage' }
   & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
@@ -8357,6 +8645,16 @@ type IContentListItem_ParagraphElement_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_ParagraphElement_Fragment' };
 
+type IContentListItem_ProductConfiguratorBlock_Fragment = (
+  { __typename?: 'ProductConfiguratorBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_ProductConfiguratorBlock_Fragment' };
+
+type IContentListItem_ProductFeatureBlock_Fragment = (
+  { __typename?: 'ProductFeatureBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_ProductFeatureBlock_Fragment' };
+
 type IContentListItem_RichTextSection_Fragment = (
   { __typename?: 'RichTextSection' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment } }
@@ -8457,7 +8755,7 @@ type IContentListItem__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem__Video_Fragment' };
 
-export type IContentListItemFragment = IContentListItem_ArticleCardBlock_Fragment | IContentListItem_ArticleCardListBlock_Fragment | IContentListItem_ArticleGroupPage_Fragment | IContentListItem_ArticleHeroBlock_Fragment | IContentListItem_ArticleListElement_Fragment | IContentListItem_ArticlePage_Fragment | IContentListItem_BannerBlock_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAButtonBlock_Fragment | IContentListItem_CTADefaultTileElement_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CTATileBlock_Fragment | IContentListItem_CardBlock_Fragment | IContentListItem_CategoryListBlock_Fragment | IContentListItem_CategoryTileBlock_Fragment | IContentListItem_DefaultImage_Fragment | IContentListItem_DefaultMaterialPage_Fragment | IContentListItem_DefaultVideo_Fragment | IContentListItem_Dictionary_Fragment | IContentListItem_DictionaryItem_Fragment | IContentListItem_FeaturedTileBlock_Fragment | IContentListItem_Footer_Fragment | IContentListItem_FooterColumn_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeaderBlock_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBannerBlock_Fragment | IContentListItem_HeroCarouselBlock_Fragment | IContentListItem_Image_Fragment | IContentListItem_ImageBanner_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_InfoBlock_Fragment | IContentListItem_JWHeader_Fragment | IContentListItem_JWHeaderColumn_Fragment | IContentListItem_JWHeaderTopBar_Fragment | IContentListItem_JWMainNavigation_Fragment | IContentListItem_JWSocialIcon_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_NavigationMenuBlock_Fragment | IContentListItem_OfficeLocation_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_RichTextSection_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TabsBlock_Fragment | IContentListItem_TabsContentBlock_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextElement_Fragment | IContentListItem_TitleAndDescriptionElement_Fragment | IContentListItem_Video_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem_WebsiteFooter_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Element_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment;
+export type IContentListItemFragment = IContentListItem_ArticleCardBlock_Fragment | IContentListItem_ArticleCardListBlock_Fragment | IContentListItem_ArticleGroupPage_Fragment | IContentListItem_ArticleHeroBlock_Fragment | IContentListItem_ArticleListElement_Fragment | IContentListItem_ArticlePage_Fragment | IContentListItem_BannerBlock_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAButtonBlock_Fragment | IContentListItem_CTADefaultTileElement_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CTATileBlock_Fragment | IContentListItem_CardBlock_Fragment | IContentListItem_CategoryListBlock_Fragment | IContentListItem_CategoryTileBlock_Fragment | IContentListItem_ConfigItemBlock_Fragment | IContentListItem_DefaultImage_Fragment | IContentListItem_DefaultMaterialPage_Fragment | IContentListItem_DefaultVideo_Fragment | IContentListItem_Dictionary_Fragment | IContentListItem_DictionaryItem_Fragment | IContentListItem_FeaturedTileBlock_Fragment | IContentListItem_Footer_Fragment | IContentListItem_FooterColumn_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeaderBlock_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBannerBlock_Fragment | IContentListItem_HeroCarouselBlock_Fragment | IContentListItem_Image_Fragment | IContentListItem_ImageBanner_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_InfoBlock_Fragment | IContentListItem_JWHeader_Fragment | IContentListItem_JWHeaderColumn_Fragment | IContentListItem_JWHeaderTopBar_Fragment | IContentListItem_JWMainNavigation_Fragment | IContentListItem_JWSocialIcon_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_NavigationMenuBlock_Fragment | IContentListItem_OfficeLocation_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_ProductConfiguratorBlock_Fragment | IContentListItem_ProductFeatureBlock_Fragment | IContentListItem_RichTextSection_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TabsBlock_Fragment | IContentListItem_TabsContentBlock_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextElement_Fragment | IContentListItem_TitleAndDescriptionElement_Fragment | IContentListItem_Video_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem_WebsiteFooter_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Element_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment;
 
 type PageData_ArticleCardBlock_Fragment = (
   { __typename?: 'ArticleCardBlock' }
@@ -8543,6 +8841,11 @@ type PageData_CategoryTileBlock_Fragment = (
   { __typename?: 'CategoryTileBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_CategoryTileBlock_Fragment' };
+
+type PageData_ConfigItemBlock_Fragment = (
+  { __typename?: 'ConfigItemBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_ConfigItemBlock_Fragment' };
 
 type PageData_DefaultImage_Fragment = (
   { __typename?: 'DefaultImage' }
@@ -8684,6 +8987,16 @@ type PageData_ParagraphElement_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_ParagraphElement_Fragment' };
 
+type PageData_ProductConfiguratorBlock_Fragment = (
+  { __typename?: 'ProductConfiguratorBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_ProductConfiguratorBlock_Fragment' };
+
+type PageData_ProductFeatureBlock_Fragment = (
+  { __typename?: 'ProductFeatureBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_ProductFeatureBlock_Fragment' };
+
 type PageData_RichTextSection_Fragment = (
   { __typename?: 'RichTextSection' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment } }
@@ -8784,7 +9097,7 @@ type PageData__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'PageData__Video_Fragment' };
 
-export type PageDataFragment = PageData_ArticleCardBlock_Fragment | PageData_ArticleCardListBlock_Fragment | PageData_ArticleGroupPage_Fragment | PageData_ArticleHeroBlock_Fragment | PageData_ArticleListElement_Fragment | PageData_ArticlePage_Fragment | PageData_BannerBlock_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAButtonBlock_Fragment | PageData_CTADefaultTileElement_Fragment | PageData_CTAElement_Fragment | PageData_CTATileBlock_Fragment | PageData_CardBlock_Fragment | PageData_CategoryListBlock_Fragment | PageData_CategoryTileBlock_Fragment | PageData_DefaultImage_Fragment | PageData_DefaultMaterialPage_Fragment | PageData_DefaultVideo_Fragment | PageData_Dictionary_Fragment | PageData_DictionaryItem_Fragment | PageData_FeaturedTileBlock_Fragment | PageData_Footer_Fragment | PageData_FooterColumn_Fragment | PageData_GenericMedia_Fragment | PageData_HeaderBlock_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBannerBlock_Fragment | PageData_HeroCarouselBlock_Fragment | PageData_Image_Fragment | PageData_ImageBanner_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_InfoBlock_Fragment | PageData_JWHeader_Fragment | PageData_JWHeaderColumn_Fragment | PageData_JWHeaderTopBar_Fragment | PageData_JWMainNavigation_Fragment | PageData_JWSocialIcon_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_NavigationMenuBlock_Fragment | PageData_OfficeLocation_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_RichTextSection_Fragment | PageData_SysContentFolder_Fragment | PageData_TabsBlock_Fragment | PageData_TabsContentBlock_Fragment | PageData_TestimonialElement_Fragment | PageData_TextElement_Fragment | PageData_TitleAndDescriptionElement_Fragment | PageData_Video_Fragment | PageData_VideoMedia_Fragment | PageData_WebsiteFooter_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Element_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment;
+export type PageDataFragment = PageData_ArticleCardBlock_Fragment | PageData_ArticleCardListBlock_Fragment | PageData_ArticleGroupPage_Fragment | PageData_ArticleHeroBlock_Fragment | PageData_ArticleListElement_Fragment | PageData_ArticlePage_Fragment | PageData_BannerBlock_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAButtonBlock_Fragment | PageData_CTADefaultTileElement_Fragment | PageData_CTAElement_Fragment | PageData_CTATileBlock_Fragment | PageData_CardBlock_Fragment | PageData_CategoryListBlock_Fragment | PageData_CategoryTileBlock_Fragment | PageData_ConfigItemBlock_Fragment | PageData_DefaultImage_Fragment | PageData_DefaultMaterialPage_Fragment | PageData_DefaultVideo_Fragment | PageData_Dictionary_Fragment | PageData_DictionaryItem_Fragment | PageData_FeaturedTileBlock_Fragment | PageData_Footer_Fragment | PageData_FooterColumn_Fragment | PageData_GenericMedia_Fragment | PageData_HeaderBlock_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBannerBlock_Fragment | PageData_HeroCarouselBlock_Fragment | PageData_Image_Fragment | PageData_ImageBanner_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_InfoBlock_Fragment | PageData_JWHeader_Fragment | PageData_JWHeaderColumn_Fragment | PageData_JWHeaderTopBar_Fragment | PageData_JWMainNavigation_Fragment | PageData_JWSocialIcon_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_NavigationMenuBlock_Fragment | PageData_OfficeLocation_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_ProductConfiguratorBlock_Fragment | PageData_ProductFeatureBlock_Fragment | PageData_RichTextSection_Fragment | PageData_SysContentFolder_Fragment | PageData_TabsBlock_Fragment | PageData_TabsContentBlock_Fragment | PageData_TestimonialElement_Fragment | PageData_TextElement_Fragment | PageData_TitleAndDescriptionElement_Fragment | PageData_Video_Fragment | PageData_VideoMedia_Fragment | PageData_WebsiteFooter_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Element_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment;
 
 type CompositionData_CompositionElementNode_Fragment = { __typename?: 'CompositionElementNode', type?: string | null, key?: string | null, name?: string | null, layoutType?: string | null, template?: string | null, element?: (
     { __typename?: 'ArticleListElement' }
@@ -8908,6 +9221,11 @@ type BlockData_CategoryTileBlock_Fragment = (
   { __typename?: 'CategoryTileBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment;'CategoryTileBlockDataFragment': CategoryTileBlockDataFragment } }
 ) & { ' $fragmentName'?: 'BlockData_CategoryTileBlock_Fragment' };
+
+type BlockData_ConfigItemBlock_Fragment = (
+  { __typename?: 'ConfigItemBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_ConfigItemBlock_Fragment' };
 
 type BlockData_DefaultImage_Fragment = (
   { __typename?: 'DefaultImage' }
@@ -9049,6 +9367,16 @@ type BlockData_ParagraphElement_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_ParagraphElement_Fragment' };
 
+type BlockData_ProductConfiguratorBlock_Fragment = (
+  { __typename?: 'ProductConfiguratorBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_ProductConfiguratorBlock_Fragment' };
+
+type BlockData_ProductFeatureBlock_Fragment = (
+  { __typename?: 'ProductFeatureBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_ProductFeatureBlock_Fragment' };
+
 type BlockData_RichTextSection_Fragment = (
   { __typename?: 'RichTextSection' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment;'RichTextSectionDataFragment': RichTextSectionDataFragment } }
@@ -9149,7 +9477,7 @@ type BlockData__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData__Video_Fragment' };
 
-export type BlockDataFragment = BlockData_ArticleCardBlock_Fragment | BlockData_ArticleCardListBlock_Fragment | BlockData_ArticleGroupPage_Fragment | BlockData_ArticleHeroBlock_Fragment | BlockData_ArticleListElement_Fragment | BlockData_ArticlePage_Fragment | BlockData_BannerBlock_Fragment | BlockData_BlankExperience_Fragment | BlockData_BlankSection_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAButtonBlock_Fragment | BlockData_CTADefaultTileElement_Fragment | BlockData_CTAElement_Fragment | BlockData_CTATileBlock_Fragment | BlockData_CardBlock_Fragment | BlockData_CategoryListBlock_Fragment | BlockData_CategoryTileBlock_Fragment | BlockData_DefaultImage_Fragment | BlockData_DefaultMaterialPage_Fragment | BlockData_DefaultVideo_Fragment | BlockData_Dictionary_Fragment | BlockData_DictionaryItem_Fragment | BlockData_FeaturedTileBlock_Fragment | BlockData_Footer_Fragment | BlockData_FooterColumn_Fragment | BlockData_GenericMedia_Fragment | BlockData_HeaderBlock_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBannerBlock_Fragment | BlockData_HeroCarouselBlock_Fragment | BlockData_Image_Fragment | BlockData_ImageBanner_Fragment | BlockData_ImageElement_Fragment | BlockData_ImageMedia_Fragment | BlockData_InfoBlock_Fragment | BlockData_JWHeader_Fragment | BlockData_JWHeaderColumn_Fragment | BlockData_JWHeaderTopBar_Fragment | BlockData_JWMainNavigation_Fragment | BlockData_JWSocialIcon_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_NavigationMenuBlock_Fragment | BlockData_OfficeLocation_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_RichTextSection_Fragment | BlockData_SysContentFolder_Fragment | BlockData_TabsBlock_Fragment | BlockData_TabsContentBlock_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextElement_Fragment | BlockData_TitleAndDescriptionElement_Fragment | BlockData_Video_Fragment | BlockData_VideoMedia_Fragment | BlockData_WebsiteFooter_Fragment | BlockData__Component_Fragment | BlockData__Content_Fragment | BlockData__Element_Fragment | BlockData__Experience_Fragment | BlockData__Folder_Fragment | BlockData__Image_Fragment | BlockData__Media_Fragment | BlockData__Page_Fragment | BlockData__Section_Fragment | BlockData__Video_Fragment;
+export type BlockDataFragment = BlockData_ArticleCardBlock_Fragment | BlockData_ArticleCardListBlock_Fragment | BlockData_ArticleGroupPage_Fragment | BlockData_ArticleHeroBlock_Fragment | BlockData_ArticleListElement_Fragment | BlockData_ArticlePage_Fragment | BlockData_BannerBlock_Fragment | BlockData_BlankExperience_Fragment | BlockData_BlankSection_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAButtonBlock_Fragment | BlockData_CTADefaultTileElement_Fragment | BlockData_CTAElement_Fragment | BlockData_CTATileBlock_Fragment | BlockData_CardBlock_Fragment | BlockData_CategoryListBlock_Fragment | BlockData_CategoryTileBlock_Fragment | BlockData_ConfigItemBlock_Fragment | BlockData_DefaultImage_Fragment | BlockData_DefaultMaterialPage_Fragment | BlockData_DefaultVideo_Fragment | BlockData_Dictionary_Fragment | BlockData_DictionaryItem_Fragment | BlockData_FeaturedTileBlock_Fragment | BlockData_Footer_Fragment | BlockData_FooterColumn_Fragment | BlockData_GenericMedia_Fragment | BlockData_HeaderBlock_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBannerBlock_Fragment | BlockData_HeroCarouselBlock_Fragment | BlockData_Image_Fragment | BlockData_ImageBanner_Fragment | BlockData_ImageElement_Fragment | BlockData_ImageMedia_Fragment | BlockData_InfoBlock_Fragment | BlockData_JWHeader_Fragment | BlockData_JWHeaderColumn_Fragment | BlockData_JWHeaderTopBar_Fragment | BlockData_JWMainNavigation_Fragment | BlockData_JWSocialIcon_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_NavigationMenuBlock_Fragment | BlockData_OfficeLocation_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_ProductConfiguratorBlock_Fragment | BlockData_ProductFeatureBlock_Fragment | BlockData_RichTextSection_Fragment | BlockData_SysContentFolder_Fragment | BlockData_TabsBlock_Fragment | BlockData_TabsContentBlock_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextElement_Fragment | BlockData_TitleAndDescriptionElement_Fragment | BlockData_Video_Fragment | BlockData_VideoMedia_Fragment | BlockData_WebsiteFooter_Fragment | BlockData__Component_Fragment | BlockData__Content_Fragment | BlockData__Element_Fragment | BlockData__Experience_Fragment | BlockData__Folder_Fragment | BlockData__Image_Fragment | BlockData__Media_Fragment | BlockData__Page_Fragment | BlockData__Section_Fragment | BlockData__Video_Fragment;
 
 type IContentInfo_ContentMetadata_Fragment = { __typename?: 'ContentMetadata', key?: string | null, locale?: string | null, types?: Array<string | null> | null, displayName?: string | null, version?: string | null, url?: (
     { __typename?: 'ContentUrl' }
@@ -9234,6 +9562,9 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
       { __typename?: 'CategoryTileBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_CategoryTileBlock_Fragment': BlockData_CategoryTileBlock_Fragment;'PageData_CategoryTileBlock_Fragment': PageData_CategoryTileBlock_Fragment } }
     ) | (
+      { __typename?: 'ConfigItemBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_ConfigItemBlock_Fragment': BlockData_ConfigItemBlock_Fragment;'PageData_ConfigItemBlock_Fragment': PageData_ConfigItemBlock_Fragment } }
+    ) | (
       { __typename?: 'DefaultImage' }
       & { ' $fragmentRefs'?: { 'BlockData_DefaultImage_Fragment': BlockData_DefaultImage_Fragment;'PageData_DefaultImage_Fragment': PageData_DefaultImage_Fragment } }
     ) | (
@@ -9317,6 +9648,12 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
     ) | (
       { __typename?: 'ParagraphElement' }
       & { ' $fragmentRefs'?: { 'BlockData_ParagraphElement_Fragment': BlockData_ParagraphElement_Fragment;'PageData_ParagraphElement_Fragment': PageData_ParagraphElement_Fragment } }
+    ) | (
+      { __typename?: 'ProductConfiguratorBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_ProductConfiguratorBlock_Fragment': BlockData_ProductConfiguratorBlock_Fragment;'PageData_ProductConfiguratorBlock_Fragment': PageData_ProductConfiguratorBlock_Fragment } }
+    ) | (
+      { __typename?: 'ProductFeatureBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_ProductFeatureBlock_Fragment': BlockData_ProductFeatureBlock_Fragment;'PageData_ProductFeatureBlock_Fragment': PageData_ProductFeatureBlock_Fragment } }
     ) | (
       { __typename?: 'RichTextSection' }
       & { ' $fragmentRefs'?: { 'BlockData_RichTextSection_Fragment': BlockData_RichTextSection_Fragment;'PageData_RichTextSection_Fragment': PageData_RichTextSection_Fragment } }
@@ -9439,6 +9776,9 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
       { __typename?: 'CategoryTileBlock' }
       & { ' $fragmentRefs'?: { 'PageData_CategoryTileBlock_Fragment': PageData_CategoryTileBlock_Fragment } }
     ) | (
+      { __typename?: 'ConfigItemBlock' }
+      & { ' $fragmentRefs'?: { 'PageData_ConfigItemBlock_Fragment': PageData_ConfigItemBlock_Fragment } }
+    ) | (
       { __typename?: 'DefaultImage' }
       & { ' $fragmentRefs'?: { 'PageData_DefaultImage_Fragment': PageData_DefaultImage_Fragment } }
     ) | (
@@ -9522,6 +9862,12 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
     ) | (
       { __typename?: 'ParagraphElement' }
       & { ' $fragmentRefs'?: { 'PageData_ParagraphElement_Fragment': PageData_ParagraphElement_Fragment } }
+    ) | (
+      { __typename?: 'ProductConfiguratorBlock' }
+      & { ' $fragmentRefs'?: { 'PageData_ProductConfiguratorBlock_Fragment': PageData_ProductConfiguratorBlock_Fragment } }
+    ) | (
+      { __typename?: 'ProductFeatureBlock' }
+      & { ' $fragmentRefs'?: { 'PageData_ProductFeatureBlock_Fragment': PageData_ProductFeatureBlock_Fragment } }
     ) | (
       { __typename?: 'RichTextSection' }
       & { ' $fragmentRefs'?: { 'PageData_RichTextSection_Fragment': PageData_RichTextSection_Fragment } }
@@ -9823,6 +10169,20 @@ type IContentData_CategoryTileBlock_Fragment = { __typename?: 'CategoryTileBlock
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_CategoryTileBlock_Fragment' };
+
+type IContentData_ConfigItemBlock_Fragment = { __typename?: 'ConfigItemBlock', _type: 'ConfigItemBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_ConfigItemBlock_Fragment' };
 
 type IContentData_DefaultImage_Fragment = { __typename?: 'DefaultImage', _type: 'DefaultImage', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10216,6 +10576,34 @@ type IContentData_ParagraphElement_Fragment = { __typename?: 'ParagraphElement',
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_ParagraphElement_Fragment' };
 
+type IContentData_ProductConfiguratorBlock_Fragment = { __typename?: 'ProductConfiguratorBlock', _type: 'ProductConfiguratorBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_ProductConfiguratorBlock_Fragment' };
+
+type IContentData_ProductFeatureBlock_Fragment = { __typename?: 'ProductFeatureBlock', _type: 'ProductFeatureBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_ProductFeatureBlock_Fragment' };
+
 type IContentData_RichTextSection_Fragment = { __typename?: 'RichTextSection', _type: 'RichTextSection', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10496,7 +10884,7 @@ type IContentData__Video_Fragment = { __typename?: '_Video', _type: '_Video', _m
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData__Video_Fragment' };
 
-export type IContentDataFragment = IContentData_ArticleCardBlock_Fragment | IContentData_ArticleCardListBlock_Fragment | IContentData_ArticleGroupPage_Fragment | IContentData_ArticleHeroBlock_Fragment | IContentData_ArticleListElement_Fragment | IContentData_ArticlePage_Fragment | IContentData_BannerBlock_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAButtonBlock_Fragment | IContentData_CTADefaultTileElement_Fragment | IContentData_CTAElement_Fragment | IContentData_CTATileBlock_Fragment | IContentData_CardBlock_Fragment | IContentData_CategoryListBlock_Fragment | IContentData_CategoryTileBlock_Fragment | IContentData_DefaultImage_Fragment | IContentData_DefaultMaterialPage_Fragment | IContentData_DefaultVideo_Fragment | IContentData_Dictionary_Fragment | IContentData_DictionaryItem_Fragment | IContentData_FeaturedTileBlock_Fragment | IContentData_Footer_Fragment | IContentData_FooterColumn_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeaderBlock_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBannerBlock_Fragment | IContentData_HeroCarouselBlock_Fragment | IContentData_Image_Fragment | IContentData_ImageBanner_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_InfoBlock_Fragment | IContentData_JWHeader_Fragment | IContentData_JWHeaderColumn_Fragment | IContentData_JWHeaderTopBar_Fragment | IContentData_JWMainNavigation_Fragment | IContentData_JWSocialIcon_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_NavigationMenuBlock_Fragment | IContentData_OfficeLocation_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_RichTextSection_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TabsBlock_Fragment | IContentData_TabsContentBlock_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextElement_Fragment | IContentData_TitleAndDescriptionElement_Fragment | IContentData_Video_Fragment | IContentData_VideoMedia_Fragment | IContentData_WebsiteFooter_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Element_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment;
+export type IContentDataFragment = IContentData_ArticleCardBlock_Fragment | IContentData_ArticleCardListBlock_Fragment | IContentData_ArticleGroupPage_Fragment | IContentData_ArticleHeroBlock_Fragment | IContentData_ArticleListElement_Fragment | IContentData_ArticlePage_Fragment | IContentData_BannerBlock_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAButtonBlock_Fragment | IContentData_CTADefaultTileElement_Fragment | IContentData_CTAElement_Fragment | IContentData_CTATileBlock_Fragment | IContentData_CardBlock_Fragment | IContentData_CategoryListBlock_Fragment | IContentData_CategoryTileBlock_Fragment | IContentData_ConfigItemBlock_Fragment | IContentData_DefaultImage_Fragment | IContentData_DefaultMaterialPage_Fragment | IContentData_DefaultVideo_Fragment | IContentData_Dictionary_Fragment | IContentData_DictionaryItem_Fragment | IContentData_FeaturedTileBlock_Fragment | IContentData_Footer_Fragment | IContentData_FooterColumn_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeaderBlock_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBannerBlock_Fragment | IContentData_HeroCarouselBlock_Fragment | IContentData_Image_Fragment | IContentData_ImageBanner_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_InfoBlock_Fragment | IContentData_JWHeader_Fragment | IContentData_JWHeaderColumn_Fragment | IContentData_JWHeaderTopBar_Fragment | IContentData_JWMainNavigation_Fragment | IContentData_JWSocialIcon_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_NavigationMenuBlock_Fragment | IContentData_OfficeLocation_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_ProductConfiguratorBlock_Fragment | IContentData_ProductFeatureBlock_Fragment | IContentData_RichTextSection_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TabsBlock_Fragment | IContentData_TabsContentBlock_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextElement_Fragment | IContentData_TitleAndDescriptionElement_Fragment | IContentData_Video_Fragment | IContentData_VideoMedia_Fragment | IContentData_WebsiteFooter_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Element_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment;
 
 export type ArticleCardBlockDataFragment = { __typename?: 'ArticleCardBlock', Title?: string | null, Image?: (
     { __typename?: 'ContentReference' }
@@ -10509,7 +10897,7 @@ export type ArticleCardBlockDataFragment = { __typename?: 'ArticleCardBlock', Ti
 export type ArticleCardListBlockDataFragment = { __typename?: 'ArticleCardListBlock', Title?: string | null, Description?: { __typename?: 'RichText', json?: any | null } | null, Articles?: Array<(
     { __typename?: 'ArticleCardBlock' }
     & { ' $fragmentRefs'?: { 'ArticleCardBlockDataFragment': ArticleCardBlockDataFragment } }
-  ) | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'ArticleCardListBlockDataFragment' };
+  ) | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'ArticleCardListBlockDataFragment' };
 
 export type ArticleHeroBlockDataFragment = { __typename?: 'ArticleHeroBlock', Title?: string | null, Description?: { __typename?: 'RichText', json?: any | null } | null, Image?: (
     { __typename?: 'ContentReference' }
@@ -10549,7 +10937,7 @@ export type CardBlockDataFragment = { __typename?: 'CardBlock', heading?: string
 export type CategoryListBlockDataFragment = { __typename?: 'CategoryListBlock', Title?: string | null, Description?: { __typename?: 'RichText', json?: any | null } | null, CategoryTiles?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | (
     { __typename?: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'CategoryTileBlockDataFragment': CategoryTileBlockDataFragment } }
-  ) | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'CategoryListBlockDataFragment' };
+  ) | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'CategoryListBlockDataFragment' };
 
 export type CategoryTileBlockDataFragment = { __typename?: 'CategoryTileBlock', TileTitle?: string | null, TileImage?: (
     { __typename?: 'ContentReference' }
@@ -10562,21 +10950,21 @@ export type FeaturedTileBlockDataFragment = { __typename?: 'FeaturedTileBlock', 
   ) | null, CTA?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | (
     { __typename?: 'CTAButtonBlock' }
     & { ' $fragmentRefs'?: { 'CTAButtonBlockDataFragment': CTAButtonBlockDataFragment } }
-  ) | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'FeaturedTileBlockDataFragment' };
+  ) | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'FeaturedTileBlockDataFragment' };
 
 export type FooterDataFragment = { __typename?: 'Footer', copyrighttext?: string | null, footertext?: { __typename?: 'RichText', json?: any | null } | null, links?: Array<(
     { __typename?: 'Link' }
     & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
-  ) | null> | null, icons?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | (
+  ) | null> | null, icons?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | (
     { __typename?: 'JWSocialIcon' }
     & { ' $fragmentRefs'?: { 'SocialIconFooterFragment': SocialIconFooterFragment } }
-  ) | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, columns?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn', Title?: string | null, Icon?: (
+  ) | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, columns?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn', Title?: string | null, Icon?: (
       { __typename?: 'ContentReference' }
       & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
     ) | null, ColumnItems?: Array<(
       { __typename?: 'Link' }
       & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
-    ) | null> | null } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, Logo?: (
+    ) | null> | null } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, Logo?: (
     { __typename?: 'ContentReference' }
     & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
   ) | null } & { ' $fragmentName'?: 'FooterDataFragment' };
@@ -10595,12 +10983,12 @@ export type HeroBannerBlockDataFragment = { __typename?: 'HeroBannerBlock', Bann
   ) | null, BannerButton?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | (
     { __typename?: 'CTAButtonBlock' }
     & { ' $fragmentRefs'?: { 'CTAButtonBlockDataFragment': CTAButtonBlockDataFragment } }
-  ) | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'HeroBannerBlockDataFragment' };
+  ) | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'HeroBannerBlockDataFragment' };
 
-export type HeroCarouselBlockDataFragment = { __typename?: 'HeroCarouselBlock', Banners?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | (
+export type HeroCarouselBlockDataFragment = { __typename?: 'HeroCarouselBlock', Banners?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | (
     { __typename?: 'HeroBannerBlock' }
     & { ' $fragmentRefs'?: { 'HeroBannerBlockDataFragment': HeroBannerBlockDataFragment } }
-  ) | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'HeroCarouselBlockDataFragment' };
+  ) | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'HeroCarouselBlockDataFragment' };
 
 export type InfoBlockDataFragment = { __typename?: 'InfoBlock', title?: string | null, descrip?: { __typename?: 'RichText', json?: any | null } | null } & { ' $fragmentName'?: 'InfoBlockDataFragment' };
 
@@ -10610,7 +10998,7 @@ export type JWHeaderDataFragment = { __typename?: 'JWHeader', logo?: (
   ) | null, bannerr?: (
     { __typename?: 'ContentReference' }
     & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
-  ) | null, topbar?: { __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar', LeftNavigationLinks?: Array<(
+  ) | null, topbar?: { __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar', LeftNavigationLinks?: Array<(
       { __typename?: 'Link' }
       & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
     ) | null> | null, SearchIcon?: (
@@ -10619,16 +11007,16 @@ export type JWHeaderDataFragment = { __typename?: 'JWHeader', logo?: (
     ) | null, FindAStore?: (
       { __typename?: 'ContentReference' }
       & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
-    ) | null } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null, mainNav?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation', Title?: string | null, IsTabLayout?: boolean | null, HeaderColumns?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn', HeaderColumnTitle?: string | null, HeaderColumnLinks?: Array<(
+    ) | null } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null, mainNav?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation', Title?: string | null, IsTabLayout?: boolean | null, HeaderColumns?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn', HeaderColumnTitle?: string | null, HeaderColumnLinks?: Array<(
         { __typename?: 'Link' }
         & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
-      ) | null> | null } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'JWHeaderDataFragment' };
+      ) | null> | null } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'JWHeaderDataFragment' };
 
 export type OfficeLocationDataFragment = { __typename?: 'OfficeLocation', title?: string | null, street1?: string | null, street2?: string | null, postalcode?: string | null, city?: string | null, country?: string | null, phone?: string | null, email?: string | null } & { ' $fragmentName'?: 'OfficeLocationDataFragment' };
 
 export type RichTextSectionDataFragment = { __typename?: 'RichTextSection', Section?: { __typename?: 'RichText', json?: any | null } | null } & { ' $fragmentName'?: 'RichTextSectionDataFragment' };
 
-export type TabsBlockDataFragment = { __typename?: 'TabsBlock', Title?: string | null, Tabs?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | (
+export type TabsBlockDataFragment = { __typename?: 'TabsBlock', Title?: string | null, Tabs?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | { __typename?: 'OfficeLocation' } | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | (
     { __typename?: 'TabsContentBlock' }
     & { ' $fragmentRefs'?: { 'TabsContentBlockDataFragment': TabsContentBlockDataFragment } }
   ) | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'TabsBlockDataFragment' };
@@ -10718,6 +11106,9 @@ export type ArticleGroupPageDataFragment = { __typename?: 'ArticleGroupPage', ar
     { __typename?: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CategoryTileBlock_Fragment': BlockData_CategoryTileBlock_Fragment } }
   ) | (
+    { __typename?: 'ConfigItemBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ConfigItemBlock_Fragment': BlockData_ConfigItemBlock_Fragment } }
+  ) | (
     { __typename?: 'DefaultImage' }
     & { ' $fragmentRefs'?: { 'BlockData_DefaultImage_Fragment': BlockData_DefaultImage_Fragment } }
   ) | (
@@ -10801,6 +11192,12 @@ export type ArticleGroupPageDataFragment = { __typename?: 'ArticleGroupPage', ar
   ) | (
     { __typename?: 'ParagraphElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ParagraphElement_Fragment': BlockData_ParagraphElement_Fragment } }
+  ) | (
+    { __typename?: 'ProductConfiguratorBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductConfiguratorBlock_Fragment': BlockData_ProductConfiguratorBlock_Fragment } }
+  ) | (
+    { __typename?: 'ProductFeatureBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductFeatureBlock_Fragment': BlockData_ProductFeatureBlock_Fragment } }
   ) | (
     { __typename?: 'RichTextSection' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextSection_Fragment': BlockData_RichTextSection_Fragment } }
@@ -10944,6 +11341,9 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
     { __typename?: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CategoryTileBlock_Fragment': BlockData_CategoryTileBlock_Fragment } }
   ) | (
+    { __typename?: 'ConfigItemBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ConfigItemBlock_Fragment': BlockData_ConfigItemBlock_Fragment } }
+  ) | (
     { __typename?: 'DefaultImage' }
     & { ' $fragmentRefs'?: { 'BlockData_DefaultImage_Fragment': BlockData_DefaultImage_Fragment } }
   ) | (
@@ -11027,6 +11427,12 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
   ) | (
     { __typename?: 'ParagraphElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ParagraphElement_Fragment': BlockData_ParagraphElement_Fragment } }
+  ) | (
+    { __typename?: 'ProductConfiguratorBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductConfiguratorBlock_Fragment': BlockData_ProductConfiguratorBlock_Fragment } }
+  ) | (
+    { __typename?: 'ProductFeatureBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductFeatureBlock_Fragment': BlockData_ProductFeatureBlock_Fragment } }
   ) | (
     { __typename?: 'RichTextSection' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextSection_Fragment': BlockData_RichTextSection_Fragment } }
@@ -11139,6 +11545,9 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
     { __typename?: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CategoryTileBlock_Fragment': BlockData_CategoryTileBlock_Fragment } }
   ) | (
+    { __typename?: 'ConfigItemBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ConfigItemBlock_Fragment': BlockData_ConfigItemBlock_Fragment } }
+  ) | (
     { __typename?: 'DefaultImage' }
     & { ' $fragmentRefs'?: { 'BlockData_DefaultImage_Fragment': BlockData_DefaultImage_Fragment } }
   ) | (
@@ -11222,6 +11631,12 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
   ) | (
     { __typename?: 'ParagraphElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ParagraphElement_Fragment': BlockData_ParagraphElement_Fragment } }
+  ) | (
+    { __typename?: 'ProductConfiguratorBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductConfiguratorBlock_Fragment': BlockData_ProductConfiguratorBlock_Fragment } }
+  ) | (
+    { __typename?: 'ProductFeatureBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductFeatureBlock_Fragment': BlockData_ProductFeatureBlock_Fragment } }
   ) | (
     { __typename?: 'RichTextSection' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextSection_Fragment': BlockData_RichTextSection_Fragment } }
@@ -11334,6 +11749,9 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
     { __typename?: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CategoryTileBlock_Fragment': BlockData_CategoryTileBlock_Fragment } }
   ) | (
+    { __typename?: 'ConfigItemBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ConfigItemBlock_Fragment': BlockData_ConfigItemBlock_Fragment } }
+  ) | (
     { __typename?: 'DefaultImage' }
     & { ' $fragmentRefs'?: { 'BlockData_DefaultImage_Fragment': BlockData_DefaultImage_Fragment } }
   ) | (
@@ -11417,6 +11835,12 @@ export type DefaultMaterialPageDataFragment = { __typename?: 'DefaultMaterialPag
   ) | (
     { __typename?: 'ParagraphElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ParagraphElement_Fragment': BlockData_ParagraphElement_Fragment } }
+  ) | (
+    { __typename?: 'ProductConfiguratorBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductConfiguratorBlock_Fragment': BlockData_ProductConfiguratorBlock_Fragment } }
+  ) | (
+    { __typename?: 'ProductFeatureBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ProductFeatureBlock_Fragment': BlockData_ProductFeatureBlock_Fragment } }
   ) | (
     { __typename?: 'RichTextSection' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextSection_Fragment': BlockData_RichTextSection_Fragment } }
@@ -11511,10 +11935,10 @@ export type TestimonialElementDataFragment = { __typename?: 'TestimonialElement'
 export type getFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type getFooterQuery = { __typename?: 'Query', footer?: { __typename?: 'WebsiteFooterOutput', total?: number | null, items?: Array<{ __typename?: 'WebsiteFooter', logoAlt?: string | null, address?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | (
+export type getFooterQuery = { __typename?: 'Query', footer?: { __typename?: 'WebsiteFooterOutput', total?: number | null, items?: Array<{ __typename?: 'WebsiteFooter', logoAlt?: string | null, address?: Array<{ __typename?: 'ArticleCardBlock' } | { __typename?: 'ArticleCardListBlock' } | { __typename?: 'ArticleGroupPage' } | { __typename?: 'ArticleHeroBlock' } | { __typename?: 'ArticleListElement' } | { __typename?: 'ArticlePage' } | { __typename?: 'BannerBlock' } | { __typename?: 'BlankExperience' } | { __typename?: 'BlankSection' } | { __typename?: 'ButtonBlock' } | { __typename?: 'CTAButtonBlock' } | { __typename?: 'CTADefaultTileElement' } | { __typename?: 'CTAElement' } | { __typename?: 'CTATileBlock' } | { __typename?: 'CardBlock' } | { __typename?: 'CategoryListBlock' } | { __typename?: 'CategoryTileBlock' } | { __typename?: 'ConfigItemBlock' } | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultMaterialPage' } | { __typename?: 'DefaultVideo' } | { __typename?: 'Dictionary' } | { __typename?: 'DictionaryItem' } | { __typename?: 'FeaturedTileBlock' } | { __typename?: 'Footer' } | { __typename?: 'FooterColumn' } | { __typename?: 'GenericMedia' } | { __typename?: 'HeaderBlock' } | { __typename?: 'HeadingElement' } | { __typename?: 'HeroBannerBlock' } | { __typename?: 'HeroCarouselBlock' } | { __typename?: 'Image' } | { __typename?: 'ImageBanner' } | { __typename?: 'ImageElement' } | { __typename?: 'ImageMedia' } | { __typename?: 'InfoBlock' } | { __typename?: 'JWHeader' } | { __typename?: 'JWHeaderColumn' } | { __typename?: 'JWHeaderTopBar' } | { __typename?: 'JWMainNavigation' } | { __typename?: 'JWSocialIcon' } | { __typename?: 'MegaMenuGroupBlock' } | { __typename?: 'NavigationMenuBlock' } | (
         { __typename?: 'OfficeLocation' }
         & { ' $fragmentRefs'?: { 'OfficeLocationDataFragment': OfficeLocationDataFragment } }
-      ) | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, firstMenu?: (
+      ) | { __typename?: 'PageSeoSettings' } | { __typename?: 'ParagraphElement' } | { __typename?: 'ProductConfiguratorBlock' } | { __typename?: 'ProductFeatureBlock' } | { __typename?: 'RichTextSection' } | { __typename?: 'SysContentFolder' } | { __typename?: 'TabsBlock' } | { __typename?: 'TabsContentBlock' } | { __typename?: 'TestimonialElement' } | { __typename?: 'TextElement' } | { __typename?: 'TitleAndDescriptionElement' } | { __typename?: 'Video' } | { __typename?: 'VideoMedia' } | { __typename?: 'WebsiteFooter' } | { __typename?: '_Component' } | { __typename?: '_Content' } | { __typename?: '_Element' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | { __typename?: '_Section' } | { __typename?: '_Video' } | null> | null, firstMenu?: (
         { __typename?: 'NavigationMenuBlockProperty' }
         & { ' $fragmentRefs'?: { 'MenuContentFragment': MenuContentFragment } }
       ) | null, secondMenu?: (
@@ -11596,6 +12020,9 @@ export type getHeaderQuery = { __typename?: 'Query', menuItems?: { __typename?: 
       ) | (
         { __typename?: 'CategoryTileBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment } }
+      ) | (
+        { __typename?: 'ConfigItemBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
       ) | (
         { __typename?: 'DefaultImage' }
         & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
@@ -11680,6 +12107,12 @@ export type getHeaderQuery = { __typename?: 'Query', menuItems?: { __typename?: 
       ) | (
         { __typename?: 'ParagraphElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
+      ) | (
+        { __typename?: 'ProductConfiguratorBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+      ) | (
+        { __typename?: 'ProductFeatureBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
       ) | (
         { __typename?: 'RichTextSection' }
         & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment } }
@@ -11792,6 +12225,9 @@ export type getHeaderQuery = { __typename?: 'Query', menuItems?: { __typename?: 
         { __typename?: 'CategoryTileBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment } }
       ) | (
+        { __typename?: 'ConfigItemBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
+      ) | (
         { __typename?: 'DefaultImage' }
         & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
       ) | (
@@ -11875,6 +12311,12 @@ export type getHeaderQuery = { __typename?: 'Query', menuItems?: { __typename?: 
       ) | (
         { __typename?: 'ParagraphElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
+      ) | (
+        { __typename?: 'ProductConfiguratorBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+      ) | (
+        { __typename?: 'ProductFeatureBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
       ) | (
         { __typename?: 'RichTextSection' }
         & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment } }
@@ -11992,6 +12434,9 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
     { __typename: 'CategoryTileBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_CategoryTileBlock_Fragment': IContentData_CategoryTileBlock_Fragment } }
   ) | (
+    { __typename: 'ConfigItemBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_ConfigItemBlock_Fragment': IContentData_ConfigItemBlock_Fragment } }
+  ) | (
     { __typename: 'DefaultImage' }
     & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
   ) | (
@@ -12075,6 +12520,12 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
   ) | (
     { __typename: 'ParagraphElement' }
     & { ' $fragmentRefs'?: { 'IContentData_ParagraphElement_Fragment': IContentData_ParagraphElement_Fragment } }
+  ) | (
+    { __typename: 'ProductConfiguratorBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_ProductConfiguratorBlock_Fragment': IContentData_ProductConfiguratorBlock_Fragment } }
+  ) | (
+    { __typename: 'ProductFeatureBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_ProductFeatureBlock_Fragment': IContentData_ProductFeatureBlock_Fragment } }
   ) | (
     { __typename: 'RichTextSection' }
     & { ' $fragmentRefs'?: { 'IContentData_RichTextSection_Fragment': IContentData_RichTextSection_Fragment } }
