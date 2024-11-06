@@ -54,7 +54,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
           />
         ))}
       </nav>
-      {/* <div>{tabs[activeTab].SectionContent.json}</div> */}
+      <div>{tabs[activeTab].Title} are u?</div>
       <h3 className="self-stretch py-3.5 mt-10 text-2xl tracking-tight text-zinc-600 max-md:pr-5 max-md:max-w-full">
         Interior Colour Options
       </h3>
