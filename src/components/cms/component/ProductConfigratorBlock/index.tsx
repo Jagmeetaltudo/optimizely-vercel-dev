@@ -39,7 +39,7 @@ const ProductConfiguratorComponent: CmsComponent<
     url: item.Link ? linkDataToUrl(item.Link) : undefined,
     className: item.ClassName || "",
   }));
-  const url1 = data.Link ? linkDataToUrl(data.Link) : undefined;
+  const url1 = data.Link ? linkDataToUrl(data.Link) : '';
   const Models = filterMaybeArray(data.Models) as SectionItems;
   const GrilleDesigns = filterMaybeArray(data.GrilleDesigns) as SectionItems;
   const ExteriorColorOptions = filterMaybeArray(
@@ -74,21 +74,21 @@ const ProductConfiguratorComponent: CmsComponent<
               <FeatureSection
                 key={index}
                 title={feature.Title || ''}
-                image={feature.Image}
+                image={feature.Image || ''}
               />
             ))}
             {GrilleDesigns.map((feature, index) => (
               <FeatureSection
                 key={index}
                 title={feature.Title || ''}
-                image={feature.Image}
+                image={feature.Image || ''}
               />
             ))}
             {ExteriorColorOptions.map((feature, index) => (
               <FeatureSection
                 key={index}
                 title={feature.Title || ''}
-                image={feature.Image}
+                image={feature.Image || ''}
               />
             ))}
             <a
