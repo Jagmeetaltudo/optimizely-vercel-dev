@@ -8,6 +8,7 @@ import {
 } from "../../../../gql/graphql";
 import CmsImage from "../../../shared/cms_image";
 
+
 interface TabComponentProps {
   tabData: any;
 }
@@ -41,6 +42,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
   ) as SectionItems;
   return (
     <>
+   
       <nav className="flex flex-wrap gap-8 mt-14 text-sm text-center uppercase text-zinc-600 max-md:mt-10">
         {tabs.map((tab, index) => (
           <Tabs
@@ -54,11 +56,11 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
 
       {sectionData?.map((item, index) => (
         <>
-          <h3 className="self-stretch py-3.5 mt-10 text-2xl tracking-tight text-zinc-600 max-md:pr-5 max-md:max-w-full">
+          <h3 className="tab-content-heading self-stretch py-3.5 mt-10 text-2xl tracking-tight text-zinc-600 max-md:pr-5 max-md:max-w-full">
             {item.Title}
           </h3>
-          <section key={index} className="pb-8 mt-8 w-full bg-blend-normal">
-            <div className="flex gap-5 max-md:flex-col">
+          <section key={index} className="tab-content-detail pb-8 mt-8 w-full bg-blend-normal">
+            <div className="flex gap-12  max-md:flex-col">
               <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
                 <CmsImage
                   src={item.Image}
@@ -77,8 +79,10 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
               </div>
             </div>
           </section>
+          
         </>
       ))}
+   
     </>
   );
 };

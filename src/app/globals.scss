@@ -703,3 +703,51 @@ font-size: 0px;
 .article-card-outer button.shadow-md[aria-label="Next slide"] {
   right: -5rem;
 }
+.opti-tab-component h2 {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  line-height: normal;
+  font-style: normal;
+  padding: 10px 0;
+  font-size: 3.8rem;
+  letter-spacing: .76px;
+  color: rgb(39, 39, 42);
+}
+.opti-tab-component nav > div{
+  padding: 8px 0;
+  color: #58595b;
+  font-family: Frutiger_LT_Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+
+}
+
+.opti-tab-component nav > div[aria-selected="true"]{
+  border: solid #fff;
+  border-width: 3px 0 0;
+  border-radius: 0;
+  border-color: #6f9abb;
+  color: #002a3a;
+  font-weight: 700;
+}
+.opti-tab-component .tab-content-heading {
+  color: #58595b;
+  font-family: Frutiger_LT_Pro;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -.44px;
+  padding: 10px 0;
+  border-bottom: 2px solid #f0f1f1;
+  margin-bottom: 30px;
+}
+.tab-content-detail p {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.6;
+}

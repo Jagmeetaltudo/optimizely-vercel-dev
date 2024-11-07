@@ -1,0 +1,79 @@
+
+.ProductConfiguratorBlockLeft h1 {
+    font-family: minion-pro, serif;
+    color: #002a3a;
+    font-size: 3.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.ProductConfiguratorBlockRight h2 {
+    font-size: 3.2rem;
+    letter-spacing: .064rem;
+    text-transform: capitalize;
+    font-family: minion-pro, serif;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    color: #58595b;
+    margin-bottom: 1.5rem;
+}
+.ProductConfiguratorBlockRight p {
+    font-family: Frutiger_LT_Pro;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.ProductConfiguratorBlockRight h3{
+    margin-right: auto;
+    font-size: 20px;
+    color: #002a3a;
+    text-shadow: 0 0 1px #002a3a;
+}
+
+.active {
+
+  }
+  
+  .inactive {
+/* no */
+  }
+  .active .hide {
+   display:block
+   }
+   .inactive .hide {
+    display: none;
+   }
+   .active .showPlus {
+    display: none;
+   }
+   .inactive .hidePlus {
+    display: block;
+   }
+   .featureActive {
+    max-height: auto;
+    -webkit-transition: max-height 0.25s ease-in;
+    transition: max-height 0.25s ease-in;
+    /* display: block; */
+   }
+   .featureInactive{
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    background: #d5d5d5;
+    /* display: none; */
+      
+   }
+
+.leadingLoose {
+    color: #002a3a;
+    font-weight: 700;
+    line-height: 2.6rem;
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+   }
