@@ -4,6 +4,8 @@ const optimizelyCmsUrl = new URL(process.env.OPTIMIZELY_CMS_URL ?? 'http://local
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
+      domains: ['app-alll01saass8g3pp003.cms.optimizely.com'],
+
         remotePatterns: [
           // Allow images from the configured Optimizely CMS URL
           {
