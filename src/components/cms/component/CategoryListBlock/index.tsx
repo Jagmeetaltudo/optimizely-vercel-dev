@@ -45,28 +45,28 @@ export const CategoryListBlockComponent: CmsComponent<
               </div>
             </div>
             <section className="mt-6 max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col">
-                {utilityItems.map((category, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full"
-                  >
-                    <div className="flex card-items relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
-                      <CmsImage
-                        loading="lazy"
-                        src={category?.TileImage}
-                        alt="Inspirational background"
-                        className="object-cover absolute inset-0 size-full"
-                        layout="fill"
-                      />
-                      <div className="card-image-overlay">
-                        <h4>{category?.TileTitle}</h4>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+  <div className="flex flex-wrap gap-5">
+    {utilityItems.map((category, index) => (
+      <div
+        key={index}
+        className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full"
+      >
+        <div className="flex card-items relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
+          <CmsImage
+            loading="lazy"
+            src={category?.TileImage}
+            alt="Inspirational background"
+            className="object-cover absolute inset-0 size-full"
+            layout="fill"
+          />
+          <div className="card-image-overlay">
+            <h4>{category?.TileTitle}</h4>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
           </div>
         </div>
       </div>
