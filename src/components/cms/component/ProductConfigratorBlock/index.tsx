@@ -91,12 +91,12 @@ const ProductConfiguratorComponent: CmsComponent<
                 image={feature.Image || ''}
               />
             ))}
-            {/* <a
+            <a
               href={url1}
               className="py-2 mt-10 text-base font-bold leading-loose border-t-2 border-stone-400 text-teal-950"
             >
               See all options and features
-            </a> */}
+            </a>
             <div className="flex gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
               {buttonData.map((button, index) => (
                 <div key={index} className="primary_button">
