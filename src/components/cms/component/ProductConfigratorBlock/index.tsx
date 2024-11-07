@@ -39,7 +39,7 @@ const ProductConfiguratorComponent: CmsComponent<
     url: item.Link ? linkDataToUrl(item.Link) : undefined,
     className: item.ClassName || "",
   }));
-  const url1 = data.Link ? linkDataToUrl(data.Link) : '';
+  const url1 = data.Link ? linkDataToUrl(data.Link) : undefined;
   const Models = filterMaybeArray(data.Models) as SectionItems;
   const GrilleDesigns = filterMaybeArray(data.GrilleDesigns) as SectionItems;
   const ExteriorColorOptions = filterMaybeArray(
