@@ -1,0 +1,20 @@
+fragment ProductConfiguratorData on ProductConfiguratorBlock {
+  Title
+  Subtitle
+  Image {
+    ...ReferenceData
+  }
+  des: Description
+  Buttons {
+  ...CTAButtonBlockData}
+  Link{...LinkData}
+    Models {
+    ...DetailSectionData
+  }
+    GrilleDesigns {
+    ...DetailSectionData
+  }
+    ExteriorColorOptions {
+    ...DetailSectionData
+  }
+}

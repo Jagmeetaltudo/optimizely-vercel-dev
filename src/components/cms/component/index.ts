@@ -69,7 +69,7 @@ export const componentDictionary : ComponentTypeDictionary = [
         component: ProductOverviewComponent
     },
     {
-        type: 'ProductConfigratorBlock',
+        type: 'ProductConfiguratorBlock',
         component: ProductConfiguratorComponent
     }
 ]

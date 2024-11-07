@@ -410,10 +410,37 @@ export const OfficeLocationDataFragmentDoc = /*#__PURE__*/ gql`
   email: OfficeEmail
 }
     `;
-export const RichTextSectionDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment RichTextSectionData on RichTextSection {
-  Section {
-    json
+export const DetailSectionDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment DetailSectionData on DetailSection {
+  Title
+  subtitle: Description
+  Image {
+    ...ReferenceData
+  }
+}
+    `;
+export const ProductConfiguratorDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ProductConfiguratorData on ProductConfiguratorBlock {
+  Title
+  Subtitle
+  Image {
+    ...ReferenceData
+  }
+  des: Description
+  Buttons {
+    ...CTAButtonBlockData
+  }
+  Link {
+    ...LinkData
+  }
+  Models {
+    ...DetailSectionData
+  }
+  GrilleDesigns {
+    ...DetailSectionData
+  }
+  ExteriorColorOptions {
+    ...DetailSectionData
   }
 }
     `;
@@ -421,7 +448,7 @@ export const TabsContentBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment TabsContentBlockData on TabsContentBlock {
   Title
   SectionContent {
-    json
+    ...DetailSectionData
   }
 }
     `;
@@ -485,7 +512,8 @@ export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
   ...InfoBlockData
   ...JWHeaderData
   ...OfficeLocationData
-  ...RichTextSectionData
+  ...ProductConfiguratorData
+  ...DetailSectionData
   ...TabsBlockData
   ...TabsContentBlockData
   ...ButtonBlockData
@@ -600,7 +628,8 @@ ${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${JWHeaderDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
-${RichTextSectionDataFragmentDoc}
+${ProductConfiguratorDataFragmentDoc}
+${DetailSectionDataFragmentDoc}
 ${TabsBlockDataFragmentDoc}
 ${TabsContentBlockDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}
@@ -671,7 +700,8 @@ ${HeroCarouselBlockDataFragmentDoc}
 ${InfoBlockDataFragmentDoc}
 ${JWHeaderDataFragmentDoc}
 ${OfficeLocationDataFragmentDoc}
-${RichTextSectionDataFragmentDoc}
+${ProductConfiguratorDataFragmentDoc}
+${DetailSectionDataFragmentDoc}
 ${TabsBlockDataFragmentDoc}
 ${TabsContentBlockDataFragmentDoc}
 ${ButtonBlockDataFragmentDoc}

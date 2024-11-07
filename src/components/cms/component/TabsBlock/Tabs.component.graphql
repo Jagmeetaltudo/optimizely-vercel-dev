@@ -1,5 +1,6 @@
 fragment TabsBlockData on TabsBlock {
-Title
-Tabs{...TabsContentBlockData}
-
+  Title
+  Tabs {
+    ...TabsContentBlockData
+  }
 }

@@ -1,3 +1,7 @@
-fragment RichTextSectionData on RichTextSection {
-Section{json}
+fragment DetailSectionData on DetailSection {
+  Title
+  subtitle: Description
+  Image {
+    ...ReferenceData
+  }
 }

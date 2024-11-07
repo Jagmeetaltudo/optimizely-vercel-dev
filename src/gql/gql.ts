@@ -43,9 +43,10 @@ const documents = {
     "fragment InfoBlockData on InfoBlock {\n  title: InfoBlockTitle\n  descrip: InfoBlockDescription {\n    json\n  }\n}": types.InfoBlockDataFragmentDoc,
     "fragment JWHeaderData on JWHeader {\n  logo: HeaderLogo {\n    ...ReferenceData\n  }\n  bannerr: HeaderBanner {\n    ...ReferenceData\n  }\n  topbar: HeaderTopBar {\n    ... on JWHeaderTopBar {\n      LeftNavigationLinks {\n        ...LinkItemData\n      }\n      SearchIcon {\n        ...ReferenceData\n      }\n      FindAStore {\n        ...ReferenceData\n      }\n    }\n  }\n  mainNav: HeaderMainNavigation {\n    ... on JWMainNavigation {\n      Title\n      IsTabLayout\n      HeaderColumns {\n        ... on JWHeaderColumn {\n          HeaderColumnTitle\n          HeaderColumnLinks {\n            ...LinkItemData\n          }\n        }\n      }\n    }\n  }\n}": types.JWHeaderDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  title: OfficeTitle\n  street1: OfficeAddressStreet1\n  street2: OfficeAddressStreet2\n  postalcode: OfficeAddressPostalCode\n  city: OfficeAddressCity\n  country: OfficeAddressCountry\n  phone: OfficePhone\n  email: OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
-    "fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}": types.RichTextSectionDataFragmentDoc,
+    "fragment ProductConfiguratorData on ProductConfiguratorBlock {\n  Title\n  Subtitle\n  Image {\n    ...ReferenceData\n  }\n  des: Description\n  Buttons {\n    ...CTAButtonBlockData\n  }\n  Link {\n    ...LinkData\n  }\n  Models {\n    ...DetailSectionData\n  }\n  GrilleDesigns {\n    ...DetailSectionData\n  }\n  ExteriorColorOptions {\n    ...DetailSectionData\n  }\n}": types.ProductConfiguratorDataFragmentDoc,
+    "fragment DetailSectionData on DetailSection {\n  Title\n  subtitle: Description\n  Image {\n    ...ReferenceData\n  }\n}": types.DetailSectionDataFragmentDoc,
     "fragment TabsBlockData on TabsBlock {\n  Title\n  Tabs {\n    ...TabsContentBlockData\n  }\n}": types.TabsBlockDataFragmentDoc,
-    "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    json\n  }\n}": types.TabsContentBlockDataFragmentDoc,
+    "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    ...DetailSectionData\n  }\n}": types.TabsContentBlockDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
@@ -207,7 +208,11 @@ export function gql(source: "fragment OfficeLocationData on OfficeLocation {\n  
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}"): (typeof documents)["fragment RichTextSectionData on RichTextSection {\n  Section {\n    json\n  }\n}"];
+export function gql(source: "fragment ProductConfiguratorData on ProductConfiguratorBlock {\n  Title\n  Subtitle\n  Image {\n    ...ReferenceData\n  }\n  des: Description\n  Buttons {\n    ...CTAButtonBlockData\n  }\n  Link {\n    ...LinkData\n  }\n  Models {\n    ...DetailSectionData\n  }\n  GrilleDesigns {\n    ...DetailSectionData\n  }\n  ExteriorColorOptions {\n    ...DetailSectionData\n  }\n}"): (typeof documents)["fragment ProductConfiguratorData on ProductConfiguratorBlock {\n  Title\n  Subtitle\n  Image {\n    ...ReferenceData\n  }\n  des: Description\n  Buttons {\n    ...CTAButtonBlockData\n  }\n  Link {\n    ...LinkData\n  }\n  Models {\n    ...DetailSectionData\n  }\n  GrilleDesigns {\n    ...DetailSectionData\n  }\n  ExteriorColorOptions {\n    ...DetailSectionData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment DetailSectionData on DetailSection {\n  Title\n  subtitle: Description\n  Image {\n    ...ReferenceData\n  }\n}"): (typeof documents)["fragment DetailSectionData on DetailSection {\n  Title\n  subtitle: Description\n  Image {\n    ...ReferenceData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -215,7 +220,7 @@ export function gql(source: "fragment TabsBlockData on TabsBlock {\n  Title\n  T
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    json\n  }\n}"): (typeof documents)["fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    json\n  }\n}"];
+export function gql(source: "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    ...DetailSectionData\n  }\n}"): (typeof documents)["fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    ...DetailSectionData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

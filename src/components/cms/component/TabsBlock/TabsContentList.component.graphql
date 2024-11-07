@@ -1,4 +1,6 @@
 fragment TabsContentBlockData on TabsContentBlock {
-Title
-SectionContent
+  Title
+  SectionContent {
+    ...DetailSectionData
+  }
 }

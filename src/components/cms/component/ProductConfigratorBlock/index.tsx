@@ -1,50 +1,112 @@
-import React from 'react';
-import FeatureSection from './FeatureSection';
-import Button from './Button';
+import React from "react";
+import FeatureSection from "./FeatureSection";
+import { CmsComponent } from "@remkoj/optimizely-cms-react";
+import {
+  CTAButtonBlockDataFragment,
+  DetailSectionDataFragment,
+  IContentDataFragment,
+  ProductConfiguratorDataFragment,
+  ProductConfiguratorDataFragmentDoc,
+} from "../../../../gql/graphql";
+import CmsImage from "../../../shared/cms_image";
+import CTAButtonBlock from "../CTAButtonBlock";
+import { linkDataToUrl } from "@remkoj/optimizely-cms-nextjs/components";
 
-interface DFHybridFixedWindowProps {}
-
-const ProductConfiguratorComponent: React.FC<DFHybridFixedWindowProps> = () => {
-  const features = [
-    { title: 'Model', options: ['Picture Interior', 'Picture Exterior'] },
-    { title: 'Grille Designs', options: ['No Grille'] },
-    { title: 'Interior Color Options', options: ['White'] },
-  ];
-
+function filterMaybeArray<T>(
+  input: Array<T | null> | T | null | undefined
+): Array<T> {
+  if (!input) return [];
+  if (!Array.isArray(input)) return [input];
+  return input.filter((x) => x) as Array<T>;
+}
+interface ButtonData {
+  text: string;
+  url: any;
+  className: string;
+}
+export type TileItems = Array<
+  CTAButtonBlockDataFragment & IContentDataFragment
+>;
+export type SectionItems = Array<
+  DetailSectionDataFragment & IContentDataFragment
+>;
+const ProductConfiguratorComponent: CmsComponent<
+  ProductConfiguratorDataFragment
+> = ({ data }) => {
+  const utilityItems = filterMaybeArray(data.Buttons) as TileItems;
+  const buttonData: ButtonData[] = utilityItems.map((item) => ({
+    text: item.Text || "",
+    url: item.Link ? linkDataToUrl(item.Link) : undefined,
+    className: item.ClassName || "",
+  }));
+  const url1 = data.Link ? linkDataToUrl(data.Link) : undefined;
+  const Models = filterMaybeArray(data.Models) as SectionItems;
+  const GrilleDesigns = filterMaybeArray(data.GrilleDesigns) as SectionItems;
+  const ExteriorColorOptions = filterMaybeArray(
+    data.ExteriorColorOptions
+  ) as SectionItems;
   return (
     <main className="self-center max-w-full w-[1217px]">
       <div className="flex gap-5 max-md:flex-col">
         <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col text-4xl text-teal-950 max-md:mt-6 max-md:max-w-full">
-            <h1 className="self-start">DF Hybrid Fixed Window</h1>
-            <img 
-              src="https://cdn.builder.io/api/v1/image/assets/55a1f87f288a4c39862df294d0639360/183df40e6b598bfa892fee001fdd18ece05760b07cb66c9225c687a51ffb3504?apiKey=55a1f87f288a4c39862df294d0639360&" 
-              alt="DF Hybrid Fixed Window" 
-              className="object-contain mt-9 w-full aspect-square max-md:max-w-full" 
+            <h1 className="self-start">{data.Title}</h1>
+            <CmsImage
+              src={data.Image}
+              alt="hero-image"
+              aria-hidden
+              priority
+              width={220}
+              height={220}
+              className="object-contain mt-9 w-full aspect-square max-md:max-w-full"
             />
           </div>
         </section>
         <section className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col items-start mt-20 w-full font-light max-md:mt-10 max-md:max-w-full">
             <h2 className="text-3xl tracking-wider text-zinc-600">
-              Explore the Options
+              {data.Subtitle}
             </h2>
             <p className="mt-7 text-base leading-loose text-stone-500">
-              Features matching sitelines to operational units
+              {data.des}
             </p>
-            {features.map((feature, index) => (
-              <FeatureSection 
-                key={index} 
-                title={feature.title} 
-                options={feature.options} 
+            {Models.map((feature, index) => (
+              <FeatureSection
+                key={index}
+                title={feature.Title}
+                image={feature.Image}
               />
             ))}
-            <div className="py-2 mt-10 text-base font-bold leading-loose border-t-2 border-stone-400 text-teal-950">
+            {GrilleDesigns.map((feature, index) => (
+              <FeatureSection
+                key={index}
+                title={feature.Title}
+                image={feature.Image}
+              />
+            ))}
+            {ExteriorColorOptions.map((feature, index) => (
+              <FeatureSection
+                key={index}
+                title={feature.Title}
+                image={feature.Image}
+              />
+            ))}
+            <a
+              href={url1}
+              className="py-2 mt-10 text-base font-bold leading-loose border-t-2 border-stone-400 text-teal-950"
+            >
               See all options and features
-            </div>
+            </a>
             <div className="flex gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
-              <Button variant="primary">WHERE TO BUY</Button>
-              <Button variant="secondary">GET HELP</Button>
+              {buttonData.map((button, index) => (
+                <div key={index} className="primary_button">
+                  <CTAButtonBlock
+                    text={button.text}
+                    url={button.url}
+                    className={button.className}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -52,5 +114,10 @@ const ProductConfiguratorComponent: React.FC<DFHybridFixedWindowProps> = () => {
     </main>
   );
 };
+ProductConfiguratorComponent.displayName = "ProductConfiguratorBlock";
+ProductConfiguratorComponent.getDataFragment = () => [
+  "ProductConfiguratorData",
+  ProductConfiguratorDataFragmentDoc,
+];
 
 export default ProductConfiguratorComponent;
