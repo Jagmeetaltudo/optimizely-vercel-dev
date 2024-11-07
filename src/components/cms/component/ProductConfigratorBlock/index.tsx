@@ -73,21 +73,21 @@ const ProductConfiguratorComponent: CmsComponent<
             {Models.map((feature, index) => (
               <FeatureSection
                 key={index}
-                title={feature.Title}
+                title={feature.Title || ''}
                 image={feature.Image}
               />
             ))}
             {GrilleDesigns.map((feature, index) => (
               <FeatureSection
                 key={index}
-                title={feature.Title}
+                title={feature.Title || ''}
                 image={feature.Image}
               />
             ))}
             {ExteriorColorOptions.map((feature, index) => (
               <FeatureSection
                 key={index}
-                title={feature.Title}
+                title={feature.Title || ''}
                 image={feature.Image}
               />
             ))}
