@@ -27,9 +27,9 @@ export const MainHeaderComponent: CmsComponent<JWHeaderDataFragment> = async ({
     <header className={styles.headerNav}>
       <div className={styles.mainContainer}>
         <TopBar
-          findastore={topBar.FindAStore || undefined}
-          links={topBar.LeftNavigationLinks as Link[]}
-          searchIcon={topBar.SearchIcon || undefined}
+          findastore={topBar?.FindAStore || undefined}
+          links={topBar?.LeftNavigationLinks as Link[]}
+          searchIcon={topBar?.SearchIcon || undefined}
         />
         <CmsImage
           loading="lazy"

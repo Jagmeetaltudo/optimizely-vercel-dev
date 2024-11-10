@@ -14,7 +14,7 @@ const TopBar: React.FC<TopBarProps> = (props) => {
     <div className={styles.topBar}>
       <nav className={styles.leftNav}>
         <div className={styles.leftNavLinks}>
-          {props.links.map((link, index) => (
+          {props?.links?.map((link, index) => (
             <a
               className={styles.navLink}
               href={link.url?.default as string}

@@ -49,10 +49,10 @@ export const FooterComponent: CmsComponent<FooterDataFragment> = async ({
             <CmsImage
               loading="lazy"
               src={data.Logo}
-              alt="JELD-WEN logo"
+              alt="logo"
               className={styles.footerLogo}
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
 
             <CmsEditable

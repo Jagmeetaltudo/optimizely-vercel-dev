@@ -14,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   return (
     <nav className={styles.navigationLinks}>
-      {props.mainNavs.map((nav, index) => (
+      {props?.mainNavs?.map((nav, index) => (
         <div
           key={index}
           className={styles.navLinkContainer}

@@ -140,7 +140,6 @@
   }
   
   .footerLogo {
-    aspect-ratio: 5.68;
     object-fit: contain;
     object-position: center;
     width: fit-content;
