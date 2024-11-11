@@ -63,7 +63,8 @@ export const FeaturedTile: CmsComponent<FeaturedTileDataFragment, FeaturedTilePr
         case "herobanner":
           return (
 <>
-      
+<section className="relative w-full min-h-[560px] max-md:pr-5 max-md:max-w-full">
+<div className={`${Styles.heroBannerSlider}`}>
       <CmsImage
         src={data.image}
         alt="hero-image"
@@ -86,7 +87,8 @@ export const FeaturedTile: CmsComponent<FeaturedTileDataFragment, FeaturedTilePr
             </div>
           </div>
         </div>
-    
+    </div>
+    </section>
     </>
           );
 
