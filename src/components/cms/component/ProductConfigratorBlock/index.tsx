@@ -94,6 +94,9 @@ const ProductConfiguratorComponent: CmsComponent<
                 <p className="mt-7 text-base leading-loose text-stone-500">
                   {data.des}
                 </p>
+                <div className={"${Styles.ProductConfiguratorBlockRight}"}>
+                  Models
+                </div>
                 <div id="accordion" className="w-full">
                   {Models.map((feature, index) => (
                     <FeatureSection
@@ -102,6 +105,9 @@ const ProductConfiguratorComponent: CmsComponent<
                       image={feature.Image || ""}
                     />
                   ))}
+                  <div className={"${Styles.ProductConfiguratorBlockRight}"}>
+                    Grille Designs
+                  </div>
                   {GrilleDesigns.map((feature, index) => (
                     <FeatureSection
                       key={index}
@@ -109,6 +115,9 @@ const ProductConfiguratorComponent: CmsComponent<
                       image={feature.Image || ""}
                     />
                   ))}
+                  <div className={"${Styles.ProductConfiguratorBlockRight}"}>
+                    Exterior Color Options
+                  </div>
                   {ExteriorColorOptions.map((feature, index) => (
                     <FeatureSection
                       key={index}
