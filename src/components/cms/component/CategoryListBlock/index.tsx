@@ -45,12 +45,17 @@ export const CategoryListBlockComponent: CmsComponent<
               </div>
             </div>
             <section className="mt-6 max-md:max-w-full">
-  <div className="flex flex-wrap gap-5">
+  {/* <div className="flex flex-wrap gap-5"> */}
+  <div className="flex flex-wrap">
     {utilityItems.map((category, index) => (
+      // <div
+      //   key={index}
+      //   className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full"
+      // >
       <div
         key={index}
-        className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full"
-      >
+        className="flex flex-col w-1/4 mb-5 max-md:ml-0 max-md:w-full"
+       >
         <div className="flex card-items relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
           <CmsImage
             loading="lazy"

@@ -20,8 +20,8 @@ export const MainHeaderComponent: CmsComponent<JWHeaderDataFragment> = async ({
 }) => {
 
 
-  const topBar = data.topbar as JWHeaderTopBar;
-  const mainNavs = data.mainNav as JWMainNavigation[];
+  const topBar = data?.topbar as JWHeaderTopBar;
+  const mainNavs = data?.mainNav as JWMainNavigation[];
 
   return (
     <header className={styles.headerNav}>
