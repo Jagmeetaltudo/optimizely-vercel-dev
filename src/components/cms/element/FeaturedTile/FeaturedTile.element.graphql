@@ -1,0 +1,16 @@
+fragment FeaturedTileData on FeaturedTile{
+    title: Title
+  variant: Variant
+  description: Description {
+    json
+  }
+  image: Image {
+    ...ReferenceData
+  }
+  cta1: CTA1 {
+    ...LinkData 
+  }
+  cta2: CTA2 {
+    ...LinkData 
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "key": "FeaturedTile",
+    "displayName": "Featured Tile",
+    "description": "",
+    "baseType": "element",
+    "sortOrder": 0,
+    "mayContainTypes": [],
+    "mediaFileExtensions": [],
+    "properties": {
+        "Text": {
+            "type": "string",
+            "displayName": "Featured Tile",
+            "description": "",
+            "localized": false,
+            "required": true,
+            "group": "Information",
+            "sortOrder": 0,
+            "editorSettings": {}
+        }
+    }
+}

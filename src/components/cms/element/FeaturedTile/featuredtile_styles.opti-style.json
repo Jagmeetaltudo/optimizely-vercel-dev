@@ -1,0 +1,26 @@
+{
+  "key": "FeaturedTile",
+  "displayName": "Default",
+  "contentType": "FeaturedTile",
+  "isDefault": false,
+  "settings": {
+      "featuredTileType": {
+          "displayName": "Featured Tile Styles",
+          "sortOrder": 10,
+          "choices": {
+              "featuredtileleft": {
+                  "displayName": "Featured Tile Image Left",
+                  "sortOrder": 10
+              },
+              "featuredtileright": {
+                  "displayName": "Featured Tile Image Right",
+                  "sortOrder": 20
+              },
+              "herobanner": {
+                  "displayName": "Hero Banner",
+                  "sortOrder": 30
+              }
+          }
+      }
+  }
+}
