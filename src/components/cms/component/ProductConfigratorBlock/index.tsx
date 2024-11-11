@@ -1,14 +1,8 @@
 //"use client";
+//'use client';
 import React, { useEffect } from "react";
 import FeatureSection from "./FeatureSection";
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
-
-import $ from "jquery";
-//import "jquery-ui/ui/widgets/accordion";
-// import "jquery-ui/ui/widgets/accordion"
-//import 'jquery-ui/ui/widgets/accordion';
-// import 'jquery-ui/themes/base/all.css'; // Import jQuery UI CSS
-import Styles from "../ProductConfigratorBlock/ProductConfigratorBlock.module.css";
 
 import {
   CTAButtonBlockDataFragment,
@@ -20,6 +14,11 @@ import {
 import CmsImage from "../../../shared/cms_image";
 import CTAButtonBlock from "../CTAButtonBlock";
 import { linkDataToUrl } from "@remkoj/optimizely-cms-nextjs/components";
+
+// import $ from 'jquery';
+// import "jquery-ui/ui/widgets/accordion";
+// import 'jquery-ui/themes/base/all.css'; // Import jQuery UI CSS
+import Styles from "../ProductConfigratorBlock/ProductConfigratorBlock.module.css";
 
 function filterMaybeArray<T>(
   input: Array<T | null> | T | null | undefined
@@ -42,23 +41,34 @@ export type SectionItems = Array<
 const ProductConfiguratorComponent: CmsComponent<
   ProductConfiguratorDataFragment
 > = ({ data }) => {
+  console.log(data);
   const utilityItems = filterMaybeArray(data.Buttons) as TileItems;
   const buttonData: ButtonData[] = utilityItems.map((item) => ({
     text: item.Text || "",
     url: item.Link ? linkDataToUrl(item.Link) : undefined,
     className: item.ClassName || "",
   }));
-  const url1 = data?.Link ? linkDataToUrl(data.Link) : "";
+
+  const url1 = data.Link ? linkDataToUrl(data.Link) : undefined;
   const Models = filterMaybeArray(data.Models) as SectionItems;
   const GrilleDesigns = filterMaybeArray(data.GrilleDesigns) as SectionItems;
   const ExteriorColorOptions = filterMaybeArray(
     data.ExteriorColorOptions
   ) as SectionItems;
 
+  // useEffect(() => {
+  //   $('#accordion').accordion({
+  //     icons: {
+  //       header: 'custom-header-icon-plus', // Collapsed state icon
+  //       activeHeader: 'custom-header-icon-minus', // Expanded state icon
+  //     },
+  //   });
+  // }, []);
+
   return (
     <div className="mx-auto container">
       <main className="self-center max-w-full w-[1217px]">
-        <div className="flex gap-5 max-md:flex-col">
+        <div className="flex gap-12 max-md:flex-col">
           <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
             <div className={`${Styles.ProductConfiguratorBlockLeft}`}>
               <div className="flex flex-col text-4xl text-teal-950 max-md:mt-6 max-md:max-w-full">
@@ -108,9 +118,9 @@ const ProductConfiguratorComponent: CmsComponent<
                   ))}
                 </div>
                 <div className="py-2 mt-10 text-base font-bold leading-loose border-t-2 border-stone-400 text-teal-950">
-                 See all options and features
+                  See all options and features
                 </div>
-                <div className="flex gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
+                <div className="flex set-btn-style gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
                   {buttonData.map((button, index) => (
                     <div key={index} className="primary_button">
                       <CTAButtonBlock

@@ -17,7 +17,9 @@
 .optly-contentLink {
   display: none
 }
-@charset "UTF-8";.slick-slider {
+@charset "UTF-8";
+
+.slick-slider {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -750,4 +752,80 @@ font-size: 0px;
   font-style: normal;
   font-weight: 300;
   line-height: 1.6;
+}
+
+body .ui-accordion .ui-accordion-header {
+  border: none;
+  background: none;
+  padding:16px 0;
+  border-top: 2px solid #6f9abb;
+  font-family: Frutiger_LT_Pro;
+  font-weight: 300;
+}
+body .ui-accordion .ui-accordion-header h3 {
+  font-family: Frutiger_LT_Pro;
+  font-weight: 300;
+  color: rgb(0, 42, 58);
+  text-shadow: none;
+}
+body .ui-accordion .ui-accordion-header.ui-accordion-header-active h3{
+      text-shadow: 0 0 1px #002a3a;
+}
+body .ui-accordion .ui-accordion-header:first-child {
+  border-top: none;
+
+}
+.ui-accordion-content .text-lg {
+  font-family: Frutiger_LT_Pro;
+  font-weight: 300;
+  line-height: normal;
+  font-style: normal;
+  color: #27272a;
+font-size: 16px;
+text-shadow: none;
+}
+body .ui-accordion .ui-accordion-content {
+  padding:0 0 16px 0;
+ border:none;
+ overflow: hidden;
+}
+body .ui-accordion-header-icon.ui-icon.custom-header-icon-plus,
+body .ui-accordion-header-icon.ui-icon.custom-header-icon-minus{
+position: absolute;
+right: 0;
+width:32px;
+height:32px;
+background: none;
+top:21px;
+
+}
+body .ui-accordion-header-icon.ui-icon:after {
+  width: 16px;
+  height: 16px;
+  content: "";
+  border-top:3px solid rgb(29, 68, 107);
+  position: absolute;
+  left:0px;
+  top:6px;
+  // border-left:2px solid rgb(29, 68, 107);
+}
+body .ui-accordion-header-icon.ui-icon.custom-header-icon-plus:before {
+  width: 16px;
+  height: 16px;
+  content: "";
+  border-left:3px solid rgb(29, 68, 107);
+  position: absolute;
+  left:6px;
+  top:0;
+  // border-left:2px solid rgb(29, 68, 107);
+}
+.set-btn-style  .primary_button:last-child a{
+  color: #002a3a;
+  background-color: transparent;
+  border: 1px solid #1d446b;
+}
+.set-btn-style  .primary_button:last-child a:hover {
+  background-color: #6f9abb;
+  color: #fff;
+  border-color: #6f9abb;
 }
