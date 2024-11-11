@@ -102,7 +102,7 @@ const ProductConfiguratorComponent: CmsComponent<
                     <FeatureSection
                       key={index}
                       title={feature.Title || ""}
-                      image={feature.Image || ""}
+                      image={feature.Image}
                     />
                   ))}
                   <div className={"${Styles.ProductConfiguratorBlockRight}"}>
@@ -112,7 +112,7 @@ const ProductConfiguratorComponent: CmsComponent<
                     <FeatureSection
                       key={index}
                       title={feature.Title || ""}
-                      image={feature.Image || ""}
+                      image={feature.Image}
                     />
                   ))}
                   <div className={"${Styles.ProductConfiguratorBlockRight}"}>
@@ -122,7 +122,7 @@ const ProductConfiguratorComponent: CmsComponent<
                     <FeatureSection
                       key={index}
                       title={feature.Title || ""}
-                      image={feature.Image || ""}
+                      image={feature.Image}
                     />
                   ))}
                 </div>
