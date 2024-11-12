@@ -14,6 +14,7 @@ import CmsImage from "@/components/shared/cms_image";
 import { CmsLink } from "@remkoj/optimizely-cms-nextjs/components";
 import FeaturedContent from "./FeaturedContent";
 import Navigation from "./Navigation";
+import { linkDataToUrl } from "@/components/shared/cms_link";
 
 export const MainHeaderComponent: CmsComponent<JWHeaderDataFragment> = async ({
   data,
@@ -22,23 +23,26 @@ export const MainHeaderComponent: CmsComponent<JWHeaderDataFragment> = async ({
 
   const topBar = data?.topbar as JWHeaderTopBar;
   const mainNavs = data?.mainNav as JWMainNavigation[];
+  const url = data?.HomeLink ? linkDataToUrl(data?.HomeLink) : '/home-new';
 
   return (
     <header className={styles.headerNav}>
       <div className={styles.mainContainer}>
-        <TopBar
+       {data?.topBar &&  <TopBar
           findastore={topBar?.FindAStore || undefined}
           links={topBar?.LeftNavigationLinks as Link[]}
           searchIcon={topBar?.SearchIcon || undefined}
-        />
-        <CmsImage
+        />}
+       <a
+          href={url}
+        ><CmsImage
           loading="lazy"
           src={data.logo}
           className={styles.logo}
           alt="Company logo"
           width={150}
           height={150}
-        />
+        /></a> 
         <CmsImage
           loading="lazy"
           src={data.bannerr}

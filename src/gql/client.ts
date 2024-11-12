@@ -388,6 +388,9 @@ export const JWHeaderDataFragmentDoc = /*#__PURE__*/ gql`
   bannerr: HeaderBanner {
     ...ReferenceData
   }
+  HomeLink {
+    ...LinkData
+  }
   topbar: HeaderTopBar {
     ... on JWHeaderTopBar {
       LeftNavigationLinks {
@@ -408,8 +411,11 @@ export const JWHeaderDataFragmentDoc = /*#__PURE__*/ gql`
       HeaderColumns {
         ... on JWHeaderColumn {
           HeaderColumnTitle
-          HeaderColumnLinks {
+          HeaderColumnSubLinks {
             ...LinkItemData
+          }
+          HeaderColumnLink {
+            ...LinkData
           }
         }
       }

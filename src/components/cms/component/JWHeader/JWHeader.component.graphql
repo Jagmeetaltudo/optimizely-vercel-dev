@@ -5,6 +5,9 @@ fragment JWHeaderData on JWHeader {
   bannerr: HeaderBanner {
     ...ReferenceData
   }
+  HomeLink {
+    ...LinkData
+  }
   topbar: HeaderTopBar {
     ... on JWHeaderTopBar {
       LeftNavigationLinks {
@@ -25,8 +28,11 @@ fragment JWHeaderData on JWHeader {
       HeaderColumns {
         ... on JWHeaderColumn {
           HeaderColumnTitle
-          HeaderColumnLinks {
+          HeaderColumnSubLinks {
             ...LinkItemData
+          }
+          HeaderColumnLink {
+            ...LinkData
           }
         }
       }
