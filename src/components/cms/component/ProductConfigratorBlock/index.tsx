@@ -1,8 +1,10 @@
+
 //"use client";
 //'use client';
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import FeatureSection from "./FeatureSection";
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
+import Script from 'next/script';
 
 import {
   CTAButtonBlockDataFragment,
@@ -57,15 +59,37 @@ const ProductConfiguratorComponent: CmsComponent<
   ) as SectionItems;
 
   // useEffect(() => {
-  //   $('#accordion').accordion({
+  //   ($('#accordion') as any).accordion({
   //     icons: {
   //       header: 'custom-header-icon-plus', // Collapsed state icon
   //       activeHeader: 'custom-header-icon-minus', // Expanded state icon
   //     },
   //   });
   // }, []);
+  
 
   return (
+    <>
+     <Script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        strategy="beforeInteractive" // Ensures jQuery loads before other scripts
+      />
+      <Script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        strategy="afterInteractive" // Loads after page is interactive
+      />
+      <Script id="accordion-script">
+        {`
+        $(document).ready(function () {
+          $('#accordion').accordion({
+            icons: {
+              header: 'custom-header-icon-plus', // Collapsed state icon
+              activeHeader: 'custom-header-icon-minus', // Expanded state icon
+            },
+          });
+        });
+        `}
+        </Script>
     <div className="mx-auto container">
       <main className="self-center max-w-full w-[1217px]">
         <div className="flex gap-12 max-md:flex-col">
@@ -94,10 +118,11 @@ const ProductConfiguratorComponent: CmsComponent<
                 <p className="mt-7 text-base leading-loose text-stone-500">
                   {data.des}
                 </p>
-                <div className={"${Styles.ProductConfiguratorBlockRight}"}>
-                  Models
-                </div>
                 <div id="accordion" className="w-full">
+                <h3>
+                  Models
+                </h3>
+                <div className={`flex ${Styles.listItem}`}>
                   {Models.map((feature, index) => (
                     <FeatureSection
                       key={index}
@@ -105,9 +130,12 @@ const ProductConfiguratorComponent: CmsComponent<
                       image={feature.Image}
                     />
                   ))}
-                  <div className={"${Styles.ProductConfiguratorBlockRight}"}>
-                    Grille Designs
                   </div>
+                  
+                  <h3>
+                    Grille Designs
+                  </h3>
+                  <div className={`flex ${Styles.listItem}`}>
                   {GrilleDesigns.map((feature, index) => (
                     <FeatureSection
                       key={index}
@@ -115,9 +143,12 @@ const ProductConfiguratorComponent: CmsComponent<
                       image={feature.Image}
                     />
                   ))}
-                  <div className={"${Styles.ProductConfiguratorBlockRight}"}>
-                    Exterior Color Options
                   </div>
+                 
+                  <h3>
+                    Exterior Color Options
+                  </h3>
+                  <div className={`flex ${Styles.listItem}`}>
                   {ExteriorColorOptions.map((feature, index) => (
                     <FeatureSection
                       key={index}
@@ -125,8 +156,9 @@ const ProductConfiguratorComponent: CmsComponent<
                       image={feature.Image}
                     />
                   ))}
+</div>
                 </div>
-                <div className="py-2 mt-10 text-base font-bold leading-loose border-t-2 border-stone-400 text-teal-950">
+                <div className={`py-2 mt-20 leading-loose  ${Styles.optionText}`}>
                   See all options and features
                 </div>
                 <div className="flex set-btn-style gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
@@ -146,6 +178,7 @@ const ProductConfiguratorComponent: CmsComponent<
         </div>
       </main>
     </div>
+    </>
   );
 };
 ProductConfiguratorComponent.displayName = "ProductConfiguratorBlock";
