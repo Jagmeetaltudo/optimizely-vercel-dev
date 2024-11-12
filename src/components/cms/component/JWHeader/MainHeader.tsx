@@ -34,7 +34,7 @@ export const MainHeaderComponent: CmsComponent<JWHeaderDataFragment> = async ({
           searchIcon={topBar?.SearchIcon || undefined}
         />}
        <a
-          href={url}
+          href={url.toString()}
         ><CmsImage
           loading="lazy"
           src={data.logo}
