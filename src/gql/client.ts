@@ -275,6 +275,9 @@ export const CategoryTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
   TileImage {
     ...ReferenceData
   }
+  TileLink {
+    ...LinkData
+  }
 }
     `;
 export const CategoryListBlockDataFragmentDoc = /*#__PURE__*/ gql`

@@ -3,4 +3,6 @@ fragment CategoryTileBlockData on CategoryTileBlock {
   TileImage {
     ...ReferenceData
   }
+  TileLink{
+  ...LinkData}
 }
