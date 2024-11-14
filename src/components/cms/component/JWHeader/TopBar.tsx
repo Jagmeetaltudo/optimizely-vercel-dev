@@ -24,7 +24,7 @@ const TopBar: React.FC<TopBarProps> = (props) => {
             </a>
           ))}
         </div>
-        <div className={styles.storeLocator}>
+      {props.findastore &&  <div className={styles.storeLocator}>
           <CmsImage
             loading="lazy"
             src={props.findastore}
@@ -34,7 +34,7 @@ const TopBar: React.FC<TopBarProps> = (props) => {
             height={100}
           />
           <a href="#find-store">Find A STORE</a>
-        </div>
+        </div>}
       </nav>
       <div className={styles.rightNav}>
         <button aria-label="Shopping cart">
