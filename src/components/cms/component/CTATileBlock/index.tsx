@@ -40,7 +40,7 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
           <h2 className="text-5xl text-teal-950 text-teal-large max-md:max-w-full max-md:text-4xl">
             {data.title}
           </h2>
-          <div className="flex flex-wrap gap-5 self-center mt-16 max-w-full max-md:mt-10">
+          <div className="cta_block_center flex flex-wrap gap-5 self-center mt-16 max-w-full max-md:mt-10">
             <div className="primary_button">
               <Button
                 url={url1}
@@ -49,12 +49,14 @@ export const CTATileBlockComponent: CmsComponent<CTATileBlockDataFragment> = ({
                 {data.Link1Text}
               </Button>
             </div>
+            <div className="secondary_button">
             <Button
               url={url2}
               className={`${baseClasses} ${getVariantClasses("secondary")}`}
             >
               <div className="px-16 py-9">{data.Link2Text}</div>
             </Button>
+            </div>
           </div>
         </div>
       </div>

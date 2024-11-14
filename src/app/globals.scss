@@ -761,7 +761,6 @@ body .ui-accordion .ui-accordion-header {
   border-top: 2px solid #6f9abb;
   font-family: Frutiger_LT_Pro;
   font-weight: 300;
-  position: relative;
 }
 body .ui-accordion .ui-accordion-header h3 {
   font-family: Frutiger_LT_Pro;
@@ -798,7 +797,7 @@ width:32px;
 height:32px;
 background: none;
 top:21px;
-cursor: pointer;
+
 }
 body .ui-accordion-header-icon.ui-icon:after {
   width: 16px;
@@ -824,9 +823,62 @@ body .ui-accordion-header-icon.ui-icon.custom-header-icon-plus:before {
   color: #002a3a;
   background-color: transparent;
   border: 1px solid #1d446b;
+  padding: 24px 48px;
 }
 .set-btn-style  .primary_button:last-child a:hover {
   background-color: #6f9abb;
   color: #fff;
   border-color: #6f9abb;
+}
+
+.cta_block_center {
+  .primary_button,.secondary_button {
+   .btn--primary {
+
+    background-color: #1d446b;
+    border: 1px solid #1d446b;
+    padding: 22px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #fff;
+    font-family: Frutiger_LT_Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: .56px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+
+
+
+    border-width: 3px;
+    font-size: 20px;
+    width: auto;
+    margin: 0px 10px;
+    padding: 2.9rem 8rem;
+
+    &:hover {
+      background-color: rgb(111, 154, 187);
+      border-color: rgb(111, 154, 187);
+      color: #fff;
+    }
+   }
+
+  }
+
+  .secondary_button {
+    .btn--primary  {
+    background-color: transparent;
+    border: 2px solid #1d446b;
+    color: #002a3a;
+    .btn__content > div {
+      padding: 0!important;
+    }
+    }
+  }
 }
