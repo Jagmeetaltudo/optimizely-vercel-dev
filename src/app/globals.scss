@@ -391,7 +391,7 @@ p {
   bottom: 0;
   padding: 10px 0;
   transition: bottom .5s ease-in;
-  color: #fff;
+  color: #a79e9e;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -404,10 +404,12 @@ p {
 
 .card-image-overlay:hover {
   background-color: rgba(0, 0, 0, .4);
+ 
 }
 
 .card-image-overlay:hover h4 {
  bottom:35%;
+ color: #fff;
 }
 .self-stretch-title {
   font-family: minion-pro, serif;
@@ -761,6 +763,7 @@ body .ui-accordion .ui-accordion-header {
   border-top: 2px solid #6f9abb;
   font-family: Frutiger_LT_Pro;
   font-weight: 300;
+  position:relative
 }
 body .ui-accordion .ui-accordion-header h3 {
   font-family: Frutiger_LT_Pro;

@@ -89,7 +89,7 @@ const ProductConfiguratorComponent: CmsComponent<
         });
         `}
       </Script>
-      <div className="mx-auto container">
+      <div className="mx-auto container mt-6">
         <main className="self-center max-w-full w-[1217px]">
           <div className="flex gap-12 max-md:flex-col">
             <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
@@ -156,7 +156,7 @@ const ProductConfiguratorComponent: CmsComponent<
                   <div
                     className={`py-2 mt-20 leading-loose  ${Styles.optionText}`}
                   >
-                    See all options and features
+                    <a href="#tabsComponent"> See all options and features</a>
                   </div>
                   <div className="flex set-btn-style gap-5 mt-16 text-sm font-bold text-center uppercase max-md:mt-10">
                     {buttonData.map((button, index) => (
