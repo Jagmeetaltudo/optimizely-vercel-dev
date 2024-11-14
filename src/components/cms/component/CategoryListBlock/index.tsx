@@ -61,12 +61,13 @@ export const CategoryListBlockComponent: CmsComponent<
             loading="lazy"
             src={category?.TileImage}
             alt="Inspirational background"
-            className="object-cover absolute inset-0 size-full"
+            className="object-contain absolute inset-0 size-full"
             layout="fill"
           />
-          <div className="card-image-overlay">
+          {/* <div className="card-image-overlay"> */}
+          <a className="card-image-overlay" href="#">
             <h4>{category?.TileTitle}</h4>
-          </div>
+          </a>
         </div>
       </div>
     ))}

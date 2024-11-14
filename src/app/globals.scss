@@ -374,6 +374,7 @@ p {
 .card-items {
   position: relative;
   text-align: center;
+  background-color: #eeeeee;
 }
 .card-image-overlay {
   position: absolute;
@@ -883,5 +884,105 @@ body .ui-accordion-header-icon.ui-icon.custom-header-icon-plus:before {
       padding: 0!important;
     }
     }
-  }
+  }  
 }
+.rich-text {
+  p, li {
+    font-family: Frutiger_LT_Pro;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.6;
+   
+    color: #666;
+  }
+  p {
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 5px;
+   
+  }
+  ul li {
+    list-style: disc inside;
+  }
+  ol li {
+    list-style: decimal inside;
+  }
+  strong, b {
+    font-weight: bold;
+  }
+  ul, ol {
+    margin-bottom: 1.5rem;
+  }
+  //margin bottom
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .mb-15 {
+    margin-bottom: 10px;
+  }
+  .mb-20 {
+    margin-bottom: 10px;
+  }
+  .mb-30 {
+    margin-bottom: 60px;
+  }
+  .mb-60 {
+    margin-bottom: 60px;
+  }
+   
+  //margin top
+   
+  .mt-10 {
+    margin-top: 10px;
+  }
+  .mt-15 {
+    margin-top: 10px;
+  }
+  .mt-20 {
+    margin-top: 10px;
+  }
+  .mt-30 {
+    margin-top: 60px;
+  }
+  .mt-60 {
+    margin-top: 60px;
+  }
+   
+  //margin left
+   
+  .ml-10 {
+    margin-left: 10px;
+  }
+  .ml-20 {
+    margin-left: 20px;
+  }
+  .ml-30 {
+    margin-left: 30px;
+  }
+  .ml-60 {
+    margin-left: 60px;
+  }
+  .ml-125 {
+    margin-left: 125px;
+  }
+   
+  //margin right
+   
+  .mr-10 {
+    margin-right: 10px;
+  }
+  .mr-20 {
+    margin-right: 20px;
+  }
+  .mr-30 {
+    margin-right: 30px;
+  }
+  .mr-60 {
+    margin-right: 60px;
+  }
+  .mr-125 {
+    margin-right: 125px;
+  }
+  }
