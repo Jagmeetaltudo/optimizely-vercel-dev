@@ -71,7 +71,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                   <CTAButtonBlock
                     key={index}
                     text={button.text}
-                    url={button.url.toString()}
+                    url={button?.url?.toString()}
                     className={button.className}
                   />
                 ))}
