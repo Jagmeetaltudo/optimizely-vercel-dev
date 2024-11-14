@@ -33,14 +33,14 @@ const FooterCol: React.FC<FooterColumnProps> = ({ Icon, Title, links }) => {
         />
         <div className={styles.columnTextContent}>
           <div className={styles.columnTitle}>{Title}</div>
-          {links.map((item, index) => (
+          {links?.map((item, index) => (
             <div
               key={index}
               className={
                 index === 0 ? styles.columnSubtitle : styles.columnText
               }
             >
-              <Link href={item.url?.default as string}>{item.text}</Link>
+              <Link href={item?.url?.default as string ||''}>{item.text}</Link>
             </div>
           ))}
         </div>

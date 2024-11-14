@@ -117,18 +117,20 @@ const ProductConfiguratorComponent: CmsComponent<
                   <p className="mt-7 text-base leading-loose text-stone-500">
                     {data.des}
                   </p>
-                  <div id="accordion" className="w-full">
-                    <h3>Models</h3>
-                    <div className={`flex ${Styles.listItem}`}>
-                      {Models.map((feature, index) => (
-                        <FeatureSection
-                          key={index}
-                          title={feature.Title || ""}
-                          image={feature.Image}
-                        />
-                      ))}
-                    </div>
-
+                 <div id="accordion" className="w-full">
+                  {data.Models && <>
+                     <h3>Models</h3>
+                     <div className={`flex ${Styles.listItem}`}>
+                       {Models.map((feature, index) => (
+                         <FeatureSection
+                           key={index}
+                           title={feature.Title || ""}
+                           image={feature.Image}
+                         />
+                       ))}
+                     </div>
+                   </>}
+                   {data.GrilleDesigns && <>
                     <h3>Grille Designs</h3>
                     <div className={`flex ${Styles.listItem}`}>
                       {GrilleDesigns.map((feature, index) => (
@@ -138,9 +140,9 @@ const ProductConfiguratorComponent: CmsComponent<
                           image={feature.Image}
                         />
                       ))}
-                    </div>
+                    </div></>}
 
-                    <h3>Exterior Color Options</h3>
+                    {data.ExteriorColorOptions && <> <h3>Color Options</h3>
                     <div className={`flex ${Styles.listItem}`}>
                       {ExteriorColorOptions.map((feature, index) => (
                         <FeatureSection
@@ -149,7 +151,7 @@ const ProductConfiguratorComponent: CmsComponent<
                           image={feature.Image}
                         />
                       ))}
-                    </div>
+                    </div></>}
                   </div>
                   <div
                     className={`py-2 mt-20 leading-loose  ${Styles.optionText}`}

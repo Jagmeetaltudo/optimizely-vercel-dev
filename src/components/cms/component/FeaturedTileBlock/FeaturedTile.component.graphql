@@ -1,7 +1,6 @@
 fragment FeaturedTileBlockData on FeaturedTileBlock {
   title: TileTitle
   TileDescription
-  buttontext: TileButtonText
   backgroundImage {
     ...ReferenceData
   }

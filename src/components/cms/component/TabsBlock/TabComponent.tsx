@@ -7,6 +7,7 @@ import {
   TabsContentBlockDataFragment,
 } from "../../../../gql/graphql";
 import CmsImage from "../../../shared/cms_image";
+import { RichText } from "@remkoj/optimizely-cms-react/components";
 
 
 interface TabComponentProps {
@@ -61,8 +62,8 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
           </h3>
           <section key={index} className="tab-content-detail pb-8 mt-8 w-full bg-blend-normal">
             <div className="flex gap-12  max-md:flex-col">
-              <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
-                <CmsImage
+            {item.Image && <div className="flex flex-col w-[18%] max-md:ml-0 max-md:w-full">
+                 <CmsImage
                   src={item.Image}
                   alt="hero-image"
                   aria-hidden
@@ -71,10 +72,11 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabData }) => {
                   height={220}
                   className="object-contain shrink-0 max-w-full bg-blend-normal aspect-square w-[220px] max-md:mt-8"
                 />
-              </div>
+              </div>}
               <div className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
                 <p className="text-base font-light leading-7 text-zinc-800 max-md:mt-8 max-md:max-w-full">
                   {item.subtitle}
+                  <RichText text={item.RichText?.json}/>
                 </p>
               </div>
             </div>

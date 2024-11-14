@@ -34,7 +34,7 @@ export const FooterComponent: CmsComponent<FooterDataFragment> = async ({
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
           <div className={styles.footerColumns}>
-            {footerCols.map((column, index) => (
+            {footerCols?.map((column, index) => (
               <FooterCol
                 links={column.ColumnItems as OptiLink[]}
                 Icon={column.Icon || undefined}
@@ -64,7 +64,7 @@ export const FooterComponent: CmsComponent<FooterDataFragment> = async ({
           </div>
           <div className={styles.socialLinks}>
             {icons &&
-              icons.map(
+              icons?.map(
                 (icon, index) =>
                   icon && (
                     <Link href={icon.Link?.default as string} key={index}>
@@ -82,8 +82,8 @@ export const FooterComponent: CmsComponent<FooterDataFragment> = async ({
         <div className={styles.topBorder} />
         <div className={styles.footerBottom}>
           <div className={styles.footerLinks}>
-            {data.links &&
-              data.links.map(
+            {data?.links &&
+              data?.links?.map(
                 (link, index) => link && <CmsLink key={index} href={link} />
               )}
           </div>

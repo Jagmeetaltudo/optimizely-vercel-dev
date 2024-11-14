@@ -292,7 +292,6 @@ export const FeaturedTileBlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment FeaturedTileBlockData on FeaturedTileBlock {
   title: TileTitle
   TileDescription
-  buttontext: TileButtonText
   backgroundImage {
     ...ReferenceData
   }
@@ -441,6 +440,9 @@ export const DetailSectionDataFragmentDoc = /*#__PURE__*/ gql`
   subtitle: Description
   Image {
     ...ReferenceData
+  }
+  RichText {
+    json
   }
 }
     `;
