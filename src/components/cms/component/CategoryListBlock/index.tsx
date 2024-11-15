@@ -65,7 +65,7 @@ export const CategoryListBlockComponent: CmsComponent<
             layout="fill"
           />
           {/* <div className="card-image-overlay"> */}
-          <a className="card-image-overlay" href={category?.TileLink?.default}>
+          <a className="card-image-overlay" href={(category?.TileLink as any)?.default}>
             <h4>{category?.TileTitle}</h4>
           </a>
         </div>
