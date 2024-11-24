@@ -49,6 +49,7 @@ const documents = {
     "fragment TabsContentBlockData on TabsContentBlock {\n  Title\n  SectionContent {\n    ...DetailSectionData\n  }\n}": types.TabsContentBlockDataFragmentDoc,
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
+    "fragment CategoryTileElementData on CategoryTileElement {\n  CategoryTileTitle\n  CategoryTileImage {\n    ...ReferenceData\n  }\n  CategoryTileLink {\n    ...LinkData\n  }\n}": types.CategoryTileElementDataFragmentDoc,
     "fragment FeaturedTileData on FeaturedTile {\n  title: Title\n  variant: Variant\n  description: Description {\n    json\n  }\n  image: Image {\n    ...ReferenceData\n  }\n  cta1: CTA1 {\n    ...LinkData\n  }\n  cta2: CTA2 {\n    ...LinkData\n  }\n}": types.FeaturedTileDataFragmentDoc,
     "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
@@ -230,6 +231,10 @@ export function gql(source: "fragment ArticleListElementData on ArticleListEleme
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}"): (typeof documents)["query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment CategoryTileElementData on CategoryTileElement {\n  CategoryTileTitle\n  CategoryTileImage {\n    ...ReferenceData\n  }\n  CategoryTileLink {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment CategoryTileElementData on CategoryTileElement {\n  CategoryTileTitle\n  CategoryTileImage {\n    ...ReferenceData\n  }\n  CategoryTileLink {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

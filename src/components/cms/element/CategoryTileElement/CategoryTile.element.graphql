@@ -1,0 +1,9 @@
+fragment CategoryTileElementData on CategoryTileElement {
+  CategoryTileTitle
+  CategoryTileImage {
+    ...ReferenceData
+  }
+  CategoryTileLink {
+    ...LinkData
+  }
+}

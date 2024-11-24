@@ -3,6 +3,7 @@ import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import ArticleListElement from "./ArticleListElement";
 import FeaturedTile from "./FeaturedTile";
 import TitleAndDescriptionElement from "./TitleAndDescriptionElement";
+import CategoryTileElement from "./CategoryTileElement";
 
 export const elementDictionary : ComponentTypeDictionary = [
     {
@@ -16,6 +17,10 @@ export const elementDictionary : ComponentTypeDictionary = [
     {
         type: 'TitleAndDescriptionElement',
         component: TitleAndDescriptionElement
+    },
+    {
+        type: 'CategoryTileElement',
+        component: CategoryTileElement
     },
 ]
 

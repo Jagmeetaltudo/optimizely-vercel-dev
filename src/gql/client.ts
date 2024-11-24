@@ -55,6 +55,17 @@ export const ReferenceDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const CategoryTileElementDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment CategoryTileElementData on CategoryTileElement {
+  CategoryTileTitle
+  CategoryTileImage {
+    ...ReferenceData
+  }
+  CategoryTileLink {
+    ...LinkData
+  }
+}
+    `;
 export const FeaturedTileDataFragmentDoc = /*#__PURE__*/ gql`
     fragment FeaturedTileData on FeaturedTile {
   title: Title
@@ -126,6 +137,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ElementData on _IElement {
   ...IElementData
   ...ArticleListElementData
+  ...CategoryTileElementData
   ...FeaturedTileData
   ...TitleAndDescriptionElementData
   ...CTAElementData
@@ -672,6 +684,7 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
+${CategoryTileElementDataFragmentDoc}
 ${FeaturedTileDataFragmentDoc}
 ${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
@@ -704,8 +717,9 @@ ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
-${FeaturedTileDataFragmentDoc}
+${CategoryTileElementDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${FeaturedTileDataFragmentDoc}
 ${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
