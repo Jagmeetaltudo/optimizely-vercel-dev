@@ -1,0 +1,10 @@
+fragment HeroCarouselElementData on HeroCarouselElement {
+  HeroTitle
+  HeroDescription
+  HeroImage {
+    ...ReferenceData
+  }
+  HeroLink {
+    ...LinkData
+  }
+}

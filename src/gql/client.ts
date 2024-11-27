@@ -84,6 +84,18 @@ export const FeaturedTileDataFragmentDoc = /*#__PURE__*/ gql`
   }
 }
     `;
+export const HeroCarouselElementDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HeroCarouselElementData on HeroCarouselElement {
+  HeroTitle
+  HeroDescription
+  HeroImage {
+    ...ReferenceData
+  }
+  HeroLink {
+    ...LinkData
+  }
+}
+    `;
 export const TitleAndDescriptionElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {
   TestTitle
@@ -139,6 +151,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
   ...ArticleListElementData
   ...CategoryTileElementData
   ...FeaturedTileData
+  ...HeroCarouselElementData
   ...TitleAndDescriptionElementData
   ...CTAElementData
   ...HeadingElementData
@@ -686,6 +699,7 @@ ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
 ${CategoryTileElementDataFragmentDoc}
 ${FeaturedTileDataFragmentDoc}
+${HeroCarouselElementDataFragmentDoc}
 ${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
@@ -720,6 +734,7 @@ ${ArticleListElementDataFragmentDoc}
 ${CategoryTileElementDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${FeaturedTileDataFragmentDoc}
+${HeroCarouselElementDataFragmentDoc}
 ${TitleAndDescriptionElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}

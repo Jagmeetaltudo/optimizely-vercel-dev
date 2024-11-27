@@ -7,6 +7,8 @@ import CardRow from './row/card-row'
 import DefaultRow from './row/default-row'
 import CarouselRow from './row/carousel-row'
 import { prefixDictionaryEntries } from "@/components/utils"
+import { HeroCarouselRow } from './row/hero-carousel-row'
+import TileRow from './row/tile-row'
 
 prefixDictionaryEntries(elements, "Element")
 
@@ -32,6 +34,14 @@ export const ComponentModuleList : ComponentTypeDictionary = [
     {
         type: "Row/CarouselRow",
         component: CarouselRow
+    },
+    {
+        type: "Row/HeroCarouselRow",
+        component: HeroCarouselRow
+    },
+    {
+        type: "Row/TileRow",
+        component: TileRow
     }
 ]
 

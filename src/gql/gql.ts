@@ -51,6 +51,7 @@ const documents = {
     "query getArticleListElementItems($count: Int, $locale: [Locales]) {\n  ArticlePage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    items {\n      ...IContentData\n      articleTitle\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      articleAuthors\n      articleSummary {\n        json\n      }\n      articleHeroImage {\n        ...ReferenceData\n      }\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "fragment CategoryTileElementData on CategoryTileElement {\n  CategoryTileTitle\n  CategoryTileImage {\n    ...ReferenceData\n  }\n  CategoryTileLink {\n    ...LinkData\n  }\n}": types.CategoryTileElementDataFragmentDoc,
     "fragment FeaturedTileData on FeaturedTile {\n  title: Title\n  variant: Variant\n  description: Description {\n    json\n  }\n  image: Image {\n    ...ReferenceData\n  }\n  cta1: CTA1 {\n    ...LinkData\n  }\n  cta2: CTA2 {\n    ...LinkData\n  }\n}": types.FeaturedTileDataFragmentDoc,
+    "fragment HeroCarouselElementData on HeroCarouselElement {\n  HeroTitle\n  HeroDescription\n  HeroImage {\n    ...ReferenceData\n  }\n  HeroLink {\n    ...LinkData\n  }\n}": types.HeroCarouselElementDataFragmentDoc,
     "fragment TitleAndDescriptionElementData on TitleAndDescriptionElement {\n  TestTitle\n  TestDescription {\n    json\n  }\n}": types.TitleAndDescriptionElementDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $version: String) {\n  BlankExperience(where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}) {\n    items {\n      _metadata {\n        displayName\n      }\n      SeoSettings {\n        metaTitle\n      }\n    }\n  }\n}": types.getBlankExperienceMetaDataDocument,
@@ -239,6 +240,10 @@ export function gql(source: "fragment CategoryTileElementData on CategoryTileEle
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment FeaturedTileData on FeaturedTile {\n  title: Title\n  variant: Variant\n  description: Description {\n    json\n  }\n  image: Image {\n    ...ReferenceData\n  }\n  cta1: CTA1 {\n    ...LinkData\n  }\n  cta2: CTA2 {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment FeaturedTileData on FeaturedTile {\n  title: Title\n  variant: Variant\n  description: Description {\n    json\n  }\n  image: Image {\n    ...ReferenceData\n  }\n  cta1: CTA1 {\n    ...LinkData\n  }\n  cta2: CTA2 {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment HeroCarouselElementData on HeroCarouselElement {\n  HeroTitle\n  HeroDescription\n  HeroImage {\n    ...ReferenceData\n  }\n  HeroLink {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment HeroCarouselElementData on HeroCarouselElement {\n  HeroTitle\n  HeroDescription\n  HeroImage {\n    ...ReferenceData\n  }\n  HeroLink {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

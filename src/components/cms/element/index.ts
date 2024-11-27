@@ -4,6 +4,7 @@ import ArticleListElement from "./ArticleListElement";
 import FeaturedTile from "./FeaturedTile";
 import TitleAndDescriptionElement from "./TitleAndDescriptionElement";
 import CategoryTileElement from "./CategoryTileElement";
+import HeroCarouselElement from "./HeroCarouselElement";
 
 export const elementDictionary : ComponentTypeDictionary = [
     {
@@ -21,6 +22,10 @@ export const elementDictionary : ComponentTypeDictionary = [
     {
         type: 'CategoryTileElement',
         component: CategoryTileElement
+    },
+    {
+        type: 'HeroCarouselElement',
+        component: HeroCarouselElement
     },
 ]
 

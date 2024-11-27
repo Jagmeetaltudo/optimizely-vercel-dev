@@ -15,15 +15,15 @@ export const CategoryTileElement: CmsComponent<
   return (
     <CmsEditable
       as="div"
-      className="flex flex-col mb-5 max-md:w-full max-md:mb-4"
+      className="flex flex-col w-1/4 mb-5 max-md:ml-0 max-md:w-full"
       cmsId={contentLink.key}
     >
-      <div className="flex card-items relative flex-col grow px-8 pt-36 pb-5 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-4 max-md:pt-20 mr-3">
+      <div className="flex card-items relative flex-col grow px-16 pt-52 pb-7 text-xl font-bold tracking-wide text-white uppercase whitespace-nowrap aspect-[1.185] max-md:px-5 max-md:pt-24 max-md:mt-5 mr-4">
         <CmsImage
           loading="lazy"
           src={data?.CategoryTileImage}
           alt="Inspirational background"
-          className="object-contain absolute inset-0 w-full h-full"
+          className="object-contain absolute inset-0 size-full"
           layout="fill"
         />
         <a
